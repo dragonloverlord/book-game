@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="book.js"></script>
+</head>
+<body class="body">
+    <input id="lock" type="hidden" value="lockoff">
+    <div id="main-div" class="main-div">
+        <div id="money-div" class="money">
+          <span id="money-text">0</span>$
+          <button class="save-button" type="button" id="save">Save</button>
+          <button class="save-button" type="button" id="reset">New Game</button>
+          <button class="save-button" type="button" id="stats">Stats</button>
+          <button class="save-button" type="button" id="shrink">Shrink Stats</button>
+          <div class="stats-text">Children's</div>
+          <div class="save-div" id="childrens-stats">0</div>
+          <div class="stats-text">Drama</div>
+          <div class="save-div" id="drama-stats">0</div>
+          <div class="stats-text">Fantasy</div>
+          <div class="save-div" id="fantasy-stats">0</div>
+          <div class="stats-text">Fiction</div>
+          <div class="save-div" id="fiction-stats">0</div>
+          <div class="stats-text">History</div>
+          <div class="save-div" id="history-stats">0</div>
+          <div class="stats-text">Scifi</div>
+          <div class="save-div" id="scifi-stats">0</div>
+          <div class="stats-text">Trashy</div>
+          <div class="save-div" id="trashy-stats">0</div>
+        </div>
+        <div class="book-col">
+          <button class="book-button" type="button" id="childrens">children's</button>
+          <button class="book-button" type="button" id="drama">Drama</button>
+          <button class="book-button-locked" type="button" id="fantasy">Locked ???</button>
+          <button class="book-button" type="button" id="fiction">Fiction</button>
+          <button class="book-button-locked" type="button" id="history" value="0">Locked 1500$</button>
+          <button class="book-button" type="button" id="scifi">Scifi</button>
+          <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
+        </div>
+        <div class="pic-div">
+          <img id="cat-pic" src="">
+        </div>
+    </div>
+</body>
+</html>

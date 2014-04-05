@@ -1,0 +1,16 @@
+#error-msg{
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+#main-div{
+  border:4px solid #333;
+  background-color:#EEE;
+}
+
+#body{
+  background-color:#DDD;
+}
