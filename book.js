@@ -39,25 +39,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorhtml("money-text");
-  errorhtml("drama-stats");
-  errorhtml("fantasy-stats");
-  errorhtml("scifi-stats");
-  errorhtml("trashy-stats");
-  errorhtml("history-stats");
-  errorhtml("childrens-stats");
-  errorvalue("trashy");
-  errorvalue("history");
+  errorh("money-text");
+  errorh("drama-stats");
+  errorh("fantasy-stats");
+  errorh("scifi-stats");
+  errorh("trashy-stats");
+  errorh("history-stats");
+  errorh("childrens-stats");
+  errorv("trashy");
+  errorv("history");
 }
 
-function errorvalue(id){
+function errorv(id){
   var error = document.getElementById(id).value;
   if(error == "NaN"){
     document.getElementById(id).value = 0;
   }
 }
 
-function errorhtml(id){
+function errorh(id){
   var error = document.getElementById(id).innerHTML;
   if(error == "NaN"){
     document.getElementById(id).innerHTML = 0;
