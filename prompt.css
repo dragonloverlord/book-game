@@ -1,0 +1,32 @@
+#main-div{
+  border:4px solid #333;
+  background-color:#EEE;
+}
+
+#body{
+  background-color:#DDD;
+}
+
+#prompt-msg{
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+.buttons{
+  width:100px;
+  height:50px;
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#button-div{
+  width:205px;
+  margin-left:auto;
+  margin-right:auto;
+}
