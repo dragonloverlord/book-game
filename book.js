@@ -109,24 +109,25 @@ function shrink(){
 }
 
 function saveChanges() {
-  var money = document.getElementById("money-text").innerHTML;
-  var drama = document.getElementById("drama-stats").innerHTML;
-  var fantasy = document.getElementById("fantasy-stats").innerHTML;
-  var scifi = document.getElementById("scifi-stats").innerHTML;
-  var trashy = document.getElementById("trashy-stats").innerHTML;
-  var trashyLock = document.getElementById("trashy").value;
-  var historyLock = document.getElementById("history").value;
-  var History = document.getElementById("history-stats").innerHTML;
-  var childrens = document.getElementById("childrens-stats").innerHTML;
-  chrome.storage.sync.set({'money': money});
-  chrome.storage.sync.set({'drama': drama});
-  chrome.storage.sync.set({'fantasy': fantasy});
-  chrome.storage.sync.set({'scifi': scifi});
-  chrome.storage.sync.set({'trashy': trashy});
-  chrome.storage.sync.set({'trashyLock': trashyLock});
-  chrome.storage.sync.set({'History': History});
-  chrome.storage.sync.set({'childrens': childrens});
-  chrome.storage.sync.set({'historyLock': historyLock});
+  saveh("money-text","money");
+  saveh("drama-stats","drama");
+  saveh("fantasy-stats","fantasy");
+  saveh("scifi-stats","scifi");
+  saveh("trashy-stats","trashy");
+  saveh("history-stats","history");
+  saveh("childrens-stats","childrens");
+  savev("trashy","trashyLock");
+  savev("history","historyLock");
+}
+
+function saveh(id,id2){
+  var data = document.getElementById(id).innerHTML;
+  chrome.storage.sync.set({id2: data});
+}
+
+function savev(id,id2){
+  var data = document.getElementById(id).value;
+  chrome.storage.sync.set({id2: data});
 }
 
 document.addEventListener('DOMContentLoaded', function () {
