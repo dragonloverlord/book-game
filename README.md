@@ -3,8 +3,8 @@ my-chrome-app
 
 a basic javascript book writing game app for chrome
 
-Instructions
-============
+Instructions For Installation
+=============================
 
 To use this app go to the extension page on chrome then check the developer box
 
