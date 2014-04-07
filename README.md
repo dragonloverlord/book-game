@@ -1,4 +1,4 @@
-my-chrome-app
+Book-Game
 =============
 
 a basic javascript book writing game app for chrome
