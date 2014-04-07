@@ -9,7 +9,7 @@
   border-left:3px groove #009;
   border-bottom:3px groove #009;
   width:100px;
-  height:95px;
+  height:88px;
   margin-left:auto;
   padding:5px;
   font-family:consolas;
@@ -24,6 +24,9 @@
 .save-button{
   width:100px;
   transition:box-shadow 0.5s;
+  border:1px solid #666;
+  border-radius:2px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
 }
 
 .save-button:hover{
@@ -59,7 +62,7 @@
 }
 
 .save-div{
-  border:2px groove #333;
+  border:2px groove #999;
   width:94px;
 }
 

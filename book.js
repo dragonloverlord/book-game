@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function shrink(){
   var moneyDiv = document.getElementById("money-div");
-  moneyDiv.setAttribute("style","height:95px;");
+  moneyDiv.setAttribute("style","");
 }
 
 function saveChanges(){
