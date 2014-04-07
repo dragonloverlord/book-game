@@ -213,41 +213,27 @@ function calc(value,book){
   var money = current+nv;
   document.getElementById("money-text").innerHTML = money;
   if(book == "drama"){
-    var drama = document.getElementById("drama-stats").innerHTML;
-    var drama = parseInt(drama);
-    var dramaStats = drama + 1;
-    document.getElementById("drama-stats").innerHTML = dramaStats;
+    bookc("drama-stats");
   }else if(book == "fantasy"){
-    var fantasy = document.getElementById("fantasy-stats").innerHTML;
-    var fantasy = parseInt(fantasy);
-    var fantasyStats = fantasy + 1;
-    document.getElementById("fantasy-stats").innerHTML = fantasyStats;
+    bookc("fantasy-stats");
   }else if(book == "scifi"){
-    var scifi = document.getElementById("scifi-stats").innerHTML;
-    var scifi = parseInt(scifi);
-    var scifiStats = scifi + 1;
-    document.getElementById("scifi-stats").innerHTML = scifiStats;
+    bookc("scifi-stats");
   }else if(book == "trashy"){
-    var trashy = document.getElementById("trashy-stats").innerHTML;
-    var trashy = parseInt(trashy);
-    var trashyStats = trashy + 1;
-    document.getElementById("trashy-stats").innerHTML = trashyStats;
+    bookc("trashy-stats");
   }else if(book == "history"){
-    var history = document.getElementById("history-stats").innerHTML;
-    var history = parseInt(history);
-    var historyStats = history + 1;
-    document.getElementById("history-stats").innerHTML = historyStats;
+    bookc("history-stats");
   }else if(book == "childrens"){
-    var childrens = document.getElementById("childrens-stats").innerHTML;
-    var childrens = parseInt(childrens);
-    var childrensStats = childrens + 1;
-    document.getElementById("childrens-stats").innerHTML = childrensStats;
+    bookc("childrens-stats");
   }else if(book == "fiction"){
-    var fiction = document.getElementById("fiction-stats").innerHTML;
-    var fiction = parseInt(fiction);
-    var fictionStats = fiction + 1;
-    document.getElementById("fiction-stats").innerHTML = fictionStats;
+    bookc("fiction-stats");
   }
+}
+
+function bookc(id){
+  var book = document.getElementById(id).innerHTML;
+  var book = parseInt(book);
+  var book = book + 1;
+  document.getElementById(id).innerHTML = book;
 }
 
 function removeLock(){
