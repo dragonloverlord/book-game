@@ -108,26 +108,35 @@ function shrink(){
   moneyDiv.setAttribute("style","height:95px;");
 }
 
-function saveChanges() {
-  saveh("money-text","money");
-  saveh("drama-stats","drama");
-  saveh("fantasy-stats","fantasy");
-  saveh("scifi-stats","scifi");
-  saveh("trashy-stats","trashy");
-  saveh("history-stats","history");
-  saveh("childrens-stats","childrens");
-  savev("trashy","trashyLock");
-  savev("history","historyLock");
+function saveChanges(){
+  var data = saveh("money-text");
+  chrome.storage.sync.set({'money':data});
+  var data = saveh("drama-stats");
+  chrome.storage.sync.set({'drama':data});
+  var data = saveh("fantasy-stats");
+  chrome.storage.sync.set({'fantasy':data});
+  var data = saveh("scifi-stats");
+  chrome.storage.sync.set({'scifi':data});
+  var data = saveh("trashy-stats");
+  chrome.storage.sync.set({'trashy':data});
+  var data = saveh("history-stats");
+  chrome.storage.sync.set({'History':data});
+  var data = saveh("childrens-stats");
+  chrome.storage.sync.set({'childrens':data});
+  var data = savev("trashy");
+  chrome.storage.sync.set({'trashyLock':data});
+  var data = savev("history");
+  chrome.storage.sync.set({'historyLock':data});
 }
 
-function saveh(id,id2){
+function saveh(id){
   var data = document.getElementById(id).innerHTML;
-  chrome.storage.sync.set({id2: data});
+  return data;
 }
 
-function savev(id,id2){
+function savev(id){
   var data = document.getElementById(id).value;
-  chrome.storage.sync.set({id2: data});
+  return data;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -137,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function picAdder(time){
   var div = document.getElementById("main-div");
   var img = document.getElementById("cat-pic");
-  div.setAttribute("style","background-color:#FFF;")
+  div.setAttribute("style","background-color:#FFF;");
   img.setAttribute("src","typeimage.gif");
   setTimeout(picRemover,time);
 }
