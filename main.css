@@ -1,13 +1,13 @@
 .main-div{
-    border:4px solid #333;
+    border:4px groove #009;
     width:975px;
     height:593px;
     background-color:#EEE;
 }
 
 .money{
-  border-left:3px solid #333;
-  border-bottom:3px solid #333;
+  border-left:3px groove #009;
+  border-bottom:3px groove #009;
   width:100px;
   height:95px;
   margin-left:auto;
@@ -38,13 +38,16 @@
   height:593px;
   width:150px;
   float:left;
-  border-right:3px solid #333;
+  border-right:3px groove #009;
   background-color:#EEE;
 }
 
 .book-button{
   width:150px;
+  border:1px solid #666;
+  border-radius:2px;
   transition:box-shadow 0.5s;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
 }
 
 .book-button:hover{
@@ -56,7 +59,7 @@
 }
 
 .save-div{
-  border:2px solid #333;
+  border:2px groove #333;
   width:94px;
 }
 
