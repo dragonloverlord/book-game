@@ -8,6 +8,8 @@ Instructions For Installation
 
 To use this app go to the extension page on chrome then check the developer box
 
+if a previous installation of the app is present then remove it now
+
 next you will need the book.game.crx file located [here](https://github.com/dragonloverlord/my-chrome-app/releases)
 
 a error message will popup in chrome if you are using it to download the app. just ignore it
