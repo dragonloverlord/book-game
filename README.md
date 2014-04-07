@@ -19,3 +19,10 @@ now drag the book.game.crx to the chrome extension page and drop it
 chrome should then guide you through the rest
 
 finally enjoy!
+
+Disclaimer
+==========
+
+This app was made and is intended for the chrome os platform and is optimized for
+chrome os. Which means that its functionality on windows and mac is not guaranteed
+or assured in any way.
