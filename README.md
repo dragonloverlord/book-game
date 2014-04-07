@@ -3,6 +3,9 @@ my-chrome-app
 
 a basic javascript book writing game app for chrome
 
+Instructions
+============
+
 To use this app go to the extension page on chrome then check the developer box
 
 next you will need the book.game.crx file located [here](https://github.com/dragonloverlord/my-chrome-app/releases)
