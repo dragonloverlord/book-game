@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var historyLock = parseInt(obj.historyLock);
     document.getElementById("history").value = historyLock;
   });
+  chrome.storage.sync.get('fiction',function(obj){
+    var fiction = parseInt(obj.fiction);
+    document.getElementById("fiction-stats").innerHTML = fiction;
+  });
 });
 
 setTimeout(errorChecker, 3000);
@@ -46,6 +50,7 @@ function errorChecker(){
   errorh("trashy-stats");
   errorh("history-stats");
   errorh("childrens-stats");
+  errorh("fiction-stats");
   errorv("trashy");
   errorv("history");
 }
@@ -123,6 +128,8 @@ function saveChanges(){
   chrome.storage.sync.set({'History':data});
   var data = saveh("childrens-stats");
   chrome.storage.sync.set({'childrens':data});
+  var data = saveh("fiction-stats");
+  chrome.storage.sync.set({'fiction':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -235,6 +242,11 @@ function calc(value,book){
     var childrens = parseInt(childrens);
     var childrensStats = childrens + 1;
     document.getElementById("childrens-stats").innerHTML = childrensStats;
+  }else if(book == "fiction"){
+    var fiction = document.getElementById("fiction-stats").innerHTML;
+    var fiction = parseInt(fiction);
+    var fictionStats = fiction + 1;
+    document.getElementById("fiction-stats").innerHTML = fictionStats;
   }
 }
 
