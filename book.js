@@ -144,18 +144,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function picAdder(time){
+  var money = document.getElementById("money-div");
   var div = document.getElementById("main-div");
   var img = document.getElementById("cat-pic");
   div.setAttribute("style","background-color:#FFF;");
   img.setAttribute("src","typeimage.gif");
+  money.setAttribute("style","background-color:#EEE");
   setTimeout(picRemover,time);
 }
 
 function picRemover(){
+  var money = document.getElementById("money-div");
   var div = document.getElementById("main-div");
   var img = document.getElementById("cat-pic");
   div.setAttribute("style","");
   img.setAttribute("src","");
+  money.setAttribute("style","");
 }
 
 function bookPrompt(){
