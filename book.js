@@ -92,7 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function reset(){
   chrome.storage.sync.clear();
-  document.getElementById("money-text").innerHTML = 0;
+  idf("money-text").innerHTML = 0;
+  idf("childrens-stats").innerHTML = 0;
+  idf("drama-stats").innerHTML = 0;
+  idf("fantasy-stats").innerHTML = 0;
+  idf("fiction-stats").innerHTML = 0;
+  idf("history-stats").innerHTML = 0;
+  idf("scifi-stats").innerHTML = 0;
+  idf("trashy-stats").innerHTML = 0;
+}
+
+function idf(id){
+  var val = document.getElementById(id);
+  return val;
 }
 
 document.addEventListener('DOMContentLoaded', function () {
