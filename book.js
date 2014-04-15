@@ -100,6 +100,15 @@ function reset(){
   idf("history-stats").innerHTML = 0;
   idf("scifi-stats").innerHTML = 0;
   idf("trashy-stats").innerHTML = 0;
+  var fantasy = idf("fantasy");
+  fantasy.innerHTML = "Locked ???";
+  fantasy.className = "book-button-locked";
+  var history = idf("history");
+  history.innerHTML = "Locked 1500$";
+  history.value = 0;
+  var trashy = idf("trashy");
+  trashy.innerHTML = "Locked 1000$";
+  trashy.value = 0;
 }
 
 function idf(id){
