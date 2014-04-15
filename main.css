@@ -15,7 +15,7 @@
   font-family:consolas;
   font-size:16px;
   text-align:left;
-  background-color:#FFF;
+  background-color:#EFE;
   float:right;
   overflow:hidden;
   transition:height 2s, background-color 0.5s;
@@ -47,7 +47,7 @@
   width:150px;
   float:left;
   border-right:3px groove #009;
-  background-color:#EEE;
+  background-color:#EFE;
 }
 
 .book-button{
@@ -74,6 +74,7 @@
 .save-div{
   border:2px groove #999;
   width:94px;
+  background-color:#FFF;
 }
 
 .stats-text{
