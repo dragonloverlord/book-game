@@ -2,7 +2,8 @@
     border:4px groove #009;
     width:975px;
     height:593px;
-    background-color:#EEE;
+    background-color:#DDF;
+    margin:auto auto auto auto;
 }
 
 .money{
@@ -39,7 +40,7 @@
 }
 
 .body{
-  background-color:#CCC;
+  background-color:#7B7;
 }
 
 .book-col{
