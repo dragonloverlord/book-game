@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function stats(){
   var moneyDiv = document.getElementById("money-div");
-  moneyDiv.setAttribute("style","height:550px;");
+  moneyDiv.setAttribute("style","height:550px;overflow:scroll;");
 }
 
 document.addEventListener('DOMContentLoaded', function () {

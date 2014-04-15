@@ -9,14 +9,14 @@
 .money{
   border-left:3px groove #009;
   border-bottom:3px groove #009;
-  width:100px;
+  width:120px;
   height:88px;
   margin-left:auto;
   padding:5px;
   font-family:consolas;
   font-size:16px;
   text-align:left;
-  background-color:#EFE;
+  background-color:#f2f2f2;
   float:right;
   overflow:hidden;
   transition:height 2s, background-color 0.5s;
@@ -45,10 +45,11 @@
 
 .book-col{
   height:593px;
-  width:150px;
+  width:165px;
   float:left;
   border-right:3px groove #009;
-  background-color:#EFE;
+  background-color:#f2f2f2;
+  overflow:scroll;
 }
 
 .book-button{
