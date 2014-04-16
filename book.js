@@ -39,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var fiction = parseInt(obj.fiction);
     document.getElementById("fiction-stats").innerHTML = fiction;
   });
+  chrome.storage.sync.get('nonfiction',function(obj){
+    var nonfiction = parseInt(obj.nonfiction);
+    document.getElementById("nonfiction-stats").innerHTML = nonfiction;
+  });
+  chrome.storage.sync.get('math',function(obj){
+    var math = parseInt(obj.math);
+    document.getElementById("math-stats").innerHTML = math;
+  });
 });
 
 setTimeout(errorChecker, 3000);
@@ -51,6 +59,8 @@ function errorChecker(){
   errorh("history-stats");
   errorh("childrens-stats");
   errorh("fiction-stats");
+  errorh("nonfiction-stats");
+  errorh("math-stats");
   errorv("trashy");
   errorv("history");
 }
@@ -100,6 +110,8 @@ function reset(){
   idf("history-stats").innerHTML = 0;
   idf("scifi-stats").innerHTML = 0;
   idf("trashy-stats").innerHTML = 0;
+  idf("nonfiction-stats").innerHTML = 0;
+  idf("math-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -151,6 +163,10 @@ function saveChanges(){
   chrome.storage.sync.set({'childrens':data});
   var data = saveh("fiction-stats");
   chrome.storage.sync.set({'fiction':data});
+  var data = saveh("nonfiction-stats");
+  chrome.storage.sync.set({'nonfiction':data});
+  var data = saveh("math-stats");
+  chrome.storage.sync.set({'math':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -247,6 +263,10 @@ function calc(value,book){
     bookc("childrens-stats");
   }else if(book == "fiction"){
     bookc("fiction-stats");
+  }else if(book == "nonfiction"){
+    bookc("nonfiction-stats");
+  }else if(book == "math"){
+    bookc("math-stats");
   }
 }
 
@@ -437,4 +457,44 @@ function onClickFiction(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#fiction").addEventListener('click',onClickFiction);
+});
+
+function startCalcNonFiction(){
+  calc(60,"nonfiction");
+}
+
+function onClickNonFiction(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(7300);
+    picAdder(7300);
+    setTimeout(startCalcNonFiction, 7300);
+    setTimeout(bookPrompt, 7300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#nonfiction").addEventListener('click',onClickNonFiction);
+});
+
+function startCalcMath(){
+  calc(130,"math");
+}
+
+function onClickMath(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(9300);
+    picAdder(9300);
+    setTimeout(startCalcMath, 9300);
+    setTimeout(bookPrompt, 9300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#math").addEventListener('click',onClickMath);
 });
