@@ -59,6 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var romance = parseInt(obj.romance);
     document.getElementById("romance-stats").innerHTML = romance;
   });
+  chrome.storage.sync.get('report',function(obj){
+    var report = parseInt(obj.report);
+    document.getElementById("report-stats").innerHTML = report;
+  });
 });
 
 setTimeout(errorChecker, 3000);
@@ -76,6 +80,7 @@ function errorChecker(){
   errorh("humor-stats");
   errorh("satire-stats");
   errorh("romance-stats");
+  errorh("report-stats");
   errorv("trashy");
   errorv("history");
 }
@@ -134,6 +139,7 @@ function reset(){
   idf("humor-stats").innerHTML = 0;
   idf("satire-stats").innerHTML = 0;
   idf("romance-stats").innerHTML = 0;
+  idf("report-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -198,6 +204,8 @@ function saveChanges(){
   chrome.storage.sync.set({'satire':data});
   var data = saveh("romance-stats");
   chrome.storage.sync.set({'romance':data});
+  var data = saveh("report-stats");
+  chrome.storage.sync.set({'report':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -304,6 +312,8 @@ function calc(value,book){
     bookc("satire-stats");
   }else if(book == "romance"){
     bookc("romance-stats");
+  }else if(book == "report"){
+    bookc("report-stats");
   }
 }
 
@@ -599,4 +609,24 @@ function onClickRomance(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#romance").addEventListener('click',onClickRomance);
+});
+
+function startCalcReport(){
+  calc(310,"report");
+}
+
+function onClickReport(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(15350);
+    picAdder(15350);
+    setTimeout(startCalcReport, 15350);
+    setTimeout(bookPrompt, 15350);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#report").addEventListener('click',onClickReport);
 });
