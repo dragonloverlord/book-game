@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var math = parseInt(obj.math);
     document.getElementById("math-stats").innerHTML = math;
   });
+  chrome.storage.sync.get('humor',function(obj){
+    var humor = parseInt(obj.humor);
+    document.getElementById("humor-stats").innerHTML = humor;
+  });
+  chrome.storage.sync.get('satire',function(obj){
+    var satire = parseInt(obj.satire);
+    document.getElementById("satire-stats").innerHTML = satire;
+  });
 });
 
 setTimeout(errorChecker, 3000);
@@ -61,6 +69,8 @@ function errorChecker(){
   errorh("fiction-stats");
   errorh("nonfiction-stats");
   errorh("math-stats");
+  errorh("humor-stats");
+  errorh("satire-stats");
   errorv("trashy");
   errorv("history");
 }
@@ -86,6 +96,8 @@ function lockCheck(){
   var history = parseInt(history);
   var scifiStats = document.getElementById("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
+  var humorStats = document.getElementById("humor-stats").innerHTML;
+  var humorStats = parseInt(humorStats);
   var trashy = parseInt(trashy);
   if(trashy === 1){
     unlock("Trashy","trashy");
@@ -93,6 +105,8 @@ function lockCheck(){
     unlockUnknown("Fantasy","fantasy");
   }else if(history === 1){
     unlock("History","history");
+  }else if(humorStats >= 5){
+    unlockUnknown("Satire","satire");
   }
 }
 
@@ -112,9 +126,14 @@ function reset(){
   idf("trashy-stats").innerHTML = 0;
   idf("nonfiction-stats").innerHTML = 0;
   idf("math-stats").innerHTML = 0;
+  idf("humor-stats").innerHTML = 0;
+  idf("satire-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
+  var satire = idf("satire");
+  satire.innerHTML = "Locked ???";
+  satire.className = "book-button-locked";
   var history = idf("history");
   history.innerHTML = "Locked 1500$";
   history.value = 0;
@@ -167,6 +186,10 @@ function saveChanges(){
   chrome.storage.sync.set({'nonfiction':data});
   var data = saveh("math-stats");
   chrome.storage.sync.set({'math':data});
+  var data = saveh("humor-stats");
+  chrome.storage.sync.set({'humor':data});
+  var data = saveh("satire-stats");
+  chrome.storage.sync.set({'satire':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -267,6 +290,10 @@ function calc(value,book){
     bookc("nonfiction-stats");
   }else if(book == "math"){
     bookc("math-stats");
+  }else if(book == "humor"){
+    bookc("humor-stats");
+  }else if(book == "satire"){
+    bookc("satire-stats");
   }
 }
 
@@ -497,4 +524,49 @@ function onClickMath(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#math").addEventListener('click',onClickMath);
+});
+
+function startCalcHumor(){
+  calc(130,"humor");
+}
+
+function onClickHumor(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(10300);
+    picAdder(10300);
+    setTimeout(startCalcHumor, 10300);
+    setTimeout(bookPrompt, 10300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#humor").addEventListener('click',onClickHumor);
+});
+
+function startCalcSatire(){
+  calc(450,"satire");
+}
+
+function onClickSatire(){
+  var lockState = document.getElementById("lock").value;
+  var humorStats = document.getElementById("humor-stats").innerHTML;
+  var humorStats = parseInt(humorStats);
+  if(lockState=="lockoff" && humorStats === 5){
+    lock(17000);
+    picAdder(17000);
+    setTimeout(startCalcSatire, 17000);
+    setTimeout(bookPrompt, 17000);
+    unlockUnknown("Satire","satire");
+  }else if(humorStats < 10){
+    unknownPopup();
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#satire").addEventListener('click',onClickSatire);
 });
