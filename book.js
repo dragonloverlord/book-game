@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var satire = parseInt(obj.satire);
     document.getElementById("satire-stats").innerHTML = satire;
   });
+  chrome.storage.sync.get('romance',function(obj){
+    var romance = parseInt(obj.romance);
+    document.getElementById("romance-stats").innerHTML = romance;
+  });
 });
 
 setTimeout(errorChecker, 3000);
@@ -71,6 +75,7 @@ function errorChecker(){
   errorh("math-stats");
   errorh("humor-stats");
   errorh("satire-stats");
+  errorh("romance-stats");
   errorv("trashy");
   errorv("history");
 }
@@ -128,6 +133,7 @@ function reset(){
   idf("math-stats").innerHTML = 0;
   idf("humor-stats").innerHTML = 0;
   idf("satire-stats").innerHTML = 0;
+  idf("romance-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -190,6 +196,8 @@ function saveChanges(){
   chrome.storage.sync.set({'humor':data});
   var data = saveh("satire-stats");
   chrome.storage.sync.set({'satire':data});
+  var data = saveh("romance-stats");
+  chrome.storage.sync.set({'romance':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -294,6 +302,8 @@ function calc(value,book){
     bookc("humor-stats");
   }else if(book == "satire"){
     bookc("satire-stats");
+  }else if(book == "romance"){
+    bookc("romance-stats");
   }
 }
 
@@ -569,4 +579,24 @@ function onClickSatire(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#satire").addEventListener('click',onClickSatire);
+});
+
+function startCalcRomance(){
+  calc(310,"romance");
+}
+
+function onClickRomance(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(15350);
+    picAdder(15350);
+    setTimeout(startCalcRomance, 15350);
+    setTimeout(bookPrompt, 15350);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#romance").addEventListener('click',onClickRomance);
 });
