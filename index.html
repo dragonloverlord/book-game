@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom.min.css">
+    <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
     <script type="text/javascript" src="book.js"></script>
 </head>
 <body class="body">
     <input id="lock" type="hidden" value="lockoff">
+    <input id="vtime" type="hidden" value="1">
+    <input id="y" type="hidden" value="546">
     <div id="main-div" class="main-div">
         <div id="money-div" class="money">
           <span id="money-text">0</span>$
@@ -56,7 +61,7 @@
           <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
         </div>
         <div class="pic-div">
-          <img id="cat-pic" src="">
+          <div class="probar" id="progressbar"></div>
         </div>
     </div>
 </body>

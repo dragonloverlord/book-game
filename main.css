@@ -95,3 +95,8 @@
 .book-button-locked:hover{
   box-shadow:0 0 15px 0 #F99;
 }
+
+.probar{
+  height:45px;
+  width:650px;
+}

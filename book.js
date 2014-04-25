@@ -65,6 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+$(document).ready(function(){
+      $(function() {
+        $( "#progressbar" ).delay(0).progressbar({
+          value: 0,
+          max: 100
+        });
+      });
+    });
+
 setTimeout(errorChecker, 3000);
 function errorChecker(){
   errorh("money-text");
@@ -228,21 +237,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function picAdder(time){
   var money = document.getElementById("money-div");
-  var div = document.getElementById("main-div");
-  var img = document.getElementById("cat-pic");
-  div.setAttribute("style","background-color:#FFF;");
-  img.setAttribute("src","typeimage.gif");
   money.setAttribute("style","background-color:#EEE");
-  setTimeout(picRemover,time);
+  $(document).ready(function(){
+      $(function() {
+        $( "#progressbar" ).progressbar( "option", "max", time );
+      });
+    });
+  atime = time/100;
+  atimeT = time/100;
+    $(document).ready(function(){
+      $(function() {
+        timeout = setTimeout(doLoop, 0);
+        function doLoop(){
+        $( "#progressbar" ).progressbar( "option", "value", atime );
+        atime = atime + atimeT;
+        if(atime < time){
+          timeout = setTimeout(doLoop, atimeT);
+        }else{
+          clearTimeout(timeout);
+          setTimeout(picRemover,500);
+        }
+        }
+      });
+    });
 }
 
 function picRemover(){
   var money = document.getElementById("money-div");
-  var div = document.getElementById("main-div");
-  var img = document.getElementById("cat-pic");
-  div.setAttribute("style","");
-  img.setAttribute("src","");
   money.setAttribute("style","");
+  $(document).ready(function(){
+      $(function() {
+        $( "#progressbar" ).progressbar( "option", "value", 0 );
+      });
+    });
 }
 
 function bookPrompt(){
