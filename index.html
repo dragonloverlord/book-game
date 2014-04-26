@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.custom.css">
     <script type="text/javascript" src="jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="jquery.ui.core.js"></script>
+    <script type="text/javascript" src="jquery.ui.progressbar.js"></script>
     <script type="text/javascript" src="book.js"></script>
 </head>
 <body class="body">
@@ -42,6 +44,8 @@
           <div class="save-div" id="satire-stats">0</div>
           <div class="stats-text">Scifi</div>
           <div class="save-div" id="scifi-stats">0</div>
+          <div class="stats-text">Survival</div>
+          <div class="save-div" id="survival-stats">0</div>
           <div class="stats-text">Trashy</div>
           <div class="save-div" id="trashy-stats">0</div>
         </div>
@@ -55,9 +59,10 @@
           <button class="book-button" type="button" id="math">Math</button>
           <button class="book-button" type="button" id="nonfiction">NonFiction</button>
           <button class="book-button" type="button" id="report">Report</button>
-          <button class="book-button" type="button" id="romance">Romance</button>
+          <button class="book-button-locked" type="button" id="romance" value="0">Locked 3000$</button>
           <button class="book-button-locked" type="button" id="satire">Locked ???</button>
           <button class="book-button" type="button" id="scifi">Scifi</button>
+          <button class="book-button" type="button" id="survival">Survival</button>
           <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
         </div>
         <div class="pic-div">

@@ -1,7 +1,7 @@
 .main-div{
     border:4px groove #009;
-    width:975px;
-    height:593px;
+    width:1175px;
+    height:633px;
     background-color:#DDF;
     margin:auto auto auto auto;
 }
@@ -44,7 +44,7 @@
 }
 
 .book-col{
-  height:593px;
+  height:633px;
   width:165px;
   float:left;
   border-right:3px groove #009;
@@ -98,5 +98,5 @@
 
 .probar{
   height:45px;
-  width:650px;
+  width:872px;
 }

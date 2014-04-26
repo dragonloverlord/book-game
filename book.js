@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var historyLock = parseInt(obj.historyLock);
     document.getElementById("history").value = historyLock;
   });
+  chrome.storage.sync.get('romanceLock',function(obj){
+    var romanceLock = parseInt(obj.romanceLock);
+    document.getElementById("romance").value = romanceLock;
+  });
   chrome.storage.sync.get('fiction',function(obj){
     var fiction = parseInt(obj.fiction);
     document.getElementById("fiction-stats").innerHTML = fiction;
@@ -63,16 +67,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var report = parseInt(obj.report);
     document.getElementById("report-stats").innerHTML = report;
   });
+  chrome.storage.sync.get('survival',function(obj){
+    var survival = parseInt(obj.survival);
+    document.getElementById("survival-stats").innerHTML = survival;
+  });
 });
 
 $(document).ready(function(){
-      $(function() {
-        $( "#progressbar" ).delay(0).progressbar({
-          value: 0,
-          max: 100
-        });
-      });
+  $(function() {
+    $( "#progressbar" ).progressbar({
+      value: 0,
+      max: 100
     });
+  });
+});
 
 setTimeout(errorChecker, 3000);
 function errorChecker(){
@@ -90,8 +98,10 @@ function errorChecker(){
   errorh("satire-stats");
   errorh("romance-stats");
   errorh("report-stats");
+  errorh("survival-stats");
   errorv("trashy");
   errorv("history");
+  errorv("romance");
 }
 
 function errorv(id){
@@ -111,13 +121,15 @@ function errorh(id){
 setTimeout(lockCheck, 4000);
 function lockCheck(){
   var trashy = document.getElementById("trashy").value;
+  var trashy = parseInt(trashy);
   var history = document.getElementById("history").value;
   var history = parseInt(history);
+  var romance = document.getElementById("romance").value;
+  var romance = parseInt(romance);
   var scifiStats = document.getElementById("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
   var humorStats = document.getElementById("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
-  var trashy = parseInt(trashy);
   if(trashy === 1){
     unlock("Trashy","trashy");
   }else if(scifiStats >= 10){
@@ -126,6 +138,8 @@ function lockCheck(){
     unlock("History","history");
   }else if(humorStats >= 5){
     unlockUnknown("Satire","satire");
+  }else if(romance === 1){
+    unlock("Romance","romance");
   }
 }
 
@@ -174,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function stats(){
   var moneyDiv = document.getElementById("money-div");
-  moneyDiv.setAttribute("style","height:550px;overflow:scroll;");
+  moneyDiv.setAttribute("style","height:623px;overflow:scroll;");
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -215,10 +229,14 @@ function saveChanges(){
   chrome.storage.sync.set({'romance':data});
   var data = saveh("report-stats");
   chrome.storage.sync.set({'report':data});
+  var data = saveh("survival-stats");
+  chrome.storage.sync.set({'survival':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
   chrome.storage.sync.set({'historyLock':data});
+  var data = savev("romance");
+  chrome.storage.sync.set({'romanceLock':data});
 }
 
 function saveh(id){
@@ -315,33 +333,7 @@ function calc(value,book){
   var nv = parseInt(value);
   var money = current+nv;
   document.getElementById("money-text").innerHTML = money;
-  if(book == "drama"){
-    bookc("drama-stats");
-  }else if(book == "fantasy"){
-    bookc("fantasy-stats");
-  }else if(book == "scifi"){
-    bookc("scifi-stats");
-  }else if(book == "trashy"){
-    bookc("trashy-stats");
-  }else if(book == "history"){
-    bookc("history-stats");
-  }else if(book == "childrens"){
-    bookc("childrens-stats");
-  }else if(book == "fiction"){
-    bookc("fiction-stats");
-  }else if(book == "nonfiction"){
-    bookc("nonfiction-stats");
-  }else if(book == "math"){
-    bookc("math-stats");
-  }else if(book == "humor"){
-    bookc("humor-stats");
-  }else if(book == "satire"){
-    bookc("satire-stats");
-  }else if(book == "romance"){
-    bookc("romance-stats");
-  }else if(book == "report"){
-    bookc("report-stats");
-  }
+  bookc(book);
 }
 
 function bookc(id){
@@ -361,7 +353,7 @@ function lock(num){
 }
 
 function startCalcScifi(){
-  calc(50,"scifi");
+  calc(50,"scifi-stats");
 }
 
 function onClickScifi(){
@@ -381,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcDrama(){
-  calc(100,"drama");
+  calc(100,"drama-stats");
 }
 
 function onClickDrama(){
@@ -401,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcTrashy(){
-  calc(120,"trashy");
+  calc(120,"trashy-stats");
 }
 
 function onClickTrashy(){
@@ -435,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcFantasy(){
-  calc(250,"fantasy");
+  calc(250,"fantasy-stats");
 }
 
 function onClickFantasy(){
@@ -460,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcHistory(){
-  calc(350,"history");
+  calc(350,"history-stats");
 }
 
 function onClickHistory(){
@@ -494,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcChildrens(){
-  calc(80,"childrens");
+  calc(80,"childrens-stats");
 }
 
 function onClickChildrens(){
@@ -514,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcFiction(){
-  calc(75,"fiction");
+  calc(75,"fiction-stats");
 }
 
 function onClickFiction(){
@@ -534,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcNonFiction(){
-  calc(60,"nonfiction");
+  calc(60,"nonfiction-stats");
 }
 
 function onClickNonFiction(){
@@ -554,7 +546,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcMath(){
-  calc(130,"math");
+  calc(95,"math-stats");
 }
 
 function onClickMath(){
@@ -574,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcHumor(){
-  calc(130,"humor");
+  calc(130,"humor-stats");
 }
 
 function onClickHumor(){
@@ -594,7 +586,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcSatire(){
-  calc(450,"satire");
+  calc(475,"satire-stats");
 }
 
 function onClickSatire(){
@@ -602,10 +594,10 @@ function onClickSatire(){
   var humorStats = document.getElementById("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(lockState=="lockoff" && humorStats === 5){
-    lock(17000);
-    picAdder(17000);
-    setTimeout(startCalcSatire, 17000);
-    setTimeout(bookPrompt, 17000);
+    lock(19000);
+    picAdder(19000);
+    setTimeout(startCalcSatire, 19000);
+    setTimeout(bookPrompt, 19000);
     unlockUnknown("Satire","satire");
   }else if(humorStats < 10){
     unknownPopup();
@@ -619,16 +611,30 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcRomance(){
-  calc(310,"romance");
+  calc(440,"romance-stats");
 }
 
 function onClickRomance(){
   var lockState = document.getElementById("lock").value;
-  if(lockState=="lockoff"){
+  var isLocked = document.getElementById("romance").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
     lock(15350);
     picAdder(15350);
     setTimeout(startCalcRomance, 15350);
     setTimeout(bookPrompt, 15350);
+  }else if(isLocked === 0){
+    var money = document.getElementById("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 3000){
+      var currentMoney = document.getElementById("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 3000;
+      document.getElementById("money-text").innerHTML = newMoney;
+      unlock("Romance","romance");
+    }else{
+      lockedPopup();
+    }
   }else{
     errorPopup();
   }
@@ -639,16 +645,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function startCalcReport(){
-  calc(310,"report");
+  calc(116,"report-stats");
 }
 
 function onClickReport(){
   var lockState = document.getElementById("lock").value;
   if(lockState=="lockoff"){
-    lock(15350);
-    picAdder(15350);
-    setTimeout(startCalcReport, 15350);
-    setTimeout(bookPrompt, 15350);
+    lock(10300);
+    picAdder(10300);
+    setTimeout(startCalcReport, 10300);
+    setTimeout(bookPrompt, 10300);
   }else{
     errorPopup();
   }
@@ -656,4 +662,24 @@ function onClickReport(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#report").addEventListener('click',onClickReport);
+});
+
+function startCalcSurvival(){
+  calc(260,"survival-stats");
+}
+
+function onClickSurvival(){
+  var lockState = document.getElementById("lock").value;
+  if(lockState=="lockoff"){
+    lock(20300);
+    picAdder(20300);
+    setTimeout(startCalcSurvival, 20300);
+    setTimeout(bookPrompt, 20300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#survival").addEventListener('click',onClickSurvival);
 });
