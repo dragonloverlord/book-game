@@ -1,75 +1,75 @@
 document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('money',function(obj){
     var money = parseInt(obj.money);
-    document.getElementById("money-text").innerHTML = money;
+    gt("money-text").innerHTML = money;
   });
   chrome.storage.sync.get('drama',function(obj){
     var drama = parseInt(obj.drama);
-    document.getElementById("drama-stats").innerHTML = drama;
+    gt("drama-stats").innerHTML = drama;
   });
   chrome.storage.sync.get('fantasy',function(obj){
     var fantasy = parseInt(obj.fantasy);
-    document.getElementById("fantasy-stats").innerHTML = fantasy;
+    gt("fantasy-stats").innerHTML = fantasy;
   });
   chrome.storage.sync.get('scifi',function(obj){
     var scifi = parseInt(obj.scifi);
-    document.getElementById("scifi-stats").innerHTML = scifi;
+    gt("scifi-stats").innerHTML = scifi;
   });
   chrome.storage.sync.get('trashy',function(obj){
     var trashy = parseInt(obj.trashy);
-    document.getElementById("trashy-stats").innerHTML = trashy;
+    gt("trashy-stats").innerHTML = trashy;
   });
   chrome.storage.sync.get('History',function(obj){
     var history = parseInt(obj.History);
-    document.getElementById("history-stats").innerHTML = history;
+    gt("history-stats").innerHTML = history;
   });
   chrome.storage.sync.get('childrens',function(obj){
     var childrens = parseInt(obj.childrens);
-    document.getElementById("childrens-stats").innerHTML = childrens;
+    gt("childrens-stats").innerHTML = childrens;
   });
   chrome.storage.sync.get('trashyLock',function(obj){
     var trashyLock = parseInt(obj.trashyLock);
-    document.getElementById("trashy").value = trashyLock;
+    gt("trashy").value = trashyLock;
   });
   chrome.storage.sync.get('historyLock',function(obj){
     var historyLock = parseInt(obj.historyLock);
-    document.getElementById("history").value = historyLock;
+    gt("history").value = historyLock;
   });
   chrome.storage.sync.get('romanceLock',function(obj){
     var romanceLock = parseInt(obj.romanceLock);
-    document.getElementById("romance").value = romanceLock;
+    gt("romance").value = romanceLock;
   });
   chrome.storage.sync.get('fiction',function(obj){
     var fiction = parseInt(obj.fiction);
-    document.getElementById("fiction-stats").innerHTML = fiction;
+    gt("fiction-stats").innerHTML = fiction;
   });
   chrome.storage.sync.get('nonfiction',function(obj){
     var nonfiction = parseInt(obj.nonfiction);
-    document.getElementById("nonfiction-stats").innerHTML = nonfiction;
+    gt("nonfiction-stats").innerHTML = nonfiction;
   });
   chrome.storage.sync.get('math',function(obj){
     var math = parseInt(obj.math);
-    document.getElementById("math-stats").innerHTML = math;
+    gt("math-stats").innerHTML = math;
   });
   chrome.storage.sync.get('humor',function(obj){
     var humor = parseInt(obj.humor);
-    document.getElementById("humor-stats").innerHTML = humor;
+    gt("humor-stats").innerHTML = humor;
   });
   chrome.storage.sync.get('satire',function(obj){
     var satire = parseInt(obj.satire);
-    document.getElementById("satire-stats").innerHTML = satire;
+    gt("satire-stats").innerHTML = satire;
   });
   chrome.storage.sync.get('romance',function(obj){
     var romance = parseInt(obj.romance);
-    document.getElementById("romance-stats").innerHTML = romance;
+    gt("romance-stats").innerHTML = romance;
   });
   chrome.storage.sync.get('report',function(obj){
     var report = parseInt(obj.report);
-    document.getElementById("report-stats").innerHTML = report;
+    gt("report-stats").innerHTML = report;
   });
   chrome.storage.sync.get('survival',function(obj){
     var survival = parseInt(obj.survival);
-    document.getElementById("survival-stats").innerHTML = survival;
+    gt("survival-stats").innerHTML = survival;
   });
 });
 
@@ -81,6 +81,10 @@ $(document).ready(function(){
     });
   });
 });
+
+function gt(id){
+  return document.getElementById(id);
+}
 
 setTimeout(errorChecker, 3000);
 function errorChecker(){
@@ -105,30 +109,30 @@ function errorChecker(){
 }
 
 function errorv(id){
-  var error = document.getElementById(id).value;
+  var error = gt(id).value;
   if(error == "NaN"){
-    document.getElementById(id).value = 0;
+    gt(id).value = 0;
   }
 }
 
 function errorh(id){
-  var error = document.getElementById(id).innerHTML;
+  var error = gt(id).innerHTML;
   if(error == "NaN"){
-    document.getElementById(id).innerHTML = 0;
+    gt(id).innerHTML = 0;
   }
 }
 
 setTimeout(lockCheck, 4000);
 function lockCheck(){
-  var trashy = document.getElementById("trashy").value;
+  var trashy = gt("trashy").value;
   var trashy = parseInt(trashy);
-  var history = document.getElementById("history").value;
+  var history = gt("history").value;
   var history = parseInt(history);
-  var romance = document.getElementById("romance").value;
+  var romance = gt("romance").value;
   var romance = parseInt(romance);
-  var scifiStats = document.getElementById("scifi-stats").innerHTML;
+  var scifiStats = gt("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
-  var humorStats = document.getElementById("humor-stats").innerHTML;
+  var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(trashy === 1){
     unlock("Trashy","trashy");
@@ -178,7 +182,7 @@ function reset(){
 }
 
 function idf(id){
-  var val = document.getElementById(id);
+  var val = gt(id);
   return val;
 }
 
@@ -187,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function stats(){
-  var moneyDiv = document.getElementById("money-div");
+  var moneyDiv = gt("money-div");
   moneyDiv.setAttribute("style","height:623px;overflow:scroll;");
 }
 
@@ -196,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function shrink(){
-  var moneyDiv = document.getElementById("money-div");
+  var moneyDiv = gt("money-div");
   moneyDiv.setAttribute("style","");
 }
 
@@ -240,12 +244,12 @@ function saveChanges(){
 }
 
 function saveh(id){
-  var data = document.getElementById(id).innerHTML;
+  var data = gt(id).innerHTML;
   return data;
 }
 
 function savev(id){
-  var data = document.getElementById(id).value;
+  var data = gt(id).value;
   return data;
 }
 
@@ -254,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function picAdder(time){
-  var money = document.getElementById("money-div");
+  var money = gt("money-div");
   money.setAttribute("style","background-color:#EEE");
   $(document).ready(function(){
       $(function() {
@@ -281,7 +285,7 @@ function picAdder(time){
 }
 
 function picRemover(){
-  var money = document.getElementById("money-div");
+  var money = gt("money-div");
   money.setAttribute("style","");
   $(document).ready(function(){
       $(function() {
@@ -315,40 +319,40 @@ function unknownPopup(){
 }
 
 function unlock(book,id){
-  var booktype = document.getElementById(id);
+  var booktype = gt(id);
   booktype.value = 1;
   booktype.innerHTML = book;
   booktype.setAttribute("class","book-button");
 }
 
 function unlockUnknown(book,id){
-  var booktype = document.getElementById(id);
+  var booktype = gt(id);
   booktype.innerHTML = book;
   booktype.setAttribute("class","book-button");
 }
 
 function calc(value,book){
-  var current = document.getElementById("money-text").innerHTML;
+  var current = gt("money-text").innerHTML;
   var current = parseInt(current);
   var nv = parseInt(value);
   var money = current+nv;
-  document.getElementById("money-text").innerHTML = money;
+  gt("money-text").innerHTML = money;
   bookc(book);
 }
 
 function bookc(id){
-  var book = document.getElementById(id).innerHTML;
+  var book = gt(id).innerHTML;
   var book = parseInt(book);
   var book = book + 1;
-  document.getElementById(id).innerHTML = book;
+  gt(id).innerHTML = book;
 }
 
 function removeLock(){
-  document.getElementById("lock").value = "lockoff";
+  gt("lock").value = "lockoff";
 }
 
 function lock(num){
-  document.getElementById("lock").value = "lockon";
+  gt("lock").value = "lockon";
   setTimeout(removeLock, num);
 }
 
@@ -357,7 +361,7 @@ function startCalcScifi(){
 }
 
 function onClickScifi(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(5000);
     picAdder(5000);
@@ -377,7 +381,7 @@ function startCalcDrama(){
 }
 
 function onClickDrama(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(5000);
     picAdder(5000);
@@ -397,8 +401,8 @@ function startCalcTrashy(){
 }
 
 function onClickTrashy(){
-  var lockState = document.getElementById("lock").value;
-  var isLocked = document.getElementById("trashy").value;
+  var lockState = gt("lock").value;
+  var isLocked = gt("trashy").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(4000);
@@ -406,13 +410,13 @@ function onClickTrashy(){
     setTimeout(startCalcTrashy, 4000);
     setTimeout(bookPrompt, 4000);
   }else if(isLocked === 0){
-    var money = document.getElementById("money-text").innerHTML;
+    var money = gt("money-text").innerHTML;
     var money = parseInt(money);
     if(money >= 1000){
-      var currentMoney = document.getElementById("money-text").innerHTML;
+      var currentMoney = gt("money-text").innerHTML;
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 1000;
-      document.getElementById("money-text").innerHTML = newMoney;
+      gt("money-text").innerHTML = newMoney;
       unlock("Trashy","trashy");
     }else{
       lockedPopup();
@@ -431,8 +435,8 @@ function startCalcFantasy(){
 }
 
 function onClickFantasy(){
-  var lockState = document.getElementById("lock").value;
-  var scifiStats = document.getElementById("scifi-stats").innerHTML;
+  var lockState = gt("lock").value;
+  var scifiStats = gt("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
   if(lockState=="lockoff" && scifiStats === 10){
     lock(10000);
@@ -456,8 +460,8 @@ function startCalcHistory(){
 }
 
 function onClickHistory(){
-  var lockState = document.getElementById("lock").value;
-  var isLocked = document.getElementById("history").value;
+  var lockState = gt("lock").value;
+  var isLocked = gt("history").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(12000);
@@ -465,10 +469,10 @@ function onClickHistory(){
     setTimeout(startCalcHistory, 12000);
     setTimeout(bookPrompt, 12000);
   }else if(isLocked === 0){
-    var money = document.getElementById("money-text").innerHTML;
+    var money = gt("money-text").innerHTML;
     var money = parseInt(money);
     if(money >= 1500){
-      var currentMoney = document.getElementById("money-text").innerHTML;
+      var currentMoney = gt("money-text").innerHTML;
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 1500;
       document.getElementById("money-text").innerHTML = newMoney;
@@ -490,7 +494,7 @@ function startCalcChildrens(){
 }
 
 function onClickChildrens(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(7000);
     picAdder(7000);
@@ -510,7 +514,7 @@ function startCalcFiction(){
 }
 
 function onClickFiction(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(7500);
     picAdder(7500);
@@ -530,7 +534,7 @@ function startCalcNonFiction(){
 }
 
 function onClickNonFiction(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(7300);
     picAdder(7300);
@@ -550,7 +554,7 @@ function startCalcMath(){
 }
 
 function onClickMath(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(9300);
     picAdder(9300);
@@ -570,7 +574,7 @@ function startCalcHumor(){
 }
 
 function onClickHumor(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(10300);
     picAdder(10300);
@@ -590,8 +594,8 @@ function startCalcSatire(){
 }
 
 function onClickSatire(){
-  var lockState = document.getElementById("lock").value;
-  var humorStats = document.getElementById("humor-stats").innerHTML;
+  var lockState = gt("lock").value;
+  var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(lockState=="lockoff" && humorStats === 5){
     lock(19000);
@@ -615,8 +619,8 @@ function startCalcRomance(){
 }
 
 function onClickRomance(){
-  var lockState = document.getElementById("lock").value;
-  var isLocked = document.getElementById("romance").value;
+  var lockState = gt("lock").value;
+  var isLocked = gt("romance").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(15350);
@@ -624,13 +628,13 @@ function onClickRomance(){
     setTimeout(startCalcRomance, 15350);
     setTimeout(bookPrompt, 15350);
   }else if(isLocked === 0){
-    var money = document.getElementById("money-text").innerHTML;
+    var money = gt("money-text").innerHTML;
     var money = parseInt(money);
     if(money >= 3000){
-      var currentMoney = document.getElementById("money-text").innerHTML;
+      var currentMoney = gt("money-text").innerHTML;
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 3000;
-      document.getElementById("money-text").innerHTML = newMoney;
+      gt("money-text").innerHTML = newMoney;
       unlock("Romance","romance");
     }else{
       lockedPopup();
@@ -649,7 +653,7 @@ function startCalcReport(){
 }
 
 function onClickReport(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(10300);
     picAdder(10300);
@@ -669,7 +673,7 @@ function startCalcSurvival(){
 }
 
 function onClickSurvival(){
-  var lockState = document.getElementById("lock").value;
+  var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(20300);
     picAdder(20300);
