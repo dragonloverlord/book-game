@@ -4,7 +4,7 @@
   "version": "1.7.0",
   "icons": {
     "16": "images/Book-icon.png",
-    "128": "imagesBook-icon.png"
+    "128": "images/Book-icon.png"
   },
   "app": {
     "background": {
