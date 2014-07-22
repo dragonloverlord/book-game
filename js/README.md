@@ -1,5 +1,5 @@
-JS-Files
-========
+book-game/js
+============
 
 These files are the required javascrips that make the app work.
 
