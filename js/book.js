@@ -71,6 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var survival = parseInt(obj.survival);
     gt("survival-stats").innerHTML = survival;
   });
+  chrome.storage.sync.get('gothic',function(obj) {
+    var gothic = parseInt(obj.gothic);
+    gt("gothic-stats").innerHTML = gothic;
+  });
 });
 
 $(document).ready(function(){
@@ -103,6 +107,7 @@ function errorChecker(){
   errorh("romance-stats");
   errorh("report-stats");
   errorh("survival-stats");
+  errorh("gothic-stats");
   errorv("trashy");
   errorv("history");
   errorv("romance");
@@ -167,6 +172,8 @@ function reset(){
   idf("satire-stats").innerHTML = 0;
   idf("romance-stats").innerHTML = 0;
   idf("report-stats").innerHTML = 0;
+  idf("survival-stats").innerHTML = 0;
+  idf("gothic-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -176,9 +183,11 @@ function reset(){
   var history = idf("history");
   history.innerHTML = "Locked 1500$";
   history.value = 0;
+  history.className = "book-button-locked";
   var trashy = idf("trashy");
   trashy.innerHTML = "Locked 1000$";
   trashy.value = 0;
+  trashy.className = "book-button-locked";
 }
 
 function idf(id){
@@ -235,6 +244,8 @@ function saveChanges(){
   chrome.storage.sync.set({'report':data});
   var data = saveh("survival-stats");
   chrome.storage.sync.set({'survival':data});
+  var data = saveh("gothic-stats");
+  chrome.storage.sync.set({'gothic':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -686,4 +697,24 @@ function onClickSurvival(){
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#survival").addEventListener('click',onClickSurvival);
+});
+
+function startCalcGothic(){
+  calc(335,"gothic-stats");
+}
+
+function onClickGothic(){
+  var lockState = gt("lock").value;
+  if(lockState=="lockoff"){
+    lock(23300);
+    picAdder(23300);
+    setTimeout(startCalcGothic, 23300);
+    setTimeout(bookPrompt, 23300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#gothic").addEventListener('click',onClickGothic);
 });
