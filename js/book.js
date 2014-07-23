@@ -195,24 +195,6 @@ function idf(id){
   return val;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#stats").addEventListener('click',stats);
-});
-
-function stats(){
-  var moneyDiv = gt("money-div");
-  moneyDiv.setAttribute("style","height:623px;overflow:scroll;");
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#shrink").addEventListener('click',shrink);
-});
-
-function shrink(){
-  var moneyDiv = gt("money-div");
-  moneyDiv.setAttribute("style","");
-}
-
 function saveChanges(){
   var data = saveh("money-text");
   chrome.storage.sync.set({'money':data});
