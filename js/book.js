@@ -306,27 +306,19 @@ function picRemover(){
 }
 
 function bookPrompt(){
-  chrome.app.window.create("prompt.html",{
-    "id":"prompt"
-  });
+  document.getElementById('iframe').src = 'html/prompt.html';
 }
 
 function errorPopup(){
-  chrome.app.window.create("error.html",{
-    "id":"error"
-  });
+  document.getElementById('iframe').src = 'html/error.html';
 }
 
 function lockedPopup(){
-  chrome.app.window.create("lock.html",{
-    "id":"lock"
-  });
+  document.getElementById('iframe').src = 'html/lock.html';
 }
 
 function unknownPopup(){
-  chrome.app.window.create("unknown.html",{
-    "id":"unknown"
-  });
+  document.getElementById('iframe').src = 'html/unknown.html';
 }
 
 function unlock(book,id){

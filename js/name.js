@@ -1,5 +1,5 @@
 function closeWindow(){
-  chrome.app.window(close());
+  document.getElementById('iframe').src = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

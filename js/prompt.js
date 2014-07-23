@@ -1,8 +1,5 @@
 function nextWindow(){
-  chrome.app.window.create("name.html",{
-    "id":"name-book"
-  });
-  chrome.app.window(close());
+  document.getElementById('iframe').src = 'html/name.html';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -10,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function closeWindow(){
-  chrome.app.window(close());
+  document.getElementById('iframe').src = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
