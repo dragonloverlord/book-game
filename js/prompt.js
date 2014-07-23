@@ -1,5 +1,5 @@
 function nextWindow(){
-  document.getElementById('iframe').src = 'html/name.html';
+  window.location = 'name.html';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function closeWindow(){
-  document.getElementById('iframe').src = '';
+  window.location = 'about:blank';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

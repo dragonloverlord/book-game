@@ -1,5 +1,5 @@
 function closeWindow(){
-  document.getElementById('iframe').src = '';
+  window.location = 'about:blank';
 }
 
 document.addEventListener('DOMContentLoaded', function () {
