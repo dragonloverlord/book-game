@@ -4,14 +4,14 @@
   text-align:center;
   margin-top:auto;
   margin-bottom:auto;
-  color:#FF4444;
+  color:#E55;
 }
 
 #main-div{
-  border:4px groove #333;
+  border:4px groove #009;
   background-color:#EEE;
 }
 
 #body{
-  background-color:#DDD;
+  background-color:#DDF;
 }
