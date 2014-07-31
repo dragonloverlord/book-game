@@ -1,12 +1,3 @@
-$(document).ready(function(){
-  $(function() {
-    $( "#progressbar" ).progressbar({
-      value: 0,
-      max: 100
-    });
-  });
-});
-
 function gt(id){
   return document.getElementById(id);
 }
