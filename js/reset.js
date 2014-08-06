@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#reset").addEventListener('click',reset);
+});
+
 function reset(){
   chrome.storage.sync.clear();
   idf("money-text").innerHTML = 0;
