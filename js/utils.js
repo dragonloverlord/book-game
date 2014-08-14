@@ -38,10 +38,12 @@ function unlock(book,id){
   booktype.setAttribute("class","book-button");
 }
 
-function unlockUnknown(book,id){
+function unlockUnknown(book,id,id2){
   var booktype = gt(id);
+  var sname = gt(id2);
   booktype.innerHTML = book;
   booktype.setAttribute("class","book-button");
+  sname.innerHTML = book;
 }
 
 function calc(value,book){

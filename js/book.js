@@ -85,7 +85,7 @@ function onClickFantasy(){
     picAdder(10000);
     setTimeout(startCalcFantasy, 10000);
     setTimeout(bookPrompt, 10000);
-    unlockUnknown("Fantasy","fantasy");
+    unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }else if(scifiStats < 10){
     unknownPopup();
   }else{
@@ -244,7 +244,7 @@ function onClickSatire(){
     picAdder(19000);
     setTimeout(startCalcSatire, 19000);
     setTimeout(bookPrompt, 19000);
-    unlockUnknown("Satire","satire");
+    unlockUnknown("Satire","satire","satire-sn");
   }else if(humorStats < 10){
     unknownPopup();
   }else{

@@ -36,11 +36,11 @@ function lockCheck(){
   if(trashy === 1){
     unlock("Trashy","trashy");
   }else if(scifiStats >= 10){
-    unlockUnknown("Fantasy","fantasy");
+    unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }else if(history === 1){
     unlock("History","history");
   }else if(humorStats >= 5){
-    unlockUnknown("Satire","satire");
+    unlockUnknown("Satire","satire","satire-sn");
   }else if(romance === 1){
     unlock("Romance","romance");
   }
