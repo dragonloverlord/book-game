@@ -35,6 +35,8 @@ function saveChanges(){
   chrome.storage.sync.set({'survival':data});
   var data = saveh("gothic-stats");
   chrome.storage.sync.set({'gothic':data});
+  var data = saveh("adventure-stats");
+  chrome.storage.sync.set({'adventure':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");

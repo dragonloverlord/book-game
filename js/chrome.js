@@ -75,4 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var gothic = parseInt(obj.gothic);
     gt("gothic-stats").innerHTML = gothic;
   });
+  chrome.storage.sync.get('adventure',function(obj) {
+    var adventure = parseInt(obj.adventure);
+    gt("adventure-stats").innerHTML = adventure;
+  });
 });

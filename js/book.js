@@ -349,3 +349,23 @@ function onClickGothic(){
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#gothic").addEventListener('click',onClickGothic);
 });
+
+function startCalcAdventure(){
+  calc(575,"adventure-stats");
+}
+
+function onClickAdventure(){
+  var lockState = gt("lock").value;
+  if(lockState=="lockoff"){
+    lock(35300);
+    picAdder(35300);
+    setTimeout(startCalcAdventure, 35300);
+    setTimeout(bookPrompt, 35300);
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#adventure").addEventListener('click',onClickAdventure);
+});

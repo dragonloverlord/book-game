@@ -16,6 +16,7 @@ function errorChecker(){
   errorh("report-stats");
   errorh("survival-stats");
   errorh("gothic-stats");
+  errorh("adventure-stats");
   errorv("trashy");
   errorv("history");
   errorv("romance");

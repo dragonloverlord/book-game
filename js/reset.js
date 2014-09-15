@@ -20,6 +20,7 @@ function reset(){
   idf("report-stats").innerHTML = 0;
   idf("survival-stats").innerHTML = 0;
   idf("gothic-stats").innerHTML = 0;
+  idf("adventure-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
