@@ -17,9 +17,11 @@ function errorChecker(){
   errorh("survival-stats");
   errorh("gothic-stats");
   errorh("adventure-stats");
+  errorh("action-stats");
   errorv("trashy");
   errorv("history");
   errorv("romance");
+  errorv("action");
 }
 
 setTimeout(lockCheck, 4000);
