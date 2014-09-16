@@ -21,6 +21,7 @@ function reset(){
   idf("survival-stats").innerHTML = 0;
   idf("gothic-stats").innerHTML = 0;
   idf("adventure-stats").innerHTML = 0;
+  idf("action-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -35,4 +36,8 @@ function reset(){
   trashy.innerHTML = "Locked 1000$";
   trashy.value = 0;
   trashy.className = "book-button-locked";
+  var action = idf("action");
+  action.innerHTML = "Locked 6000$";
+  action.value = 0;
+  action.className = "book-button-locked";
 }
