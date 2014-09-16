@@ -37,10 +37,14 @@ function saveChanges(){
   chrome.storage.sync.set({'gothic':data});
   var data = saveh("adventure-stats");
   chrome.storage.sync.set({'adventure':data});
+  var data = saveh("action-stats");
+  chrome.storage.sync.set({'action':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
   chrome.storage.sync.set({'historyLock':data});
   var data = savev("romance");
   chrome.storage.sync.set({'romanceLock':data});
+  var data = savev("action");
+  chrome.storage.sync.set({'actionLock':data});
 }
