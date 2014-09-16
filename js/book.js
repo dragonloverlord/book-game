@@ -369,3 +369,37 @@ function onClickAdventure(){
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#adventure").addEventListener('click',onClickAdventure);
 });
+
+function startCalcAction(){
+  calc(370,"action-stats");
+}
+
+function onClickAction(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("action").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(18350);
+    picAdder(18350);
+    setTimeout(startCalcAction, 18350);
+    setTimeout(bookPrompt, 18350);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 3000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 3000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Action","action");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector("#action").addEventListener('click',onClickAction);
+});
