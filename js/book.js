@@ -386,10 +386,10 @@ function onClickAction(){
   }else if(isLocked === 0){
     var money = gt("money-text").innerHTML;
     var money = parseInt(money);
-    if(money >= 3000){
+    if(money >= 6000){
       var currentMoney = gt("money-text").innerHTML;
       var currentMoney = parseInt(currentMoney);
-      var newMoney = currentMoney - 3000;
+      var newMoney = currentMoney - 6000;
       gt("money-text").innerHTML = newMoney;
       unlock("Action","action");
     }else{
