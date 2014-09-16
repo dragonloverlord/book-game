@@ -79,4 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var adventure = parseInt(obj.adventure);
     gt("adventure-stats").innerHTML = adventure;
   });
+  chrome.storage.sync.get('actionLock',function(obj) {
+    var actionLock = parseInt(obj.actionLock);
+    gt("action").value = actionLock;
+  });
+  chrome.storage.sync.get('action',function(obj) {
+    var action = parseInt(obj.action);
+    gt("action-stats").innerHTML = action;
+  });
 });
