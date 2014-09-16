@@ -40,4 +40,8 @@ function reset(){
   action.innerHTML = "Locked 6000$";
   action.value = 0;
   action.className = "book-button-locked";
+  var romance = idf("romance");
+  romance.innerHTML = "Locked 3000$";
+  romance.value = 0;
+  romance.className = "book-button-locked";
 }
