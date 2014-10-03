@@ -32,19 +32,23 @@ function lockCheck(){
   var history = parseInt(history);
   var romance = gt("romance").value;
   var romance = parseInt(romance);
+  var action = gt("action").value;
+  var action = parseInt(action);
   var scifiStats = gt("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
   var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(trashy === 1){
     unlock("Trashy","trashy");
-  }else if(scifiStats >= 10){
+  }if(scifiStats >= 10){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
-  }else if(history === 1){
+  }if(history === 1){
     unlock("History","history");
-  }else if(humorStats >= 5){
+  }if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
-  }else if(romance === 1){
+  }if(romance === 1){
     unlock("Romance","romance","romance-sn");
+  }if(action === 1){
+    unlock("Action","action","action-sn");
   }
 }
