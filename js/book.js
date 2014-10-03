@@ -59,7 +59,7 @@ function onClickTrashy(){
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 1000;
       gt("money-text").innerHTML = newMoney;
-      unlock("Trashy","trashy");
+      unlock("Trashy","trashy","trashy-sn");
     }else{
       lockedPopup();
     }
