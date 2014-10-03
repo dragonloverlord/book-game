@@ -391,7 +391,7 @@ function onClickAction(){
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 6000;
       gt("money-text").innerHTML = newMoney;
-      unlock("Action","action");
+      unlock("Action","action","action-sn");
     }else{
       lockedPopup();
     }
