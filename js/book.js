@@ -277,7 +277,7 @@ function onClickRomance(){
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 3000;
       gt("money-text").innerHTML = newMoney;
-      unlock("Romance","romance");
+      unlock("Romance","romance","romance-sn");
     }else{
       lockedPopup();
     }
