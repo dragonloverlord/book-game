@@ -43,7 +43,7 @@ function lockCheck(){
   }if(scifiStats >= 10){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }if(history === 1){
-    unlock("History","history");
+    unlock("History","history","history-sn");
   }if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
   }if(romance === 1){
