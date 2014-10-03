@@ -45,6 +45,6 @@ function lockCheck(){
   }else if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
   }else if(romance === 1){
-    unlock("Romance","romance");
+    unlock("Romance","romance","romance-sn");
   }
 }
