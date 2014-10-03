@@ -39,7 +39,7 @@ function lockCheck(){
   var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(trashy === 1){
-    unlock("Trashy","trashy");
+    unlock("Trashy","trashy","trashy-sn");
   }if(scifiStats >= 10){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }if(history === 1){
