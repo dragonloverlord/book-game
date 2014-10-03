@@ -31,11 +31,13 @@ function savev(id){
   return data;
 }
 
-function unlock(book,id){
+function unlock(book,id,id2){
   var booktype = gt(id);
+  var sname = gt(id2);
   booktype.value = 1;
   booktype.innerHTML = book;
   booktype.setAttribute("class","book-button");
+  sname.innerHTML = book;
 }
 
 function unlockUnknown(book,id,id2){
