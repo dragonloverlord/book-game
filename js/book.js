@@ -118,7 +118,7 @@ function onClickHistory(){
       var currentMoney = parseInt(currentMoney);
       var newMoney = currentMoney - 1500;
       document.getElementById("money-text").innerHTML = newMoney;
-      unlock("History","history");
+      unlock("History","history","history-sn");
     }else{
       lockedPopup();
     }
