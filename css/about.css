@@ -1,0 +1,12 @@
+.main-header{
+  font-family:consolas, arial;
+  font-weight:bold;
+  color:#111;
+  text-align:center;
+}
+
+.sub-header{
+  font-family:consolas, arial;
+  text-align:center;
+  color:#333;
+}
