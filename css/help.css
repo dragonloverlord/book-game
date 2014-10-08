@@ -15,6 +15,23 @@
   overflow:scroll;
 }
 
+.help-button{
+  width:150px;
+  border:1px solid #666;
+  border-radius:2px;
+  transition:box-shadow 0.5s;
+  outline:none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
+}
+
+.help-button:active{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,190,200,205)), color-stop(0.25, rgba(0,180,190,205)), color-stop(0.5, rgba(0,170,180,205)), color-stop(0.75, rgba(0,204,201,205)), color-stop(1, rgba(0,203,205,205)));
+}
+
+.help-button:hover{
+  box-shadow:0 0 15px 0 #99F;
+}
+
 .help-div{
   float:right;
   width:803px;
