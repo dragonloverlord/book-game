@@ -1,0 +1,29 @@
+.main-div{
+    border:4px groove #009;
+    width:975px;
+    height:525px;
+    background-color:#DDF;
+    margin:auto auto auto auto;
+}
+
+.toc-div{
+  height:525px;
+  width:165px;
+  float:left;
+  border-right:3px groove #009;
+  background-color:#f2f2f2;
+  overflow:scroll;
+}
+
+.help-div{
+  float:right;
+  width:803px;
+  height:521px;
+  margin-bottom:4px;
+  margin-right:4px;
+}
+
+.iframe{
+  width:100%;
+  height:100%;
+}
