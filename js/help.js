@@ -3,5 +3,5 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function general(){
-  document.getElementById('iframe').src = 'html/general.html';
+  document.getElementById('iframe').src = '/html/general.html';
 }
