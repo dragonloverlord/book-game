@@ -10,3 +10,8 @@
   text-align:center;
   color:#333;
 }
+
+.license-div{
+  border:3px groove #009;
+  background-color:#DDF;
+}
