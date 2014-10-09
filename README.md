@@ -26,5 +26,5 @@ Disclaimer
 ==========
 
 This app was made for and is intended for the chrome os platform and is optimized for
-chrome os. Which means that its functionality on windows and mac is not guaranteed
+chrome os. Which means that its functionality on windows, mac, and linux is not guaranteed
 or assured in any way.
