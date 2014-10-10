@@ -1,7 +1,7 @@
 Book-Game
 =============
 
-a basic javascript book writing game app for chrome
+A javascript book writing idle game app for chrome
 
 Instructions For Installation
 =============================
