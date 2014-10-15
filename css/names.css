@@ -29,3 +29,8 @@ body{
   height:2px;
   background-color:#000;
 }
+
+.help-topics{
+  list-style-type:disc;
+  font-size:18px;
+}
