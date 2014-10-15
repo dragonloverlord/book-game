@@ -29,3 +29,8 @@ body{
   color:#111;
   font-weight:normal;
 }
+
+.bar{
+  height:2px;
+  background-color:#000;
+}
