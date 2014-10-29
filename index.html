@@ -62,10 +62,10 @@
             <div class="stats-text" id="trashy-sn">???</div>
             <div class="save-div" id="trashy-stats">0</div>
           </div>
-          <div class="book-col">
-            <button class="book-button" type="button" id="adventure">Adventure</button>
+          <div ng-controller="bookbuttons as book" class="book-col">
+            <button ng-click="book.onClickAdventure()" class="book-button" type="button" id="adventure">Adventure</button>
             <button class="book-button-locked" type="button" id="action" value="0">Locked 6000$</button>
-            <button class="book-button" type="button" id="childrens">Children's</button>
+            <button ng-click="book.onClickChildrens()" class="book-button" type="button" id="childrens">Children's</button>
             <button class="book-button" type="button" id="drama">Drama</button>
             <button class="book-button-locked" type="button" id="fantasy">Locked ???</button>
             <button class="book-button" type="button" id="fiction">Fiction</button>
@@ -77,7 +77,7 @@
             <button class="book-button" type="button" id="report">Report</button>
             <button class="book-button-locked" type="button" id="romance" value="0">Locked 3000$</button>
             <button class="book-button-locked" type="button" id="satire">Locked ???</button>
-            <button class="book-button" type="button" id="scifi">Scifi</button>
+            <button ng-click="book.onClickScifi()" class="book-button" type="button" id="scifi">Scifi</button>
             <button class="book-button" type="button" id="survival">Survival</button>
             <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
           </div>

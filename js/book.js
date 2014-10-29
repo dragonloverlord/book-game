@@ -1,22 +1,18 @@
-function startCalcScifi(){
+bookbuttons.prototype.startCalcScifi = function(){
   calc(50,"scifi-stats");
 }
 
-function onClickScifi(){
+bookbuttons.prototype.onClickScifi = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(5000);
     picAdder(5000);
-    setTimeout(startCalcScifi, 5000);
+    setTimeout(this.startCalcScifi, 5000);
     setTimeout(bookPrompt, 5000);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#scifi").addEventListener('click',onClickScifi);
-});
 
 function startCalcDrama(){
   calc(100,"drama-stats");
@@ -131,25 +127,27 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#history").addEventListener('click',onClickHistory);
 });
 
-function startCalcChildrens(){
+function bookbuttons(){
+
+}
+
+bookbuttons.prototype.startCalcChildrens = function(){
   calc(80,"childrens-stats");
 }
 
-function onClickChildrens(){
+bookbuttons.prototype.onClickChildrens = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(7000);
     picAdder(7000);
-    setTimeout(startCalcChildrens, 7000);
+    setTimeout(this.startCalcChildrens, 7000);
     setTimeout(bookPrompt, 7000);
   }else{
     errorPopup();
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#childrens").addEventListener('click',onClickChildrens);
-});
+
 
 function startCalcFiction(){
   calc(75,"fiction-stats");
@@ -350,25 +348,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#gothic").addEventListener('click',onClickGothic);
 });
 
-function startCalcAdventure(){
+bookbuttons.prototype.startCalcAdventure = function(){
   calc(575,"adventure-stats");
 }
 
-function onClickAdventure(){
+bookbuttons.prototype.onClickAdventure = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(35300);
     picAdder(35300);
-    setTimeout(startCalcAdventure, 35300);
+    setTimeout(this.startCalcAdventure, 35300);
     setTimeout(bookPrompt, 35300);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#adventure").addEventListener('click',onClickAdventure);
-});
 
 function startCalcAction(){
   calc(370,"action-stats");
