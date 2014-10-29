@@ -14,25 +14,21 @@ bookbuttons.prototype.onClickScifi = function(){
   }
 }
 
-function startCalcDrama(){
+bookbuttons.prototype.startCalcDrama = function(){
   calc(100,"drama-stats");
 }
 
-function onClickDrama(){
+bookbuttons.prototype.onClickDrama = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(5000);
     picAdder(5000);
-    setTimeout(startCalcDrama, 5000);
+    setTimeout(this.startCalcDrama, 5000);
     setTimeout(bookPrompt, 5000);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#drama").addEventListener('click',onClickDrama);
-});
 
 function startCalcTrashy(){
   calc(120,"trashy-stats");
