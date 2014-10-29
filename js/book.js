@@ -71,7 +71,7 @@ bookbuttons.prototype.onClickFantasy = function(){
   if(lockState=="lockoff" && scifiStats === 10){
     lock(10000);
     picAdder(10000);
-    setTimeout(startCalcFantasy, 10000);
+    setTimeout(this.startCalcFantasy, 10000);
     setTimeout(bookPrompt, 10000);
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }else if(scifiStats < 10){
@@ -81,18 +81,18 @@ bookbuttons.prototype.onClickFantasy = function(){
   }
 }
 
-function startCalcHistory(){
+bookbuttons.prototype.startCalcHistory = function(){
   calc(350,"history-stats");
 }
 
-function onClickHistory(){
+bookbuttons.prototype.onClickHistory = function(){
   var lockState = gt("lock").value;
   var isLocked = gt("history").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(12000);
     picAdder(12000);
-    setTimeout(startCalcHistory, 12000);
+    setTimeout(this.startCalcHistory, 12000);
     setTimeout(bookPrompt, 12000);
   }else if(isLocked === 0){
     var money = gt("money-text").innerHTML;
@@ -110,10 +110,6 @@ function onClickHistory(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#history").addEventListener('click',onClickHistory);
-});
 
 function bookbuttons(){
 
