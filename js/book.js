@@ -60,11 +60,11 @@ bookbuttons.prototype.onClickTrashy = function(){
   }
 }
 
-function startCalcFantasy(){
+bookbuttons.prototype.startCalcFantasy = function(){
   calc(250,"fantasy-stats");
 }
 
-function onClickFantasy(){
+bookbuttons.prototype.onClickFantasy = function(){
   var lockState = gt("lock").value;
   var scifiStats = gt("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
@@ -80,10 +80,6 @@ function onClickFantasy(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#fantasy").addEventListener('click',onClickFantasy);
-});
 
 function startCalcHistory(){
   calc(350,"history-stats");
