@@ -30,18 +30,18 @@ bookbuttons.prototype.onClickDrama = function(){
   }
 }
 
-function startCalcTrashy(){
+bookbuttons.prototype.startCalcTrashy = function(){
   calc(120,"trashy-stats");
 }
 
-function onClickTrashy(){
+bookbuttons.prototype.onClickTrashy = function(){
   var lockState = gt("lock").value;
   var isLocked = gt("trashy").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(4000);
     picAdder(4000);
-    setTimeout(startCalcTrashy, 4000);
+    setTimeout(this.startCalcTrashy, 4000);
     setTimeout(bookPrompt, 4000);
   }else if(isLocked === 0){
     var money = gt("money-text").innerHTML;
@@ -59,10 +59,6 @@ function onClickTrashy(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#trashy").addEventListener('click',onClickTrashy);
-});
 
 function startCalcFantasy(){
   calc(250,"fantasy-stats");
