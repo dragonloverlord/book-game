@@ -1,90 +1,90 @@
-<!DOCTYPE html ng-app ng-csp >
+<!DOCTYPE html>
 <html ng-app ng-csp>
-<head>
-    <script type="text/javascript" src="js/angularjs/angular-loader.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/angularjs/angular-csp.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/jquery/jquery-ui-1.10.4.custom.css">
-    <script type="text/javascript" src="js/angularjs/angular.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.ui.widget.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.ui.core.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.ui.progressbar.js"></script>
-    <script type="text/javascript" src="js/book.js"></script>
-    <script type="text/javascript" src="js/chrome.js"></script>
-    <script type="text/javascript" src="js/reset.js"></script>
-    <script type="text/javascript" src="js/save.js"></script>
-    <script type="text/javascript" src="js/probar.js"></script>
-    <script type="text/javascript" src="js/error.js"></script>
-    <script type="text/javascript" src="js/utils.js"></script>
-    <script type="text/javascript" src="js/iframe.js"></script>
-</head>
-<body class="body">
-    <input id="lock" type="hidden" value="lockoff">
-    <div id="main-div" class="main-div">
-        <div id="money-div" class="money">
-          <span id="money-text">0</span>$
-          <br>
-          <button class="save-button" type="button" id="save">Save</button>
-          <button class="save-button" type="button" id="reset">New Game</button>
-          <div class="stats-text">Adventure</div>
-          <div class="save-div" id="adventure-stats">0</div>
-          <div class="stats-text" id="action-sn">???</div>
-          <div class="save-div" id="action-stats">0</div>
-          <div class="stats-text">Children's</div>
-          <div class="save-div" id="childrens-stats">0</div>
-          <div class="stats-text">Drama</div>
-          <div class="save-div" id="drama-stats">0</div>
-          <div class="stats-text" id="fantasy-sn">???</div>
-          <div class="save-div" id="fantasy-stats">0</div>
-          <div class="stats-text">Fiction</div>
-          <div class="save-div" id="fiction-stats">0</div>
-          <div class="stats-text">Gothic</div>
-          <div class="save-div" id="gothic-stats">0</div>
-          <div class="stats-text" id="history-sn">???</div>
-          <div class="save-div" id="history-stats">0</div>
-          <div class="stats-text">Humor</div>
-          <div class="save-div" id="humor-stats">0</div>
-          <div class="stats-text">Math</div>
-          <div class="save-div" id="math-stats">0</div>
-          <div class="stats-text">NonFiction</div>
-          <div class="save-div" id="nonfiction-stats">0</div>
-          <div class="stats-text">Report</div>
-          <div class="save-div" id="report-stats">0</div>
-          <div class="stats-text" id="romance-sn">???</div>
-          <div class="save-div" id="romance-stats">0</div>
-          <div class="stats-text" id="satire-sn">???</div>
-          <div class="save-div" id="satire-stats">0</div>
-          <div class="stats-text">Scifi</div>
-          <div class="save-div" id="scifi-stats">0</div>
-          <div class="stats-text">Survival</div>
-          <div class="save-div" id="survival-stats">0</div>
-          <div class="stats-text" id="trashy-sn">???</div>
-          <div class="save-div" id="trashy-stats">0</div>
-        </div>
-        <div class="book-col">
-          <button class="book-button" type="button" id="adventure">Adventure</button>
-          <button class="book-button-locked" type="button" id="action" value="0">Locked 6000$</button>
-          <button class="book-button" type="button" id="childrens">Children's</button>
-          <button class="book-button" type="button" id="drama">Drama</button>
-          <button class="book-button-locked" type="button" id="fantasy">Locked ???</button>
-          <button class="book-button" type="button" id="fiction">Fiction</button>
-          <button class="book-button" type="button" id="gothic">Gothic</button>
-          <button class="book-button-locked" type="button" id="history" value="0">Locked 1500$</button>
-          <button class="book-button" type="button" id="humor">Humor</button>
-          <button class="book-button" type="button" id="math">Math</button>
-          <button class="book-button" type="button" id="nonfiction">NonFiction</button>
-          <button class="book-button" type="button" id="report">Report</button>
-          <button class="book-button-locked" type="button" id="romance" value="0">Locked 3000$</button>
-          <button class="book-button-locked" type="button" id="satire">Locked ???</button>
-          <button class="book-button" type="button" id="scifi">Scifi</button>
-          <button class="book-button" type="button" id="survival">Survival</button>
-          <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
-        </div>
-        <div class="pic-div">
-          <div class="probar" id="progressbar"></div>
-          <iframe id="iframe" class="iframe" src="about:blank"></iframe>
-        </div>
-    </div>
-</body>
+  <head>
+      <script type="text/javascript" src="js/angularjs/angular-loader.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/angularjs/angular-csp.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
+      <link rel="stylesheet" type="text/css" href="/css/jquery/jquery-ui-1.10.4.custom.css">
+      <script type="text/javascript" src="js/angularjs/angular.min.js"></script>
+      <script type="text/javascript" src="js/jquery/jquery-2.1.0.min.js"></script>
+      <script type="text/javascript" src="js/jquery/jquery.ui.widget.js"></script>
+      <script type="text/javascript" src="js/jquery/jquery.ui.core.js"></script>
+      <script type="text/javascript" src="js/jquery/jquery.ui.progressbar.js"></script>
+      <script type="text/javascript" src="js/book.js"></script>
+      <script type="text/javascript" src="js/chrome.js"></script>
+      <script type="text/javascript" src="js/reset.js"></script>
+      <script type="text/javascript" src="js/save.js"></script>
+      <script type="text/javascript" src="js/probar.js"></script>
+      <script type="text/javascript" src="js/error.js"></script>
+      <script type="text/javascript" src="js/utils.js"></script>
+      <script type="text/javascript" src="js/iframe.js"></script>
+  </head>
+  <body class="body">
+      <input id="lock" type="hidden" value="lockoff">
+      <div id="main-div" class="main-div">
+          <div id="money-div" class="money">
+            <span id="money-text">0</span>$
+            <br>
+            <button class="save-button" type="button" id="save">Save</button>
+            <button class="save-button" type="button" id="reset">New Game</button>
+            <div class="stats-text">Adventure</div>
+            <div class="save-div" id="adventure-stats">0</div>
+            <div class="stats-text" id="action-sn">???</div>
+            <div class="save-div" id="action-stats">0</div>
+            <div class="stats-text">Children's</div>
+            <div class="save-div" id="childrens-stats">0</div>
+            <div class="stats-text">Drama</div>
+            <div class="save-div" id="drama-stats">0</div>
+            <div class="stats-text" id="fantasy-sn">???</div>
+            <div class="save-div" id="fantasy-stats">0</div>
+            <div class="stats-text">Fiction</div>
+            <div class="save-div" id="fiction-stats">0</div>
+            <div class="stats-text">Gothic</div>
+            <div class="save-div" id="gothic-stats">0</div>
+            <div class="stats-text" id="history-sn">???</div>
+            <div class="save-div" id="history-stats">0</div>
+            <div class="stats-text">Humor</div>
+            <div class="save-div" id="humor-stats">0</div>
+            <div class="stats-text">Math</div>
+            <div class="save-div" id="math-stats">0</div>
+            <div class="stats-text">NonFiction</div>
+            <div class="save-div" id="nonfiction-stats">0</div>
+            <div class="stats-text">Report</div>
+            <div class="save-div" id="report-stats">0</div>
+            <div class="stats-text" id="romance-sn">???</div>
+            <div class="save-div" id="romance-stats">0</div>
+            <div class="stats-text" id="satire-sn">???</div>
+            <div class="save-div" id="satire-stats">0</div>
+            <div class="stats-text">Scifi</div>
+            <div class="save-div" id="scifi-stats">0</div>
+            <div class="stats-text">Survival</div>
+            <div class="save-div" id="survival-stats">0</div>
+            <div class="stats-text" id="trashy-sn">???</div>
+            <div class="save-div" id="trashy-stats">0</div>
+          </div>
+          <div class="book-col">
+            <button class="book-button" type="button" id="adventure">Adventure</button>
+            <button class="book-button-locked" type="button" id="action" value="0">Locked 6000$</button>
+            <button class="book-button" type="button" id="childrens">Children's</button>
+            <button class="book-button" type="button" id="drama">Drama</button>
+            <button class="book-button-locked" type="button" id="fantasy">Locked ???</button>
+            <button class="book-button" type="button" id="fiction">Fiction</button>
+            <button class="book-button" type="button" id="gothic">Gothic</button>
+            <button class="book-button-locked" type="button" id="history" value="0">Locked 1500$</button>
+            <button class="book-button" type="button" id="humor">Humor</button>
+            <button class="book-button" type="button" id="math">Math</button>
+            <button class="book-button" type="button" id="nonfiction">NonFiction</button>
+            <button class="book-button" type="button" id="report">Report</button>
+            <button class="book-button-locked" type="button" id="romance" value="0">Locked 3000$</button>
+            <button class="book-button-locked" type="button" id="satire">Locked ???</button>
+            <button class="book-button" type="button" id="scifi">Scifi</button>
+            <button class="book-button" type="button" id="survival">Survival</button>
+            <button class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
+          </div>
+          <div class="pic-div">
+            <div class="probar" id="progressbar"></div>
+            <iframe id="iframe" class="iframe" src="about:blank"></iframe>
+          </div>
+      </div>
+  </body>
 </html>
