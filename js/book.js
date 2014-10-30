@@ -140,7 +140,7 @@ bookbuttons.prototype.onClickFiction = function(){
   if(lockState=="lockoff"){
     lock(7500);
     picAdder(7500);
-    setTimeout(startCalcFiction, 7500);
+    setTimeout(this.startCalcFiction, 7500);
     setTimeout(bookPrompt, 7500);
   }else{
     errorPopup();
