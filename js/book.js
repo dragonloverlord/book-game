@@ -163,25 +163,21 @@ bookbuttons.prototype.onClickNonFiction = function(){
   }
 }
 
-function startCalcMath(){
+bookbuttons.prototype.startCalcMath = function(){
   calc(95,"math-stats");
 }
 
-function onClickMath(){
+bookbuttons.prototype.onClickMath = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(9300);
     picAdder(9300);
-    setTimeout(startCalcMath, 9300);
+    setTimeout(this.startCalcMath, 9300);
     setTimeout(bookPrompt, 9300);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#math").addEventListener('click',onClickMath);
-});
 
 function startCalcHumor(){
   calc(130,"humor-stats");
