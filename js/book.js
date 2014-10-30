@@ -179,25 +179,21 @@ bookbuttons.prototype.onClickMath = function(){
   }
 }
 
-function startCalcHumor(){
+bookbuttons.prototype.startCalcHumor = function(){
   calc(130,"humor-stats");
 }
 
-function onClickHumor(){
+bookbuttons.prototype.onClickHumor = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(10300);
     picAdder(10300);
-    setTimeout(startCalcHumor, 10300);
+    setTimeout(this.startCalcHumor, 10300);
     setTimeout(bookPrompt, 10300);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#humor").addEventListener('click',onClickHumor);
-});
 
 function startCalcSatire(){
   calc(475,"satire-stats");
