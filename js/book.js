@@ -131,13 +131,11 @@ bookbuttons.prototype.onClickChildrens = function(){
   }
 }
 
-
-
-function startCalcFiction(){
+bookbuttons.prototype.startCalcFiction = function(){
   calc(75,"fiction-stats");
 }
 
-function onClickFiction(){
+bookbuttons.prototype.onClickFiction = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(7500);
@@ -148,10 +146,6 @@ function onClickFiction(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#fiction").addEventListener('click',onClickFiction);
-});
 
 function startCalcNonFiction(){
   calc(60,"nonfiction-stats");
