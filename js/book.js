@@ -195,18 +195,18 @@ bookbuttons.prototype.onClickHumor = function(){
   }
 }
 
-function startCalcSatire(){
+bookbuttons.prototype.startCalcSatire = function(){
   calc(475,"satire-stats");
 }
 
-function onClickSatire(){
+bookbuttons.prototype.onClickSatire = function(){
   var lockState = gt("lock").value;
   var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
   if(lockState=="lockoff" && humorStats === 5){
     lock(19000);
     picAdder(19000);
-    setTimeout(startCalcSatire, 19000);
+    setTimeout(this.startCalcSatire, 19000);
     setTimeout(bookPrompt, 19000);
     unlockUnknown("Satire","satire","satire-sn");
   }else if(humorStats < 10){
@@ -215,10 +215,6 @@ function onClickSatire(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#satire").addEventListener('click',onClickSatire);
-});
 
 function startCalcRomance(){
   calc(440,"romance-stats");
