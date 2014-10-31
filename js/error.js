@@ -18,10 +18,12 @@ function errorChecker(){
   errorh("gothic-stats");
   errorh("adventure-stats");
   errorh("action-stats");
+  errorh("environmental-stats");
   errorv("trashy");
   errorv("history");
   errorv("romance");
   errorv("action");
+  errorv("environmental");
 }
 
 setTimeout(lockCheck, 4000);
