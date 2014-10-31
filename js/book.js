@@ -339,3 +339,33 @@ bookbuttons.prototype.onClickAction = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcEnvironmental = function(){
+  calc(460,"environmental-stats");
+}
+
+bookbuttons.prototype.onClickEnvironmental = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("environmental").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(18350);
+    picAdder(18350);
+    setTimeout(this.startCalcEnvironmental, 18350);
+    setTimeout(bookPrompt, 18350);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 12000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 12000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Environmental","environmental","environmental-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
