@@ -278,10 +278,6 @@ bookbuttons.prototype.onClickSurvival = function(){
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#survival").addEventListener('click',onClickSurvival);
-});
-
 function startCalcGothic(){
   calc(335,"gothic-stats");
 }
