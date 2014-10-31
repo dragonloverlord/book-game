@@ -39,6 +39,8 @@ function saveChanges(){
   chrome.storage.sync.set({'adventure':data});
   var data = saveh("action-stats");
   chrome.storage.sync.set({'action':data});
+  var data = saveh("environmental-stats");
+  chrome.storage.sync.set({'environmental':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -47,4 +49,6 @@ function saveChanges(){
   chrome.storage.sync.set({'romanceLock':data});
   var data = savev("action");
   chrome.storage.sync.set({'actionLock':data});
+  var data = savev("environmental");
+  chrome.storage.sync.set({'environmentalLock':data});
 }
