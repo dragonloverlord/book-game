@@ -262,16 +262,16 @@ bookbuttons.prototype.onClickReport = function(){
   }
 }
 
-function startCalcSurvival(){
+bookbuttons.prototype.startCalcSurvival = function(){
   calc(260,"survival-stats");
 }
 
-function onClickSurvival(){
+bookbuttons.prototype.onClickSurvival = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(20300);
     picAdder(20300);
-    setTimeout(startCalcSurvival, 20300);
+    setTimeout(this.startCalcSurvival, 20300);
     setTimeout(bookPrompt, 20300);
   }else{
     errorPopup();
