@@ -349,10 +349,10 @@ bookbuttons.prototype.onClickEnvironmental = function(){
   var isLocked = gt("environmental").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
-    lock(18350);
-    picAdder(18350);
-    setTimeout(this.startCalcEnvironmental, 18350);
-    setTimeout(bookPrompt, 18350);
+    lock(19350);
+    picAdder(19350);
+    setTimeout(this.startCalcEnvironmental, 19350);
+    setTimeout(bookPrompt, 19350);
   }else if(isLocked === 0){
     var money = gt("money-text").innerHTML;
     var money = parseInt(money);
