@@ -278,25 +278,21 @@ bookbuttons.prototype.onClickSurvival = function(){
   }
 }
 
-function startCalcGothic(){
+bookbuttons.prototype.startCalcGothic = function(){
   calc(335,"gothic-stats");
 }
 
-function onClickGothic(){
+bookbuttons.prototype.onClickGothic = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(23300);
     picAdder(23300);
-    setTimeout(startCalcGothic, 23300);
+    setTimeout(this.startCalcGothic, 23300);
     setTimeout(bookPrompt, 23300);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#gothic").addEventListener('click',onClickGothic);
-});
 
 bookbuttons.prototype.startCalcAdventure = function(){
   calc(575,"adventure-stats");
