@@ -87,4 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var action = parseInt(obj.action);
     gt("action-stats").innerHTML = action;
   });
+  chrome.storage.sync.get('environmentalLock',function(obj) {
+    var environmentalLock = parseInt(obj.environmentalLock);
+    gt("environmental").value = environmentalLock;
+  });
+  chrome.storage.sync.get('environmental',function(obj) {
+    var environmental = parseInt(obj.environmental);
+    gt("environmental-stats").innerHTML = environmental;
+  });
 });
