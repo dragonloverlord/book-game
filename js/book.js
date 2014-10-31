@@ -216,18 +216,18 @@ bookbuttons.prototype.onClickSatire = function(){
   }
 }
 
-function startCalcRomance(){
+bookbuttons.prototype.startCalcRomance = function(){
   calc(440,"romance-stats");
 }
 
-function onClickRomance(){
+bookbuttons.prototype.onClickRomance = function(){
   var lockState = gt("lock").value;
   var isLocked = gt("romance").value;
   var isLocked = parseInt(isLocked);
   if(lockState=="lockoff" && isLocked === 1){
     lock(15350);
     picAdder(15350);
-    setTimeout(startCalcRomance, 15350);
+    setTimeout(this.startCalcRomance, 15350);
     setTimeout(bookPrompt, 15350);
   }else if(isLocked === 0){
     var money = gt("money-text").innerHTML;
@@ -245,10 +245,6 @@ function onClickRomance(){
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#romance").addEventListener('click',onClickRomance);
-});
 
 function startCalcReport(){
   calc(116,"report-stats");
