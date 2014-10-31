@@ -246,25 +246,21 @@ bookbuttons.prototype.onClickRomance = function(){
   }
 }
 
-function startCalcReport(){
+bookbuttons.prototype.startCalcReport = function(){
   calc(116,"report-stats");
 }
 
-function onClickReport(){
+bookbuttons.prototype.onClickReport = function(){
   var lockState = gt("lock").value;
   if(lockState=="lockoff"){
     lock(10300);
     picAdder(10300);
-    setTimeout(startCalcReport, 10300);
+    setTimeout(this.startCalcReport, 10300);
     setTimeout(bookPrompt, 10300);
   }else{
     errorPopup();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#report").addEventListener('click',onClickReport);
-});
 
 function startCalcSurvival(){
   calc(260,"survival-stats");
