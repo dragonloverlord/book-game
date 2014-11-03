@@ -1,15 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#general").addEventListener('click',general);
-});
-
-function general(){
+helpbuttons.prototype.general = function(){
   document.getElementById('iframe').src = '/html/general.html';
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector("#names").addEventListener('click',names);
-});
-
-function names(){
+helpbuttons.prototype.names = function(){
   document.getElementById('iframe').src = '/html/names.html';
+}
+
+function helpbuttons(){
+
 }
