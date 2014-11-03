@@ -10,9 +10,9 @@
   </head>
   <body class="background">
     <div class="main-div">
-      <div class="toc-div">
-        <button class="help-button" id="general" type="button">General</button>
-        <button class="help-button" id="names" type="button">Book Names</button>
+      <div ng-controller="helpbuttons as help" class="toc-div">
+        <button ng-click="help.general()" class="help-button" id="general" type="button">General</button>
+        <button ng-click="help.names()" class="help-button" id="names" type="button">Book Names</button>
       </div>
       <div class="help-div">
         <iframe id="iframe" class="iframe" src="about:blank"></iframe>
