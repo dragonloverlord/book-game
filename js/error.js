@@ -19,11 +19,13 @@ function errorChecker(){
   errorh("adventure-stats");
   errorh("action-stats");
   errorh("environmental-stats");
+  errorh("parenting-stats");
   errorv("trashy");
   errorv("history");
   errorv("romance");
   errorv("action");
   errorv("environmental");
+  errorv("parenting");
 }
 
 setTimeout(lockCheck, 4000);
@@ -36,6 +38,10 @@ function lockCheck(){
   var romance = parseInt(romance);
   var action = gt("action").value;
   var action = parseInt(action);
+  var environmental = gt("environmental").value;
+  var environmental = parseInt(environmental);
+  var parenting = gt("parenting").value;
+  var parenting = parseInt(parenting);
   var scifiStats = gt("scifi-stats").innerHTML;
   var scifiStats = parseInt(scifiStats);
   var humorStats = gt("humor-stats").innerHTML;
@@ -52,5 +58,9 @@ function lockCheck(){
     unlock("Romance","romance","romance-sn");
   }if(action === 1){
     unlock("Action","action","action-sn");
+  }if(environmental === 1){
+    unlock("Environmental","environmental","environmental-sn");
+  }if(parenting === 1){
+    unlock("Parenting","parenting","parenting-sn");
   }
 }
