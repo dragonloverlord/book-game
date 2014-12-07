@@ -369,3 +369,33 @@ bookbuttons.prototype.onClickEnvironmental = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcParenting = function(){
+  calc(590,"parenting-stats");
+}
+
+bookbuttons.prototype.onClickParenting = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("parenting").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(20670);
+    picAdder(20670);
+    setTimeout(this.startCalcParenting, 20670);
+    setTimeout(bookPrompt, 20670);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 15000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 15000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Parenting","parenting","parenting-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
