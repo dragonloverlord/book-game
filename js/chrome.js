@@ -95,4 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var environmental = parseInt(obj.environmental);
     gt("environmental-stats").innerHTML = environmental;
   });
+  chrome.storage.sync.get('parentingLock',function(obj) {
+    var parentingLock = parseInt(obj.parentingLock);
+    gt("parenting").value = parentingLock;
+  });
+  chrome.storage.sync.get('parenting',function(obj) {
+    var parenting = parseInt(obj.parenting);
+    gt("parenting-stats").innerHTML = parenting;
+  });
 });
