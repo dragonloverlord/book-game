@@ -41,6 +41,8 @@ function saveChanges(){
   chrome.storage.sync.set({'action':data});
   var data = saveh("environmental-stats");
   chrome.storage.sync.set({'environmental':data});
+  var data = saveh("parenting-stats");
+  chrome.storage.sync.set({'parenting':data});
   var data = savev("trashy");
   chrome.storage.sync.set({'trashyLock':data});
   var data = savev("history");
@@ -51,4 +53,6 @@ function saveChanges(){
   chrome.storage.sync.set({'actionLock':data});
   var data = savev("environmental");
   chrome.storage.sync.set({'environmentalLock':data});
+  var data = savev("parenting");
+  chrome.storage.sync.set({'parentingLock':data});
 }
