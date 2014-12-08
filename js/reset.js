@@ -22,6 +22,8 @@ function reset(){
   idf("gothic-stats").innerHTML = 0;
   idf("adventure-stats").innerHTML = 0;
   idf("action-stats").innerHTML = 0;
+  idf("environmental-stats").innerHTML = 0;
+  idf("parenting-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -44,4 +46,12 @@ function reset(){
   romance.innerHTML = "Locked 3000$";
   romance.value = 0;
   romance.className = "book-button-locked";
+  var environmental = idf("environmental");
+  environmental.innerHTML = "Locked 12000$";
+  environmental.value = 0;
+  environmental.className = "book-button-locked";
+  var parenting = idf("parenting");
+  parenting.innerHTML = "Locked 15000$";
+  parenting.value = 0;
+  parenting.className = "book-button-locked";
 }
