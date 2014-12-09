@@ -16,11 +16,14 @@ chromeLoad.prototype.drama = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.fantasy = function(){
   chrome.storage.sync.get('fantasy',function(obj) {
     var fantasy = parseInt(obj.fantasy);
     gt("fantasy-stats").innerHTML = fantasy;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('scifi',function(obj) {
     var scifi = parseInt(obj.scifi);
     gt("scifi-stats").innerHTML = scifi;
