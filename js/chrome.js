@@ -37,11 +37,14 @@ chromeLoad.prototype.trashy = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.historybook = function(){
   chrome.storage.sync.get('History',function(obj) {
     var history = parseInt(obj.History);
     gt("history-stats").innerHTML = history;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('childrens',function(obj) {
     var childrens = parseInt(obj.childrens);
     gt("childrens-stats").innerHTML = childrens;
