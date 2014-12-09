@@ -23,11 +23,14 @@ chromeLoad.prototype.fantasy = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.scifi = function(){
   chrome.storage.sync.get('scifi',function(obj) {
     var scifi = parseInt(obj.scifi);
     gt("scifi-stats").innerHTML = scifi;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('trashy',function(obj) {
     var trashy = parseInt(obj.trashy);
     gt("trashy-stats").innerHTML = trashy;
