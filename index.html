@@ -23,8 +23,8 @@
   <body class="body">
       <input id="lock" type="hidden" value="lockoff">
       <div id="main-div" class="main-div">
-          <div id="money-div" class="money">
-            <span id="money-text">0</span>$
+          <div ng-controller="chromeLoad as load" id="money-div" class="money">
+            <span id="money-text">{{load.money()}}</span>$
             <br>
             <button class="save-button" type="button" id="save">Save</button>
             <button class="save-button" type="button" id="reset">New Game</button>
@@ -35,7 +35,7 @@
             <div class="stats-text">Children's</div>
             <div class="save-div" id="childrens-stats">0</div>
             <div class="stats-text">Drama</div>
-            <div class="save-div" id="drama-stats">0</div>
+            <div class="save-div" id="drama-stats">{{load.drama()}}</div>
             <div class="stats-text" id="environmental-sn">???</div>
             <div class="save-div" id="environmental-stats">0</div>
             <div class="stats-text" id="fantasy-sn">???</div>

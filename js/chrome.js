@@ -1,12 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
+function chromeLoad(){
+
+}
+
+chromeLoad.prototype.money = function(){
   chrome.storage.sync.get('money',function(obj) {
     var money = parseInt(obj.money);
     gt("money-text").innerHTML = money;
   });
+}
+
+chromeLoad.prototype.drama = function(){
   chrome.storage.sync.get('drama',function(obj) {
     var drama = parseInt(obj.drama);
     gt("drama-stats").innerHTML = drama;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('fantasy',function(obj) {
     var fantasy = parseInt(obj.fantasy);
     gt("fantasy-stats").innerHTML = fantasy;
