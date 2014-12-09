@@ -44,11 +44,14 @@ chromeLoad.prototype.historybook = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.childrens = function(){
   chrome.storage.sync.get('childrens',function(obj) {
     var childrens = parseInt(obj.childrens);
     gt("childrens-stats").innerHTML = childrens;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('trashyLock',function(obj) {
     var trashyLock = parseInt(obj.trashyLock);
     gt("trashy").value = trashyLock;
