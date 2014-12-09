@@ -30,11 +30,14 @@ chromeLoad.prototype.scifi = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.trashy = function(){
   chrome.storage.sync.get('trashy',function(obj) {
     var trashy = parseInt(obj.trashy);
     gt("trashy-stats").innerHTML = trashy;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('History',function(obj) {
     var history = parseInt(obj.History);
     gt("history-stats").innerHTML = history;
