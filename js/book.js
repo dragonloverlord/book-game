@@ -399,3 +399,33 @@ bookbuttons.prototype.onClickParenting = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcReligious = function(){
+  calc(660,"religious-stats");
+}
+
+bookbuttons.prototype.onClickReligious = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("religious").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(21660);
+    picAdder(21660);
+    setTimeout(this.startCalcReligious, 21660);
+    setTimeout(bookPrompt, 21660);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 20000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 20000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Religious","religious","religious-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
