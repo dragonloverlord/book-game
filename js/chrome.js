@@ -51,11 +51,14 @@ chromeLoad.prototype.childrens = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.trashyLock = function(){
   chrome.storage.sync.get('trashyLock',function(obj) {
     var trashyLock = parseInt(obj.trashyLock);
     gt("trashy").value = trashyLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('historyLock',function(obj) {
     var historyLock = parseInt(obj.historyLock);
     gt("history").value = historyLock;
