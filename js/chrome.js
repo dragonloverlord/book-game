@@ -51,7 +51,7 @@ chromeLoad.prototype.childrens = function(){
   });
 }
 
-chromeLoad.prototype.trashyLock = function(){
+bookbuttons.prototype.trashyLock = function(){
   chrome.storage.sync.get('trashyLock',function(obj) {
     var trashyLock = parseInt(obj.trashyLock);
     gt("trashy").value = trashyLock;

@@ -24,8 +24,7 @@
       <input id="lock" type="hidden" value="lockoff">
       <div id="main-div" class="main-div">
           <div ng-controller="chromeLoad as load" id="money-div" class="money">
-            {{load.trashyLock()}}
-            <span id="money-text">{{load.money()}}</span>$
+            <span id="money-text" ng-init="load.money()">0</span>$
             <br>
             <button class="save-button" type="button" id="save">Save</button>
             <button class="save-button" type="button" id="reset">New Game</button>
@@ -90,7 +89,7 @@
             <button ng-click="book.onClickSatire()" class="book-button-locked" type="button" id="satire">Locked ???</button>
             <button ng-click="book.onClickScifi()" class="book-button" type="button" id="scifi">Scifi</button>
             <button ng-click="book.onClickSurvival()" class="book-button" type="button" id="survival">Survival</button>
-            <button ng-click="book.onClickTrashy()" class="book-button-locked" type="button" id="trashy" value="0">Locked 1000$</button>
+            <button ng-click="book.onClickTrashy()" class="book-button-locked" type="button" id="trashy" value="0" ng-init="book.trashyLock()">Locked 1000$</button>
           </div>
           <div class="pic-div">
             <div class="probar" id="progressbar"></div>
