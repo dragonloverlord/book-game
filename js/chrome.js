@@ -58,11 +58,14 @@ bookbuttons.prototype.trashyLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+bookbuttons.prototype.historyLock = function(){
   chrome.storage.sync.get('historyLock',function(obj) {
     var historyLock = parseInt(obj.historyLock);
     gt("history").value = historyLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('romanceLock',function(obj) {
     var romanceLock = parseInt(obj.romanceLock);
     gt("romance").value = romanceLock;
