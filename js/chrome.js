@@ -95,11 +95,14 @@ chromeLoad.prototype.math = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.humor = function(){
   chrome.storage.sync.get('humor',function(obj) {
     var humor = parseInt(obj.humor);
     gt("humor-stats").innerHTML = humor;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('satire',function(obj) {
     var satire = parseInt(obj.satire);
     gt("satire-stats").innerHTML = satire;
