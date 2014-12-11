@@ -65,11 +65,14 @@ bookbuttons.prototype.historyLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+bookbuttons.prototype.romanceLock = function(){
   chrome.storage.sync.get('romanceLock',function(obj) {
     var romanceLock = parseInt(obj.romanceLock);
     gt("romance").value = romanceLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('fiction',function(obj) {
     var fiction = parseInt(obj.fiction);
     gt("fiction-stats").innerHTML = fiction;
