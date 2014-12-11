@@ -102,11 +102,14 @@ chromeLoad.prototype.humor = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.satire = function(){
   chrome.storage.sync.get('satire',function(obj) {
     var satire = parseInt(obj.satire);
     gt("satire-stats").innerHTML = satire;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('romance',function(obj) {
     var romance = parseInt(obj.romance);
     gt("romance-stats").innerHTML = romance;
