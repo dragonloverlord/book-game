@@ -109,6 +109,13 @@ chromeLoad.prototype.satire = function(){
   });
 }
 
+chromeLoad.prototype.romance = function(){
+  chrome.storage.sync.get('romance',function(obj) {
+    var romance = parseInt(obj.romance);
+    gt("romance-stats").innerHTML = romance;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('romance',function(obj) {
     var romance = parseInt(obj.romance);
