@@ -81,11 +81,14 @@ chromeLoad.prototype.fiction = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.nonfiction = function(){
   chrome.storage.sync.get('nonfiction',function(obj) {
     var nonfiction = parseInt(obj.nonfiction);
     gt("nonfiction-stats").innerHTML = nonfiction;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('math',function(obj) {
     var math = parseInt(obj.math);
     gt("math-stats").innerHTML = math;
