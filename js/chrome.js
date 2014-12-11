@@ -1,6 +1,8 @@
-function chromeLoad(){
+chromeLoad = function(){
 
 }
+
+app.controller("chromeLoad", [chromeLoad]);
 
 chromeLoad.prototype.money = function(){
   chrome.storage.sync.get('money',function(obj) {

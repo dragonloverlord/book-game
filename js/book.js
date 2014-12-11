@@ -1,3 +1,9 @@
+function bookbuttons(){
+
+}
+app = angular.module("app",[]);
+app.controller("bookbuttons",[bookbuttons]);
+
 bookbuttons.prototype.startCalcScifi = function(){
   calc(50,"scifi-stats");
 }
@@ -109,10 +115,6 @@ bookbuttons.prototype.onClickHistory = function(){
   }else{
     errorPopup();
   }
-}
-
-function bookbuttons(){
-
 }
 
 bookbuttons.prototype.startCalcChildrens = function(){
