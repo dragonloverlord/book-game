@@ -74,11 +74,14 @@ bookbuttons.prototype.romanceLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.fiction = function(){
   chrome.storage.sync.get('fiction',function(obj) {
     var fiction = parseInt(obj.fiction);
     gt("fiction-stats").innerHTML = fiction;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('nonfiction',function(obj) {
     var nonfiction = parseInt(obj.nonfiction);
     gt("nonfiction-stats").innerHTML = nonfiction;
