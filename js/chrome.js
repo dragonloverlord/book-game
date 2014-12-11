@@ -88,11 +88,14 @@ chromeLoad.prototype.nonfiction = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.math = function(){
   chrome.storage.sync.get('math',function(obj) {
     var math = parseInt(obj.math);
     gt("math-stats").innerHTML = math;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('humor',function(obj) {
     var humor = parseInt(obj.humor);
     gt("humor-stats").innerHTML = humor;
