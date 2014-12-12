@@ -144,11 +144,14 @@ chromeLoad.prototype.adventure = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+bookbuttons.prototype.actionLock = function(){
   chrome.storage.sync.get('actionLock',function(obj) {
     var actionLock = parseInt(obj.actionLock);
     gt("action").value = actionLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('action',function(obj) {
     var action = parseInt(obj.action);
     gt("action-stats").innerHTML = action;
