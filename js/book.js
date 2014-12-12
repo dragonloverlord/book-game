@@ -1,7 +1,9 @@
+app = angular.module("app",[]);
+
 function bookbuttons(){
 
 }
-app = angular.module("app",[]);
+
 app.controller("bookbuttons",[bookbuttons]);
 
 bookbuttons.prototype.startCalcScifi = function(){
