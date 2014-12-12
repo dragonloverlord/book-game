@@ -130,11 +130,14 @@ chromeLoad.prototype.survival = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.gothic = function(){
   chrome.storage.sync.get('gothic',function(obj) {
     var gothic = parseInt(obj.gothic);
     gt("gothic-stats").innerHTML = gothic;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('adventure',function(obj) {
     var adventure = parseInt(obj.adventure);
     gt("adventure-stats").innerHTML = adventure;
