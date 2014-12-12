@@ -137,11 +137,14 @@ chromeLoad.prototype.gothic = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.adventure = function(){
   chrome.storage.sync.get('adventure',function(obj) {
     var adventure = parseInt(obj.adventure);
     gt("adventure-stats").innerHTML = adventure;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('actionLock',function(obj) {
     var actionLock = parseInt(obj.actionLock);
     gt("action").value = actionLock;
