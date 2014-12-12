@@ -116,15 +116,14 @@ chromeLoad.prototype.romance = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  chrome.storage.sync.get('romance',function(obj) {
-    var romance = parseInt(obj.romance);
-    gt("romance-stats").innerHTML = romance;
-  });
+chromeLoad.prototype.report = function(){
   chrome.storage.sync.get('report',function(obj) {
     var report = parseInt(obj.report);
     gt("report-stats").innerHTML = report;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('survival',function(obj) {
     var survival = parseInt(obj.survival);
     gt("survival-stats").innerHTML = survival;
