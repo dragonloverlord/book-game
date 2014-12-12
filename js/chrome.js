@@ -123,11 +123,14 @@ chromeLoad.prototype.report = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.survival = function(){
   chrome.storage.sync.get('survival',function(obj) {
     var survival = parseInt(obj.survival);
     gt("survival-stats").innerHTML = survival;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.sync.get('gothic',function(obj) {
     var gothic = parseInt(obj.gothic);
     gt("gothic-stats").innerHTML = gothic;
