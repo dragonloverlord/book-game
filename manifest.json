@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Book Writer",
-  "version": "2.1.5.4",
+  "version": "2.1.5.6",
   "icons": {
     "16": "images/Book-icon.png",
     "48": "images/Book-icon.png",
