@@ -14,6 +14,7 @@
   },
   "permissions": [
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "unlimitedStorage"
     ]
 }
