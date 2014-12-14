@@ -24,7 +24,22 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.contextMenus.onClicked.addListener(function(itemData) {
 	if (itemData.menuItemId == "help")
-		chrome.app.window.create('html/help.html', {bounds:{width: 1000, height: 550}});
+		chrome.app.window.create('html/help.html', {
+		  innerBounds:{
+		    width: 1000,
+		    height: 550,
+		    minWidth: 1000,
+		    minHeight: 550
+		  }
+		});
+
 	if (itemData.menuItemId == "about")
-		chrome.app.window.create('html/about.html', {bounds:{width: 600, height: 475}});
+		chrome.app.window.create('html/about.html', {
+		  innerBounds:{
+		    width: 600,
+		    height: 475,
+		    minWidth: 600,
+		    minHeight: 475
+		  }
+		});
 });
