@@ -151,11 +151,14 @@ bookbuttons.prototype.actionLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.action = function(){
   chrome.storage.local.get('action',function(obj) {
     var action = parseInt(obj.action);
     gt("action-stats").innerHTML = action;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get('environmentalLock',function(obj) {
     var environmentalLock = parseInt(obj.environmentalLock);
     gt("environmental").value = environmentalLock;
