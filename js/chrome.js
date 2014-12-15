@@ -165,11 +165,14 @@ bookbuttons.prototype.environmentalLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.environmental = function(){
   chrome.storage.local.get('environmental',function(obj) {
     var environmental = parseInt(obj.environmental);
     gt("environmental-stats").innerHTML = environmental;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get('parentingLock',function(obj) {
     var parentingLock = parseInt(obj.parentingLock);
     gt("parenting").value = parentingLock;
