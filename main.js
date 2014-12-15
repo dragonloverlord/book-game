@@ -47,6 +47,8 @@ chrome.contextMenus.onClicked.addListener(function(itemData) {
 chrome.runtime.onInstalled.addListener(function(details){
   if(details.reason == "update"){
     chrome.app.window.create('html/update.html', {
+      focused: true,
+      alwaysOnTop: true,
       innerBounds:{
         width: 600,
         height: 475,
