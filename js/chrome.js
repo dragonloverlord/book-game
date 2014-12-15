@@ -185,3 +185,10 @@ chromeLoad.prototype.parenting = function(){
     gt("parenting-stats").innerHTML = parenting;
   });
 }
+
+bookbuttons.prototype.religiousLock = function(){
+  chrome.storage.local.get('religiousLock',function(obj) {
+    var religiousLock = parseInt(obj.religiousLock);
+    gt("religious").value = religiousLock;
+  });
+}
