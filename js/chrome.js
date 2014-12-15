@@ -179,9 +179,9 @@ bookbuttons.prototype.parentingLock = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+chromeLoad.prototype.parenting = function(){
   chrome.storage.local.get('parenting',function(obj) {
     var parenting = parseInt(obj.parenting);
     gt("parenting-stats").innerHTML = parenting;
   });
-});
+}
