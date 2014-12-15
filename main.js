@@ -43,3 +43,16 @@ chrome.contextMenus.onClicked.addListener(function(itemData) {
 		  }
 		});
 });
+
+chrome.runtime.onInstalled.addListener(function(details){
+  if(details.reason == "update"){
+    chrome.app.window.create('html/update.html', {
+      innerBounds:{
+        width: 600,
+        height: 475,
+        minWidth: 600,
+        minHeight: 475
+      }
+    });
+  }
+});
