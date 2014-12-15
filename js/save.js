@@ -57,4 +57,6 @@ function saveChanges(){
   chrome.storage.local.set({'environmentalLock':data});
   var data = savev("parenting");
   chrome.storage.local.set({'parentingLock':data});
+  var data = savev("religious");
+  chrome.storage.local.set({'religiousLock':data});
 }
