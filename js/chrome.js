@@ -158,11 +158,14 @@ chromeLoad.prototype.action = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+bookbuttons.prototype.environmentalLock = function(){
   chrome.storage.local.get('environmentalLock',function(obj) {
     var environmentalLock = parseInt(obj.environmentalLock);
     gt("environmental").value = environmentalLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get('environmental',function(obj) {
     var environmental = parseInt(obj.environmental);
     gt("environmental-stats").innerHTML = environmental;
