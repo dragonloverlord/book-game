@@ -172,11 +172,14 @@ chromeLoad.prototype.environmental = function(){
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+bookbuttons.prototype.parentingLock = function(){
   chrome.storage.local.get('parentingLock',function(obj) {
     var parentingLock = parseInt(obj.parentingLock);
     gt("parenting").value = parentingLock;
   });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   chrome.storage.local.get('parenting',function(obj) {
     var parenting = parseInt(obj.parenting);
     gt("parenting-stats").innerHTML = parenting;
