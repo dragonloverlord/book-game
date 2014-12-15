@@ -192,3 +192,10 @@ bookbuttons.prototype.religiousLock = function(){
     gt("religious").value = religiousLock;
   });
 }
+
+chromeLoad.prototype.religious = function(){
+  chrome.storage.local.get('religious',function(obj) {
+    var religious = parseInt(obj.religious);
+    gt("religious-stats").innerHTML = religious;
+  });
+}
