@@ -1,8 +1,16 @@
-function chromeSave(){
+chromeLoad.prototype.saveChildrens = function(){
+  var target = document.getElementById("childrens-stats");
 
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      console.log(mutation.type);
+    });
+  });
+
+  var config = {attributes:true, characterData:true};
+
+  observer.observe(target,config);
 }
-
-app.controller("chromeSave",[chromeSave]);
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#save").addEventListener('click',saveChanges);
@@ -21,8 +29,6 @@ function saveChanges(){
   chrome.storage.local.set({'trashy':data});
   var data = saveh("history-stats");
   chrome.storage.local.set({'History':data});
-  var data = saveh("childrens-stats");
-  chrome.storage.local.set({'childrens':data});
   var data = saveh("fiction-stats");
   chrome.storage.local.set({'fiction':data});
   var data = saveh("nonfiction-stats");
