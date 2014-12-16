@@ -23,7 +23,7 @@
   <body class="body">
       <input id="lock" type="hidden" value="lockoff">
       <div id="main-div" class="main-div">
-          <div ng-controller="chromeLoad as load" id="money-div" class="money">
+          <div ng-controller="chromeLoad as load" ng-controller="chromeSave as save" id="money-div" class="money">
             <span id="money-text" ng-init="load.money()">0</span>$
             <br>
             <button class="save-button" type="button" id="save">Save</button>
