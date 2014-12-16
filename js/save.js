@@ -1,3 +1,9 @@
+function chromeSave(){
+
+}
+
+app.controller("chromeSave",[chromeSave]);
+
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#save").addEventListener('click',saveChanges);
 });
