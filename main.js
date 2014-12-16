@@ -44,6 +44,7 @@ chrome.contextMenus.onClicked.addListener(function(itemData) {
 		});
 });
 
+/**
 chrome.runtime.onInstalled.addListener(function(details){
   if(details.reason == "update"){
     chrome.app.window.create('html/update.html', {
@@ -58,3 +59,4 @@ chrome.runtime.onInstalled.addListener(function(details){
     });
   }
 });
+**/
