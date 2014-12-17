@@ -1,17 +1,3 @@
-chromeLoad.prototype.saveChildrens = function(){
-  var target = document.getElementById("childrens-stats");
-
-  var observer = new MutationObserver(function(mutations){
-    mutations.forEach(function(mutation){
-      console.log(mutation.type);
-    });
-  });
-
-  var config = {attributes:true, characterData:true};
-
-  observer.observe(target,config);
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelector("#save").addEventListener('click',saveChanges);
 });
