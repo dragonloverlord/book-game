@@ -185,6 +185,15 @@ chromeLoad.prototype.nonfiction = function(){
     var nonfiction = parseInt(obj.nonfiction);
     gt("nonfiction-stats").innerHTML = nonfiction;
   });
+  var target = gtch("nonfiction-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("nonfiction-stats");
+      chrome.storage.local.set({'nonfiction':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.math = function(){

@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("nonfiction-stats");
-  chrome.storage.local.set({'nonfiction':data});
   var data = saveh("math-stats");
   chrome.storage.local.set({'math':data});
   var data = saveh("humor-stats");
