@@ -361,6 +361,15 @@ bookbuttons.prototype.environmentalLock = function(){
     var environmentalLock = parseInt(obj.environmentalLock);
     gt("environmental").value = environmentalLock;
   });
+  var target = gt("environmental");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("environmental");
+      chrome.storage.local.set({'environmentalLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.environmental = function(){
