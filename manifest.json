@@ -5,6 +5,7 @@
   "description":"A book creating idle game that is made for chrome.",
   "author":"dragonloverlord",
   "short_name":"Book Writer",
+  "offline_enabled":true,
   "icons": {
     "16": "images/Book-icon.png",
     "48": "images/Book-icon.png",
