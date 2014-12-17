@@ -281,6 +281,15 @@ chromeLoad.prototype.survival = function(){
     var survival = parseInt(obj.survival);
     gt("survival-stats").innerHTML = survival;
   });
+  var target = gtch("survival-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("survival-stats");
+      chrome.storage.local.set({'survival':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.gothic = function(){
