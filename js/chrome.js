@@ -137,6 +137,15 @@ bookbuttons.prototype.historyLock = function(){
     var historyLock = parseInt(obj.historyLock);
     gt("history").value = historyLock;
   });
+  var target = gt("history");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("history");
+      chrome.storage.local.set({'historyLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.romanceLock = function(){
