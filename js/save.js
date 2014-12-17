@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("adventure-stats");
-  chrome.storage.local.set({'adventure':data});
   var data = saveh("action-stats");
   chrome.storage.local.set({'action':data});
   var data = saveh("environmental-stats");
@@ -13,8 +11,6 @@ function saveChanges(){
   chrome.storage.local.set({'parenting':data});
   var data = saveh("religious-stats");
   chrome.storage.local.set({'religious':data});
-  var data = savev("action");
-  chrome.storage.local.set({'actionLock':data});
   var data = savev("environmental");
   chrome.storage.local.set({'environmentalLock':data});
   var data = savev("parenting");

@@ -313,6 +313,15 @@ chromeLoad.prototype.adventure = function(){
     var adventure = parseInt(obj.adventure);
     gt("adventure-stats").innerHTML = adventure;
   });
+  var target = gtch("adventure-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("adventure-stats");
+      chrome.storage.local.set({'adventure':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.actionLock = function(){
@@ -320,6 +329,15 @@ bookbuttons.prototype.actionLock = function(){
     var actionLock = parseInt(obj.actionLock);
     gt("action").value = actionLock;
   });
+  var target = gt("action");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("action");
+      chrome.storage.local.set({'actionLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.action = function(){
