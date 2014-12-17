@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("fantasy-stats");
-  chrome.storage.local.set({'fantasy':data});
   var data = saveh("scifi-stats");
   chrome.storage.local.set({'scifi':data});
   var data = saveh("trashy-stats");
