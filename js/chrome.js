@@ -57,6 +57,15 @@ chromeLoad.prototype.scifi = function(){
     var scifi = parseInt(obj.scifi);
     gt("scifi-stats").innerHTML = scifi;
   });
+  var target = gtch("scifi-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("scifi-stats");
+      chrome.storage.local.set({'scifi':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.trashy = function(){
