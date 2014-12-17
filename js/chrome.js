@@ -297,6 +297,15 @@ chromeLoad.prototype.gothic = function(){
     var gothic = parseInt(obj.gothic);
     gt("gothic-stats").innerHTML = gothic;
   });
+  var target = gtch("gothic-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("gothic-stats");
+      chrome.storage.local.set({'gothic':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.adventure = function(){

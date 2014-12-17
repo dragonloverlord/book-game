@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("gothic-stats");
-  chrome.storage.local.set({'gothic':data});
   var data = saveh("adventure-stats");
   chrome.storage.local.set({'adventure':data});
   var data = saveh("action-stats");
