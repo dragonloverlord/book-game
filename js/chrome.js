@@ -233,6 +233,15 @@ chromeLoad.prototype.satire = function(){
     var satire = parseInt(obj.satire);
     gt("satire-stats").innerHTML = satire;
   });
+  var target = gtch("satire-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("satire-stats");
+      chrome.storage.local.set({'satire':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.romance = function(){
