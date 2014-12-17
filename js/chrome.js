@@ -345,6 +345,15 @@ chromeLoad.prototype.action = function(){
     var action = parseInt(obj.action);
     gt("action-stats").innerHTML = action;
   });
+  var target = gtch("action-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("action-stats");
+      chrome.storage.local.set({'action':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.environmentalLock = function(){
