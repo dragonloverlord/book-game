@@ -9,6 +9,15 @@ chromeLoad.prototype.money = function(){
     var money = parseInt(obj.money);
     gt("money-text").innerHTML = money;
   });
+  var target = document.getElementById("money-text").childNodes[0];
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("money-text");
+      chrome.storage.local.set({'money':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.drama = function(){

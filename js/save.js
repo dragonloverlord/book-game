@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("money-text");
-  chrome.storage.local.set({'money':data});
   var data = saveh("drama-stats");
   chrome.storage.local.set({'drama':data});
   var data = saveh("fantasy-stats");
