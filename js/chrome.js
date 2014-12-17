@@ -393,6 +393,15 @@ bookbuttons.prototype.parentingLock = function(){
     var parentingLock = parseInt(obj.parentingLock);
     gt("parenting").value = parentingLock;
   });
+  var target = gt("parenting");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("parenting");
+      chrome.storage.local.set({'parentingLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.parenting = function(){
