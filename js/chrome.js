@@ -377,6 +377,15 @@ chromeLoad.prototype.environmental = function(){
     var environmental = parseInt(obj.environmental);
     gt("environmental-stats").innerHTML = environmental;
   });
+  var target = gtch("environmental-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("environmental-stats");
+      chrome.storage.local.set({'environmental':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.parentingLock = function(){

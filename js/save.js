@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("environmental-stats");
-  chrome.storage.local.set({'environmental':data});
   var data = saveh("parenting-stats");
   chrome.storage.local.set({'parenting':data});
   var data = saveh("religious-stats");
