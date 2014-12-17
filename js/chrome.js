@@ -89,6 +89,15 @@ chromeLoad.prototype.historybook = function(){
     var history = parseInt(obj.History);
     gt("history-stats").innerHTML = history;
   });
+  var target = gtch("history-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("history-stats");
+      chrome.storage.local.set({'History':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.childrens = function(){
