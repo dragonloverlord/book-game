@@ -153,6 +153,15 @@ bookbuttons.prototype.romanceLock = function(){
     var romanceLock = parseInt(obj.romanceLock);
     gt("romance").value = romanceLock;
   });
+  var target = gt("romance");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("romance");
+      chrome.storage.local.set({'romanceLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.fiction = function(){
