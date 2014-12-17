@@ -69,7 +69,7 @@ chromeLoad.prototype.childrens = function(){
     var childrens = parseInt(obj.childrens);
     gt("childrens-stats").innerHTML = childrens;
   });
-  var target = document.getElementById("childrens-stats").childNodes[0];
+  var target = gt("childrens-stats").childNodes[0];
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
       var data = saveh("childrens-stats");
