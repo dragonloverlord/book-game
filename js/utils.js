@@ -16,6 +16,11 @@ function gt(id){
   return document.getElementById(id);
 }
 
+function gtch(id,num){
+  var data = document.getElementById(id).childNodes[num];
+  return data;
+}
+
 function idf(id){
   var val = gt(id);
   return val;
