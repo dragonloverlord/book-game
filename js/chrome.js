@@ -217,6 +217,15 @@ chromeLoad.prototype.humor = function(){
     var humor = parseInt(obj.humor);
     gt("humor-stats").innerHTML = humor;
   });
+  var target = gtch("humor-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("humor-stats");
+      chrome.storage.local.set({'humor':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.satire = function(){
