@@ -249,6 +249,15 @@ chromeLoad.prototype.romance = function(){
     var romance = parseInt(obj.romance);
     gt("romance-stats").innerHTML = romance;
   });
+  var target = gtch("romance-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("romance-stats");
+      chrome.storage.local.set({'romance':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.report = function(){
