@@ -409,6 +409,15 @@ chromeLoad.prototype.parenting = function(){
     var parenting = parseInt(obj.parenting);
     gt("parenting-stats").innerHTML = parenting;
   });
+  var target = gtch("parenting-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("parenting-stats");
+      chrome.storage.local.set({'parenting':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.religiousLock = function(){
