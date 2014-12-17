@@ -25,6 +25,15 @@ chromeLoad.prototype.drama = function(){
     var drama = parseInt(obj.drama);
     gt("drama-stats").innerHTML = drama;
   });
+  var target = gt("drama-stats").childNodes[0];
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("drama-stats");
+      chrome.storage.local.set({'drama':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.fantasy = function(){
