@@ -121,6 +121,15 @@ bookbuttons.prototype.trashyLock = function(){
     var trashyLock = parseInt(obj.trashyLock);
     gt("trashy").value = trashyLock;
   });
+  var target = gt("trashy");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("trashy");
+      chrome.storage.local.set({'trashyLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.historyLock = function(){

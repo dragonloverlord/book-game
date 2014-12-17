@@ -31,8 +31,6 @@ function saveChanges(){
   chrome.storage.local.set({'parenting':data});
   var data = saveh("religious-stats");
   chrome.storage.local.set({'religious':data});
-  var data = savev("trashy");
-  chrome.storage.local.set({'trashyLock':data});
   var data = savev("history");
   chrome.storage.local.set({'historyLock':data});
   var data = savev("romance");
