@@ -201,6 +201,15 @@ chromeLoad.prototype.math = function(){
     var math = parseInt(obj.math);
     gt("math-stats").innerHTML = math;
   });
+  var target = gtch("math-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("math-stats");
+      chrome.storage.local.set({'math':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.humor = function(){
