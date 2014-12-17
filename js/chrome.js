@@ -169,6 +169,15 @@ chromeLoad.prototype.fiction = function(){
     var fiction = parseInt(obj.fiction);
     gt("fiction-stats").innerHTML = fiction;
   });
+  var target = gtch("fiction-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("fiction-stats");
+      chrome.storage.local.set({'fiction':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.nonfiction = function(){
