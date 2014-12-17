@@ -441,4 +441,13 @@ chromeLoad.prototype.religious = function(){
     var religious = parseInt(obj.religious);
     gt("religious-stats").innerHTML = religious;
   });
+  var target = gtch("religious-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("religious-stats");
+      chrome.storage.local.set({'religious':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
