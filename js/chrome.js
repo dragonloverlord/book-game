@@ -9,7 +9,7 @@ chromeLoad.prototype.money = function(){
     var money = parseInt(obj.money);
     gt("money-text").innerHTML = money;
   });
-  var target = gt("money-text").childNodes[0];
+  var target = gtch("money-text",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
       var data = saveh("money-text");
@@ -25,7 +25,7 @@ chromeLoad.prototype.drama = function(){
     var drama = parseInt(obj.drama);
     gt("drama-stats").innerHTML = drama;
   });
-  var target = gt("drama-stats").childNodes[0];
+  var target = gtch("drama-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
       var data = saveh("drama-stats");
@@ -69,7 +69,7 @@ chromeLoad.prototype.childrens = function(){
     var childrens = parseInt(obj.childrens);
     gt("childrens-stats").innerHTML = childrens;
   });
-  var target = gt("childrens-stats").childNodes[0];
+  var target = gtch("childrens-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
       var data = saveh("childrens-stats");
