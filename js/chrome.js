@@ -425,6 +425,15 @@ bookbuttons.prototype.religiousLock = function(){
     var religiousLock = parseInt(obj.religiousLock);
     gt("religious").value = religiousLock;
   });
+  var target = gt("religious");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = savev("religious");
+      chrome.storage.local.set({'religiousLock':data});
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.religious = function(){
