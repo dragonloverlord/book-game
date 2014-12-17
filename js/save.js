@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function saveChanges(){
-  var data = saveh("trashy-stats");
-  chrome.storage.local.set({'trashy':data});
   var data = saveh("history-stats");
   chrome.storage.local.set({'History':data});
   var data = saveh("fiction-stats");

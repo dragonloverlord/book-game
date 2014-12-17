@@ -73,6 +73,15 @@ chromeLoad.prototype.trashy = function(){
     var trashy = parseInt(obj.trashy);
     gt("trashy-stats").innerHTML = trashy;
   });
+  var target = gtch("trashy-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      var data = saveh("trashy-stats");
+      chrome.storage.local.set({'trashy':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
 }
 
 chromeLoad.prototype.historybook = function(){
