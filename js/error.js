@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("romance-stats");
   errorh("report-stats");
   errorh("survival-stats");
   errorh("gothic-stats");

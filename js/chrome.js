@@ -267,6 +267,7 @@ chromeLoad.prototype.romance = function(){
   var target = gtch("romance-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("romance-stats");
       var data = saveh("romance-stats");
       chrome.storage.local.set({'romance':data});
     });
