@@ -216,6 +216,7 @@ chromeLoad.prototype.math = function(){
   var target = gtch("math-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("math-stats");
       var data = saveh("math-stats");
       chrome.storage.local.set({'math':data});
     });
