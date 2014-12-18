@@ -29,6 +29,7 @@ chromeLoad.prototype.drama = function(){
   var target = gtch("drama-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("drama-stats");
       var data = saveh("drama-stats");
       chrome.storage.local.set({'drama':data});
     });
