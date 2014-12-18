@@ -12,6 +12,7 @@ chromeLoad.prototype.money = function(){
   var target = gtch("money-text",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("money-text");
       var data = saveh("money-text");
       chrome.storage.local.set({'money':data});
     });
