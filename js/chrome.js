@@ -199,6 +199,7 @@ chromeLoad.prototype.nonfiction = function(){
   var target = gtch("nonfiction-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("nonfiction-stats");
       var data = saveh("nonfiction-stats");
       chrome.storage.local.set({'nonfiction':data});
     });
