@@ -97,6 +97,7 @@ chromeLoad.prototype.historybook = function(){
   var target = gtch("history-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("history-stats");
       var data = saveh("history-stats");
       chrome.storage.local.set({'History':data});
     });
