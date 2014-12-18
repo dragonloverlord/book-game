@@ -250,6 +250,7 @@ chromeLoad.prototype.satire = function(){
   var target = gtch("satire-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("satire-stats");
       var data = saveh("satire-stats");
       chrome.storage.local.set({'satire':data});
     });
