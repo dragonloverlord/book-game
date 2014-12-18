@@ -63,6 +63,7 @@ chromeLoad.prototype.scifi = function(){
   var target = gtch("scifi-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("scifi-stats");
       var data = saveh("scifi-stats");
       chrome.storage.local.set({'scifi':data});
     });
