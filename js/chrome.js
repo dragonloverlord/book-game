@@ -233,6 +233,7 @@ chromeLoad.prototype.humor = function(){
   var target = gtch("humor-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("humor-stats");
       var data = saveh("humor-stats");
       chrome.storage.local.set({'humor':data});
     });

@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("humor-stats");
   errorh("satire-stats");
   errorh("romance-stats");
   errorh("report-stats");
