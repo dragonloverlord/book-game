@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("childrens-stats");
   errorh("fiction-stats");
   errorh("nonfiction-stats");
   errorh("math-stats");

@@ -114,6 +114,7 @@ chromeLoad.prototype.childrens = function(){
   var target = gtch("childrens-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+
       var data = saveh("childrens-stats");
       chrome.storage.local.set({'childrens':data});
     });
