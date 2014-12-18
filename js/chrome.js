@@ -46,6 +46,7 @@ chromeLoad.prototype.fantasy = function(){
   var target = gtch("fantasy-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("fantasy-stats");
       var data = saveh("fantasy-stats");
       chrome.storage.local.set({'fantasy':data});
     });

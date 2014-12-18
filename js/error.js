@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("fantasy-stats");
   errorh("scifi-stats");
   errorh("trashy-stats");
   errorh("history-stats");
