@@ -148,6 +148,7 @@ bookbuttons.prototype.historyLock = function(){
   var target = gt("history");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("history");
       var data = savev("history");
       chrome.storage.local.set({'historyLock':data});
     });
