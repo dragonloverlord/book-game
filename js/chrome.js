@@ -182,6 +182,7 @@ chromeLoad.prototype.fiction = function(){
   var target = gtch("fiction-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("fiction-stats");
       var data = saveh("fiction-stats");
       chrome.storage.local.set({'fiction':data});
     });
