@@ -114,7 +114,7 @@ chromeLoad.prototype.childrens = function(){
   var target = gtch("childrens-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
-
+      errorh("childrens-stats");
       var data = saveh("childrens-stats");
       chrome.storage.local.set({'childrens':data});
     });
@@ -131,6 +131,7 @@ bookbuttons.prototype.trashyLock = function(){
   var target = gt("trashy");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("trashy");
       var data = savev("trashy");
       chrome.storage.local.set({'trashyLock':data});
     });
