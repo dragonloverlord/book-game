@@ -14,7 +14,6 @@ function errorChecker(){
   errorh("environmental-stats");
   errorh("parenting-stats");
   errorh("religious-stats");
-  errorv("romance");
   errorv("action");
   errorv("environmental");
   errorv("parenting");

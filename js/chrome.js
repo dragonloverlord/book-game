@@ -165,6 +165,7 @@ bookbuttons.prototype.romanceLock = function(){
   var target = gt("romance");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("romance");
       var data = savev("romance");
       chrome.storage.local.set({'romanceLock':data});
     });
