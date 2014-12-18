@@ -80,6 +80,7 @@ chromeLoad.prototype.trashy = function(){
   var target = gtch("trashy-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("trashy-stats");
       var data = saveh("trashy-stats");
       chrome.storage.local.set({'trashy':data});
     });
