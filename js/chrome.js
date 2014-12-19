@@ -437,6 +437,7 @@ chromeLoad.prototype.parenting = function(){
   var target = gtch("parenting-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("parenting-stats");
       var data = saveh("parenting-stats");
       chrome.storage.local.set({'parenting':data});
     });
