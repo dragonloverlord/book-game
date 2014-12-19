@@ -318,6 +318,7 @@ chromeLoad.prototype.gothic = function(){
   var target = gtch("gothic-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("gothic-stats");
       var data = saveh("gothic-stats");
       chrome.storage.local.set({'gothic':data});
     });

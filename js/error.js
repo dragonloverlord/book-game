@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("gothic-stats");
   errorh("adventure-stats");
   errorh("action-stats");
   errorh("environmental-stats");
