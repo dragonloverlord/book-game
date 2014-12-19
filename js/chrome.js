@@ -420,6 +420,7 @@ bookbuttons.prototype.parentingLock = function(){
   var target = gt("parenting");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("parenting");
       var data = savev("parenting");
       chrome.storage.local.set({'parentingLock':data});
     });
