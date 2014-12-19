@@ -1,6 +1,5 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
-  errorh("action-stats");
   errorh("environmental-stats");
   errorh("parenting-stats");
   errorh("religious-stats");

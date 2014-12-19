@@ -369,6 +369,7 @@ chromeLoad.prototype.action = function(){
   var target = gtch("action-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("action-stats");
       var data = saveh("action-stats");
       chrome.storage.local.set({'action':data});
     });
