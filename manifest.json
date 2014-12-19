@@ -14,7 +14,10 @@
   },
   "app": {
     "background": {
-      "scripts": ["main.js"]
+      "scripts": [
+        "main.js",
+        "storage.js"
+        ]
     }
   },
   "permissions": [
