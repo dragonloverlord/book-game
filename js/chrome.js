@@ -352,6 +352,7 @@ bookbuttons.prototype.actionLock = function(){
   var target = gt("action");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("action");
       var data = savev("action");
       chrome.storage.local.set({'actionLock':data});
     });

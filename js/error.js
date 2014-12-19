@@ -4,7 +4,6 @@ function errorChecker(){
   errorh("environmental-stats");
   errorh("parenting-stats");
   errorh("religious-stats");
-  errorv("action");
   errorv("environmental");
   errorv("parenting");
   errorv("religious");
