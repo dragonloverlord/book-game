@@ -284,6 +284,7 @@ chromeLoad.prototype.report = function(){
   var target = gtch("report-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("report-stats");
       var data = saveh("report-stats");
       chrome.storage.local.set({'report':data});
     });
