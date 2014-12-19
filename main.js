@@ -26,6 +26,7 @@ chrome.runtime.onInstalled.addListener(function() {
 chrome.contextMenus.onClicked.addListener(function(itemData) {
 	if (itemData.menuItemId == "help")
 		chrome.app.window.create('html/help.html', {
+		  id: 'helpWindow',
 		  innerBounds:{
 		    width: 1000,
 		    height: 550,
