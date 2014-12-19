@@ -1,7 +1,5 @@
 setTimeout(lockCheck, 4000);
 function lockCheck(){
-  var parenting = gt("parenting").value;
-  var parenting = parseInt(parenting);
   var religious = gt("religious").value;
   var religious = parseInt(religious);
   var scifiStats = gt("scifi-stats").innerHTML;
@@ -12,8 +10,6 @@ function lockCheck(){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
-  }if(parenting === 1){
-    unlock("Parenting","parenting","parenting-sn");
   }if(religious === 1){
     unlock("Religious","religious","religious-sn");
   }

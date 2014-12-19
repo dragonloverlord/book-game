@@ -488,6 +488,19 @@ bookbuttons.prototype.parentingLock = function(){
       errorv("parenting");
       var data = savev("parenting");
       chrome.storage.local.set({'parentingLock':data});
+      chrome.storage.local.get('parentingLockValue',function(obj){
+        var parentingLockValue = parseInt(obj.parentingLockValue);
+        var lock = parentingLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"parentingLockValue":"2"});
+          var parenting = gt("parenting").value;
+          var parenting = parseInt(parenting);
+          if(parenting === 1){
+            unlock("Parenting","parenting","parenting-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
