@@ -386,6 +386,7 @@ bookbuttons.prototype.environmentalLock = function(){
   var target = gt("environmental");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("environmental");
       var data = savev("environmental");
       chrome.storage.local.set({'environmentalLock':data});
     });

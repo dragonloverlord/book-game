@@ -3,7 +3,6 @@ function errorChecker(){
   errorh("environmental-stats");
   errorh("parenting-stats");
   errorh("religious-stats");
-  errorv("environmental");
   errorv("parenting");
   errorv("religious");
 }
