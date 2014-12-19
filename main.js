@@ -5,7 +5,8 @@ chrome.app.runtime.onLaunched.addListener(function() {
       height: 658,
       minWidth: 1200,
       minHeight: 658
-    }
+    },
+    id: 'mainWindow'
   });
 });
 
