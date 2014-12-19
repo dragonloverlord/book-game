@@ -367,7 +367,7 @@ chromeLoad.prototype.gothic = function(){
 }
 
 chromeLoad.prototype.adventure = function(){
-  chrome.storage.local.get('adventure',function(obj) {
+  chrome.storage.local.get('adventure',function(obj){
     var adventure = parseInt(obj.adventure);
     gt("adventure-stats").innerHTML = adventure;
   });
@@ -384,7 +384,7 @@ chromeLoad.prototype.adventure = function(){
 }
 
 bookbuttons.prototype.actionLock = function(){
-  chrome.storage.local.get('actionLock',function(obj) {
+  chrome.storage.local.get('actionLock',function(obj){
     var actionLock = parseInt(obj.actionLock);
     gt("action").value = actionLock;
   });
@@ -394,6 +394,19 @@ bookbuttons.prototype.actionLock = function(){
       errorv("action");
       var data = savev("action");
       chrome.storage.local.set({'actionLock':data});
+      chrome.storage.local.get('actionLockValue',function(obj){
+        var actionLockValue = parseInt(obj.actionLockValue);
+        var lock = actionLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'actionLockValue':"2"});
+          var action = gt("action").value;
+          var action = parseInt(action);
+          if(action === 1){
+            unlock("Action","action","action-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
@@ -401,7 +414,7 @@ bookbuttons.prototype.actionLock = function(){
 }
 
 chromeLoad.prototype.action = function(){
-  chrome.storage.local.get('action',function(obj) {
+  chrome.storage.local.get('action',function(obj){
     var action = parseInt(obj.action);
     gt("action-stats").innerHTML = action;
   });

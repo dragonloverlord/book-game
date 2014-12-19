@@ -1,7 +1,5 @@
 setTimeout(lockCheck, 4000);
 function lockCheck(){
-  var action = gt("action").value;
-  var action = parseInt(action);
   var environmental = gt("environmental").value;
   var environmental = parseInt(environmental);
   var parenting = gt("parenting").value;
@@ -16,8 +14,6 @@ function lockCheck(){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
-  }if(action === 1){
-    unlock("Action","action","action-sn");
   }if(environmental === 1){
     unlock("Environmental","environmental","environmental-sn");
   }if(parenting === 1){
