@@ -107,7 +107,7 @@ chromeLoad.prototype.historybook = function(){
 }
 
 chromeLoad.prototype.childrens = function(){
-  chrome.storage.local.get('childrens',function(obj) {
+  chrome.storage.local.get('childrens',function(obj){
     var childrens = parseInt(obj.childrens);
     gt("childrens-stats").innerHTML = childrens;
   });
@@ -124,7 +124,7 @@ chromeLoad.prototype.childrens = function(){
 }
 
 bookbuttons.prototype.trashyLock = function(){
-  chrome.storage.local.get('trashyLock',function(obj) {
+  chrome.storage.local.get('trashyLock',function(obj){
     var trashyLock = parseInt(obj.trashyLock);
     gt("trashy").value = trashyLock;
   });
@@ -134,6 +134,19 @@ bookbuttons.prototype.trashyLock = function(){
       errorv("trashy");
       var data = savev("trashy");
       chrome.storage.local.set({'trashyLock':data});
+      chrome.storage.local.get('trashyLockValue',function(obj){
+        var trashyLockValue = parseInt(obj.trashyLockValue);
+        var lock = trashyLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'trashyLockValue':"2"});
+          var trashy = gt("trashy").value;
+          var trashy = parseInt(trashy);
+          if(trashy === 1){
+            unlock("Trashy","trashy","trashy-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
@@ -141,7 +154,7 @@ bookbuttons.prototype.trashyLock = function(){
 }
 
 bookbuttons.prototype.historyLock = function(){
-  chrome.storage.local.get('historyLock',function(obj) {
+  chrome.storage.local.get('historyLock',function(obj){
     var historyLock = parseInt(obj.historyLock);
     gt("history").value = historyLock;
   });

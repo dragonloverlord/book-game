@@ -1,7 +1,5 @@
 setTimeout(lockCheck, 4000);
 function lockCheck(){
-  var trashy = gt("trashy").value;
-  var trashy = parseInt(trashy);
   var history = gt("history").value;
   var history = parseInt(history);
   var romance = gt("romance").value;
@@ -18,9 +16,7 @@ function lockCheck(){
   var scifiStats = parseInt(scifiStats);
   var humorStats = gt("humor-stats").innerHTML;
   var humorStats = parseInt(humorStats);
-  if(trashy === 1){
-    unlock("Trashy","trashy","trashy-sn");
-  }if(scifiStats >= 10){
+  if(scifiStats >= 10){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
   }if(history === 1){
     unlock("History","history","history-sn");
