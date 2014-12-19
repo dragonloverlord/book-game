@@ -1,7 +1,6 @@
 setTimeout(errorChecker, 3000);
 function errorChecker(){
   errorh("religious-stats");
-  errorv("religious");
 }
 
 setTimeout(lockCheck, 4000);

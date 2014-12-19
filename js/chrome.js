@@ -454,6 +454,7 @@ bookbuttons.prototype.religiousLock = function(){
   var target = gt("religious");
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorv("religious");
       var data = savev("religious");
       chrome.storage.local.set({'religiousLock':data});
     });
