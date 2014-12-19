@@ -37,6 +37,7 @@ chrome.contextMenus.onClicked.addListener(function(itemData) {
 
 	if (itemData.menuItemId == "about")
 		chrome.app.window.create('html/about.html', {
+		  id: 'aboutWindow',
 		  innerBounds:{
 		    width: 600,
 		    height: 475,
