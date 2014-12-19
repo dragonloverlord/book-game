@@ -301,6 +301,7 @@ chromeLoad.prototype.survival = function(){
   var target = gtch("survival-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("survival-stats");
       var data = saveh("survival-stats");
       chrome.storage.local.set({'survival':data});
     });
