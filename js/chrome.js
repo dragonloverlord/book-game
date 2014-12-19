@@ -403,6 +403,7 @@ chromeLoad.prototype.environmental = function(){
   var target = gtch("environmental-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("environmental-stats");
       var data = saveh("environmental-stats");
       chrome.storage.local.set({'environmental':data});
     });
