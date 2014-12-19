@@ -1,7 +1,5 @@
 setTimeout(lockCheck, 4000);
 function lockCheck(){
-  var history = gt("history").value;
-  var history = parseInt(history);
   var romance = gt("romance").value;
   var romance = parseInt(romance);
   var action = gt("action").value;
@@ -18,8 +16,6 @@ function lockCheck(){
   var humorStats = parseInt(humorStats);
   if(scifiStats >= 10){
     unlockUnknown("Fantasy","fantasy","fantasy-sn");
-  }if(history === 1){
-    unlock("History","history","history-sn");
   }if(humorStats >= 5){
     unlockUnknown("Satire","satire","satire-sn");
   }if(romance === 1){

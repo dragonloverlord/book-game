@@ -164,6 +164,19 @@ bookbuttons.prototype.historyLock = function(){
       errorv("history");
       var data = savev("history");
       chrome.storage.local.set({'historyLock':data});
+      chrome.storage.local.get('historyLockValue',function(obj){
+        var historyLockValue = parseInt(obj.historyLockValue);
+        var lock = historyLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'historyLockValue':"2"});
+          var history = gt("history").value;
+          var history = parseInt(history);
+          if(history === 1){
+            unlock("History","history","history-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
