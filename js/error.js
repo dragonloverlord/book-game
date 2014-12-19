@@ -1,8 +1,3 @@
-setTimeout(errorChecker, 3000);
-function errorChecker(){
-  errorh("religious-stats");
-}
-
 setTimeout(lockCheck, 4000);
 function lockCheck(){
   var trashy = gt("trashy").value;

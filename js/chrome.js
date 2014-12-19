@@ -471,6 +471,7 @@ chromeLoad.prototype.religious = function(){
   var target = gtch("religious-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("religious-stats");
       var data = saveh("religious-stats");
       chrome.storage.local.set({'religious':data});
     });
