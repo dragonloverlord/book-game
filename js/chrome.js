@@ -335,6 +335,7 @@ chromeLoad.prototype.adventure = function(){
   var target = gtch("adventure-stats",0);
   var observer = new MutationObserver(function(mutations){
     mutations.forEach(function(mutation){
+      errorh("adventure-stats");
       var data = saveh("adventure-stats");
       chrome.storage.local.set({'adventure':data});
     });
