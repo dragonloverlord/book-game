@@ -441,6 +441,19 @@ bookbuttons.prototype.environmentalLock = function(){
       errorv("environmental");
       var data = savev("environmental");
       chrome.storage.local.set({'environmentalLock':data});
+      chrome.storage.local.get('environmentalLockValue',function(obj){
+        var environmentalLockValue = parseInt(obj.environmentalLockValue);
+        var lock = environmentalLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"environmentalLockValue":"2"});
+          var environmental = gt("environmental").value;
+          var environmental = parseInt(environmental);
+          if(environmental === 1){
+            unlock("Environmental","environmental","environmental-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
