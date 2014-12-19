@@ -184,7 +184,7 @@ bookbuttons.prototype.historyLock = function(){
 }
 
 bookbuttons.prototype.romanceLock = function(){
-  chrome.storage.local.get('romanceLock',function(obj) {
+  chrome.storage.local.get('romanceLock',function(obj){
     var romanceLock = parseInt(obj.romanceLock);
     gt("romance").value = romanceLock;
   });
@@ -194,6 +194,19 @@ bookbuttons.prototype.romanceLock = function(){
       errorv("romance");
       var data = savev("romance");
       chrome.storage.local.set({'romanceLock':data});
+      chrome.storage.local.get('romanceLockValue',function(obj){
+        var romanceLockValue = parseInt(obj.romanceLockValue);
+        var lock = romanceLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'romanceLockValue':"2"});
+          var romance = gt("romance").value;
+          var romance = parseInt(romance);
+          if(romance === 1){
+            unlock("Romance","romance","romance-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
@@ -201,7 +214,7 @@ bookbuttons.prototype.romanceLock = function(){
 }
 
 chromeLoad.prototype.fiction = function(){
-  chrome.storage.local.get('fiction',function(obj) {
+  chrome.storage.local.get('fiction',function(obj){
     var fiction = parseInt(obj.fiction);
     gt("fiction-stats").innerHTML = fiction;
   });
@@ -218,7 +231,7 @@ chromeLoad.prototype.fiction = function(){
 }
 
 chromeLoad.prototype.nonfiction = function(){
-  chrome.storage.local.get('nonfiction',function(obj) {
+  chrome.storage.local.get('nonfiction',function(obj){
     var nonfiction = parseInt(obj.nonfiction);
     gt("nonfiction-stats").innerHTML = nonfiction;
   });
