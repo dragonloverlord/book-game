@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Book Writer",
-  "version": "2.2.8.5",
+  "version": "2.2.8.6",
   "description":"A book creating idle game that is made for chrome.",
   "author":"dragonloverlord",
   "short_name":"Book Writer",
