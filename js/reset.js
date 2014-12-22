@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function reset(){
-  chrome.storage.sync.clear();
+  chrome.storage.local.clear();
   idf("money-text").innerHTML = 0;
   idf("childrens-stats").innerHTML = 0;
   idf("drama-stats").innerHTML = 0;
