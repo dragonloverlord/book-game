@@ -431,7 +431,7 @@ chromeLoad.prototype.action = function(){
 }
 
 bookbuttons.prototype.environmentalLock = function(){
-  chrome.storage.local.get('environmentalLock',function(obj) {
+  chrome.storage.local.get('environmentalLock',function(obj){
     var environmentalLock = parseInt(obj.environmentalLock);
     gt("environmental").value = environmentalLock;
   });
@@ -461,7 +461,7 @@ bookbuttons.prototype.environmentalLock = function(){
 }
 
 chromeLoad.prototype.environmental = function(){
-  chrome.storage.local.get('environmental',function(obj) {
+  chrome.storage.local.get('environmental',function(obj){
     var environmental = parseInt(obj.environmental);
     gt("environmental-stats").innerHTML = environmental;
   });
@@ -478,7 +478,7 @@ chromeLoad.prototype.environmental = function(){
 }
 
 bookbuttons.prototype.parentingLock = function(){
-  chrome.storage.local.get('parentingLock',function(obj) {
+  chrome.storage.local.get('parentingLock',function(obj){
     var parentingLock = parseInt(obj.parentingLock);
     gt("parenting").value = parentingLock;
   });
@@ -508,7 +508,7 @@ bookbuttons.prototype.parentingLock = function(){
 }
 
 chromeLoad.prototype.parenting = function(){
-  chrome.storage.local.get('parenting',function(obj) {
+  chrome.storage.local.get('parenting',function(obj){
     var parenting = parseInt(obj.parenting);
     gt("parenting-stats").innerHTML = parenting;
   });
@@ -525,7 +525,7 @@ chromeLoad.prototype.parenting = function(){
 }
 
 bookbuttons.prototype.religiousLock = function(){
-  chrome.storage.local.get('religiousLock',function(obj) {
+  chrome.storage.local.get('religiousLock',function(obj){
     var religiousLock = parseInt(obj.religiousLock);
     gt("religious").value = religiousLock;
   });
@@ -535,6 +535,19 @@ bookbuttons.prototype.religiousLock = function(){
       errorv("religious");
       var data = savev("religious");
       chrome.storage.local.set({'religiousLock':data});
+      chrome.storage.local.get("religiousLockValue",function(obj){
+        var religiousLockValue = parseInt(obj.religiousLockValue);
+        var lock = religiousLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"religiousLockValue":"2"});
+          var religious = gt("religious").value;
+          var religious = parseInt(religious);
+          if(religious === 1){
+            unlock("Religious","religious","religious-sn");
+          }
+        }
+      });
     });
   });
   var config = {attributes:true};
@@ -542,7 +555,7 @@ bookbuttons.prototype.religiousLock = function(){
 }
 
 chromeLoad.prototype.religious = function(){
-  chrome.storage.local.get('religious',function(obj) {
+  chrome.storage.local.get('religious',function(obj){
     var religious = parseInt(obj.religious);
     gt("religious-stats").innerHTML = religious;
   });
