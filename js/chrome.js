@@ -66,6 +66,11 @@ chromeLoad.prototype.scifi = function(){
       errorh("scifi-stats");
       var data = saveh("scifi-stats");
       chrome.storage.local.set({'scifi':data});
+      var scifiStats = gt("scifi-stats").innerHTML;
+      var scifiStats = parseInt(scifiStats);
+      if(scifiStats >= 10){
+        unlockUnknown("Fantasy","fantasy","fantasy-sn");
+      }
     });
   });
   var config = {characterData:true};
