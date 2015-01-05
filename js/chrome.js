@@ -154,6 +154,8 @@ bookbuttons.prototype.fantasyLock = function(){
       });
     });
   });
+  var config = {attributes:true};
+  observer.observe(target,config);
 }
 
 bookbuttons.prototype.trashyLock = function(){
