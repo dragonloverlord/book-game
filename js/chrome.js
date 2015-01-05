@@ -131,7 +131,7 @@ chromeLoad.prototype.childrens = function(){
 bookbuttons.prototype.fantasyLock = function(){
   chrome.storage.local.get('fantasyLock',function(obj){
     var fantasyLock = parseInt(obj.fantasyLock);
-    gt("fantasy").value fantasyLock;
+    gt("fantasy").value = fantasyLock;
   });
   var target = gt("fantasy");
   var observer = new MutationObserver(function(mutations){
