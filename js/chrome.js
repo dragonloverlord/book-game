@@ -216,6 +216,36 @@ bookbuttons.prototype.historyLock = function(){
   observer.observe(target,config);
 }
 
+bookbuttons.prototype.satireLock = function(){
+  chrome.storage.local.get('satireLock',function(obj){
+    var satireLock = parseInt(obj.satireLock);
+    gt("satire").value = satireLock;
+  });
+  var target = gt("satire");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorv("satire");
+      var data = savev("satire");
+      chrome.storage.local.set({'satireLock':data});
+      chrome.storage.local.get('satireLockValue',function(obj){
+        var satireLockValue = parseInt(obj.satireLockValue);
+        var lock = satireLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'satireLockValue':"2"});
+          var satire = gt("satire").value;
+          var satire = parseInt(satire);
+          if(satire === 1){
+            unlock("Satire","satire","satire-sn");
+          }
+        }
+      });
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
+}
+
 bookbuttons.prototype.romanceLock = function(){
   chrome.storage.local.get('romanceLock',function(obj){
     var romanceLock = parseInt(obj.romanceLock);
