@@ -308,6 +308,11 @@ chromeLoad.prototype.humor = function(){
       errorh("humor-stats");
       var data = saveh("humor-stats");
       chrome.storage.local.set({'humor':data});
+      var humorStats = gt("humor-stats").innerHTML;
+      var humorStats = parseInt(humorStats);
+      if(humorStats >= 5){
+        unlock("Satire","satire","satire-sn");
+      }
     });
   });
   var config = {characterData:true};
