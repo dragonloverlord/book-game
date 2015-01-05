@@ -128,6 +128,34 @@ chromeLoad.prototype.childrens = function(){
   observer.observe(target,config);
 }
 
+bookbuttons.prototype.fantasyLock = function(){
+  chrome.storage.local.get('fantasyLock',function(obj){
+    var fantasyLock = parseInt(obj.fantasyLock);
+    gt("fantasy").value fantasyLock;
+  });
+  var target = gt("fantasy");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorv("fantasy");
+      var data = savev("fantasy");
+      chrome.storage.local.set({'fantasyLock':data});
+      chrome.storage.local.get('fantasyLockValue',function(obj){
+        var fantasyLockValue = parseInt(obj.fantasyLockValue);
+        var lock = fantasyLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({'fantasyLockValue':"2"});
+          var fantasy = gt("fantasy").value;
+          var fantasy = parseInt(fantasy);
+          if(fantasy === 1){
+            unlock("Fantasy","fantasy","fantasy-sn");
+          }
+        }
+      });
+    });
+  });
+}
+
 bookbuttons.prototype.trashyLock = function(){
   chrome.storage.local.get('trashyLock',function(obj){
     var trashyLock = parseInt(obj.trashyLock);
