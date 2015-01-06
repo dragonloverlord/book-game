@@ -437,3 +437,29 @@ bookbuttons.prototype.onClickReligious = function(){
 bookbuttons.prototype.startCalcComic = function(){
   calc(715,"comic-stats");
 }
+
+bookbuttons.prototype.onClickComic = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("comic").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(19680);
+    picAdder(19680);
+    setTimeout(this.startCalcComic, 19680);
+    setTimeout(bookPrompt, 19680);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 35000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 35000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Comic","comic","comic-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
