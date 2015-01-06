@@ -433,3 +433,7 @@ bookbuttons.prototype.onClickReligious = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcComic = function(){
+  calc(715,"comic-stats");
+}
