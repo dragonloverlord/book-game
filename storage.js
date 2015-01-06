@@ -7,3 +7,4 @@ chrome.storage.local.set({"parentingLockValue":"1"});
 chrome.storage.local.set({"religiousLockValue":"1"});
 chrome.storage.local.set({"fantasyLockValue":"1"});
 chrome.storage.local.set({"satireLockValue":"1"});
+chrome.storage.local.set({"comicLockValue":"1"});
