@@ -44,3 +44,33 @@ chromeLoad.prototype.comic = function(){
   var config = {characterData:true};
   observer.observe(target,config);
 }
+
+bookbuttons.prototype.educationalLock = function(){
+  chrome.storage.local.get('educationalLock',function(obj){
+    var educationalLock = parseInt(obj.educationalLock);
+    gt("educational").value = educationalLock;
+  });
+  var target = gt("educational");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorv("educational");
+      var data = savev("educational");
+      chrome.storage.local.set({'educationalLock':data});
+      chrome.storage.local.get("educationalLockValue",function(obj){
+        var educationalLockValue = parseInt(obj.educationalLockValue);
+        var lock = educationalLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"educationalLockValue":"2"});
+          var educational = gt("educational").value;
+          var educational = parseInt(educational);
+          if(educational === 1){
+            unlock("Educational","educational","educational-sn");
+          }
+        }
+      });
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
+}
