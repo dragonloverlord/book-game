@@ -463,3 +463,33 @@ bookbuttons.prototype.onClickComic = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcEducational = function(){
+  calc(800,"educational-stats");
+}
+
+bookbuttons.prototype.onClickEducational = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("educational").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(18380);
+    picAdder(18380);
+    setTimeout(this.startCalcEducational, 18380);
+    setTimeout(bookPrompt, 18380);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 40000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 40000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Educational","educational","educational-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
