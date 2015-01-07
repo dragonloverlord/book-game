@@ -74,3 +74,20 @@ bookbuttons.prototype.educationalLock = function(){
   var config = {attributes:true};
   observer.observe(target,config);
 }
+
+chromeLoad.prototype.educational = function(){
+  chrome.storage.local.get('educational',function(obj){
+    var educational = parseInt(obj.educational);
+    gt("educational-stats").innerHTML = educational;
+  });
+  var target = gtch("educational-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorh("educational-stats");
+      var data = saveh("educational-stats");
+      chrome.storage.local.set({'educational':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
+}
