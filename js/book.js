@@ -493,3 +493,33 @@ bookbuttons.prototype.onClickEducational = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcFashion = function(){
+  calc(825, "fashion-stats");
+}
+
+bookbuttons.prototype.onClickFashion = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("fashion").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(19880);
+    picAdder(19880);
+    setTimeout(this.startCalcFashion, 19880);
+    setTimeout(bookPrompt, 19880);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 45000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 45000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Fashion","fashion","fashion-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
