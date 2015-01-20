@@ -27,6 +27,7 @@ function reset(){
   idf("religious-stats").innerHTML = 0;
   idf("comic-stats").innerHTML = 0;
   idf("educational-stats").innerHTML = 0;
+  idf("fashion-stats").innerHTML = 0;
   var fantasy = idf("fantasy");
   fantasy.innerHTML = "Locked ???";
   fantasy.className = "book-button-locked";
@@ -69,4 +70,8 @@ function reset(){
   educational.innerHTML = "Locked 40000$";
   educational.value = 0;
   educational.className = "book-button-locked";
+  var fashion = idf("fashion");
+  fashion.innerHTML = "Locked 45000$";
+  fashion.value = 0;
+  fashion.className = "book-button-locked";
 }
