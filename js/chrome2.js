@@ -121,3 +121,20 @@ bookbuttons.prototype.fashionLock = function(){
   var config = {attributes:true};
   observer.observe(target,config);
 }
+
+chromeLoad.prototype.fashion = function(){
+  chrome.storage.local.get('fashion',function(obj){
+    var fashion = parseInt(obj.fashion);
+    gt("fashion-stats").innerHTML = fashion;
+  });
+  var target = gtch("fashion-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorh("fashion-stats");
+      var data = saveh("fashion-stats");
+      chrome.storage.local.set({'fashion':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
+}
