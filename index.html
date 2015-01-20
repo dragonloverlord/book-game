@@ -44,7 +44,7 @@
             <div class="stats-text" id="fantasy-sn">???</div>
             <div class="save-div" id="fantasy-stats" ng-init="load.fantasy()">0</div>
             <div class="stats-text" id="fashion-sn">???</div>
-            <div class="save-div" id="fashion-stats" ng-init="load.fashion()"></div>
+            <div class="save-div" id="fashion-stats" ng-init="load.fashion()">0</div>
             <div class="stats-text">Fiction</div>
             <div class="save-div" id="fiction-stats" ng-init="load.fiction()">0</div>
             <div class="stats-text">Gothic</div>
@@ -83,6 +83,7 @@
             <button ng-click="book.onClickEducational()" class="book-button-locked" type="button" id="educational" value="0" ng-init="book.educationalLock()">Locked 40000$</button>
             <button ng-click="book.onClickEnvironmental()" class="book-button-locked" type="button" id="environmental" value="0" ng-init="book.environmentalLock()">Locked 12000$</button>
             <button ng-click="book.onClickFantasy()" class="book-button-locked" type="button" id="fantasy" value="0" ng-init="book.fantasyLock()">Locked ???</button>
+            <button ng-click="book.onClickFashion()" class="book-button-locked" type="button" id="fashion" value="0" ng-init="book.fashionLock()">Locked 45000$</button>
             <button ng-click="book.onClickFiction()" class="book-button" type="button" id="fiction">Fiction</button>
             <button ng-click="book.onClickGothic()" class="book-button" type="button" id="gothic">Gothic</button>
             <button ng-click="book.onClickHistory()" class="book-button-locked" type="button" id="history" value="0" ng-init="book.historyLock()">Locked 1500$</button>
