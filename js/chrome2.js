@@ -91,3 +91,33 @@ chromeLoad.prototype.educational = function(){
   var config = {characterData:true};
   observer.observe(target,config);
 }
+
+bookbuttons.prototype.fashionLock = function(){
+  chrome.storage.local.get('fashionLock',function(obj){
+    var fashionLock = parseInt(obj.fashionLock);
+    gt("fashion").value = fashionLock;
+  });
+  var target = gt("fashion");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorv("fashion");
+      var data = savev("fashion");
+      chrome.storage.local.set({'fashionLock':data});
+      chrome.storage.local.get("fashionLockValue",function(obj){
+        var fashionLockValue = parseInt(obj.fashionLockValue);
+        var lock = fashionLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"fashionLockValue":"2"});
+          var fashion = gt("fashion").value;
+          var fashion = parseInt(fashion);
+          if(fashion === 1){
+            unlock("Fashion","fashion","fashion-sn");
+          }
+        }
+      });
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
+}
