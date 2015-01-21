@@ -138,3 +138,50 @@ chromeLoad.prototype.fashion = function(){
   var config = {characterData:true};
   observer.observe(target,config);
 }
+
+bookbuttons.prototype.gossipLock = function(){
+  chrome.storage.local.get('gossipLock',function(obj){
+    var gossipLock = parseInt(obj.gossipLock);
+    gt("gossip").value = gossipLock;
+  });
+  var target = gt("gossip");
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorv("gossip");
+      var data = savev("gossip");
+      chrome.storage.local.set({'gossipLock':data});
+      chrome.storage.local.get("gossipLockValue",function(obj){
+        var gossipLockValue = parseInt(obj.gossipLockValue);
+        var lock = gossipLockValue;
+        while(lock === 1){
+          var lock = 2;
+          chrome.storage.local.set({"gossipLockValue":"2"});
+          var gossip = gt("gossip").value;
+          var gossip = parseInt(gossip);
+          if(gossip === 1){
+            unlock("Gossip","gossip","gossip-sn");
+          }
+        }
+      });
+    });
+  });
+  var config = {attributes:true};
+  observer.observe(target,config);
+}
+
+chromeLoad.prototype.gossip = function(){
+  chrome.storage.local.get('gossip',function(obj){
+    var gossip = parseInt(obj.gossip);
+    gt("gossip-stats").innerHTML = gossip;
+  });
+  var target = gtch("gossip-stats",0);
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){
+      errorh("gossip-stats");
+      var data = saveh("gossip-stats");
+      chrome.storage.local.set({'gossip':data});
+    });
+  });
+  var config = {characterData:true};
+  observer.observe(target,config);
+}
