@@ -10,3 +10,4 @@ chrome.storage.local.set({"satireLockValue":"1"});
 chrome.storage.local.set({"comicLockValue":"1"});
 chrome.storage.local.set({"educationalLockValue":"1"});
 chrome.storage.local.set({"fashionLockValue":"1"});
+chrome.storage.local.set({"gossipLockValue":"1"});
