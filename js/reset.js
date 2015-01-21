@@ -78,5 +78,18 @@ function reset(){
   var gossip = idf("gossip");
   gossip.innerHTML = "Locked 50000$";
   gossip.value = 0;
-  gossip.className = "book-button-locked"
+  gossip.className = "book-button-locked";
+  idf("fantasy-sn").innerHTML = "???";
+  idf("satire-sn").innerHTML = "???";
+  idf("history-sn").innerHTML = "???";
+  idf("trashy-sn").innerHTML = "???";
+  idf("action-sn").innerHTML = "???";
+  idf("romance-sn").innerHTML = "???";
+  idf("environmental-sn").innerHTML = "???";
+  idf("parenting-sn").innerHTML = "???";
+  idf("religious-sn").innerHTML = "???";
+  idf("comic-sn").innerHTML = "???";
+  idf("educational-sn").innerHTML = "???";
+  idf("fashion-sn").innerHTML = "???";
+  idf("gossip-sn").innerHTML = "???";
 }
