@@ -523,3 +523,33 @@ bookbuttons.prototype.onClickFashion = function(){
     errorPopup();
   }
 }
+
+bookbuttons.prototype.startCalcGossip = function(){
+  calc(900, "gossip-stats");
+}
+
+bookbuttons.prototype.onClickGossip = function(){
+  var lockState = gt("lock").value;
+  var isLocked = gt("gossip").value;
+  var isLocked = parseInt(isLocked);
+  if(lockState=="lockoff" && isLocked === 1){
+    lock(20000);
+    picAdder(20000);
+    setTimeout(this.startCalcGossip, 20000);
+    setTimeout(bookPrompt, 20000);
+  }else if(isLocked === 0){
+    var money = gt("money-text").innerHTML;
+    var money = parseInt(money);
+    if(money >= 50000){
+      var currentMoney = gt("money-text").innerHTML;
+      var currentMoney = parseInt(currentMoney);
+      var newMoney = currentMoney - 50000;
+      gt("money-text").innerHTML = newMoney;
+      unlock("Gossip","gossip","gossip-sn");
+    }else{
+      lockedPopup();
+    }
+  }else{
+    errorPopup();
+  }
+}
