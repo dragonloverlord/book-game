@@ -10,7 +10,7 @@ dependencies:
 transformers:
 - chrome
 - polymer:
-	entry-points:
+	entry_points:
 	- web/index.html
     csp: true
 - $dart2js:
