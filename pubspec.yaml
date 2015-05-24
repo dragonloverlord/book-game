@@ -6,7 +6,8 @@ homepage: https://github.com/dragonloverlord/book-game
 documentation: https://github.com/dragonloverlord/book-game/wiki
 dependencies:
   chrome: any
-  polymer: any
+  polymer: "^0.16.3+3"
+  angular: "^1.1.2"
 transformers:
 - polymer:
     entry_points:

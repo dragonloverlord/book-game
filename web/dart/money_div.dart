@@ -4,6 +4,9 @@ import 'dart:html';
 
 import 'money_text_span.dart';
 import 'reset_button.dart';
+import 'adventure_sn.dart';
+import 'adventure_stats.dart';
+
 
 Element br_element = new Element.tag('br');
 Element button_element = new Element.tag('button');
@@ -17,6 +20,8 @@ class MoneyDiv{
         MoneyTextSpan.main();
         addBr();
         ResetButton.main();
+        AdventureSn.main();
+        AdventureStats.main();
     }
     
     static void moneyDiv(){
