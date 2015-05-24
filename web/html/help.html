@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-csp>
+  <head>
+    <title>Help</title>
+    <script type="text/javascript" src="/js/angularjs/angular-loader.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/angularjs/angular-csp.css">
+    <link rel="stylesheet" type="text/css" href="/css/help.css">
+    <script type="text/javascript" src="/js/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="/js/help.js"></script>
+  </head>
+  <body class="background">
+    <div class="main-div">
+      <div ng-controller="helpbuttons as help" class="toc-div">
+        <button ng-click="help.names()" class="help-button" id="names" type="button">Book Names</button>
+        <button ng-click="help.general()" class="help-button" id="general" type="button">General</button>
+        <button ng-click="help.unlock()" class="help-button" id="unlock" type="button">Unlocking Books</button>
+      </div>
+      <div class="help-div">
+        <iframe id="iframe" class="iframe" src="about:blank"></iframe>
+      </div>
+    </div>
+  </body>
+</html>

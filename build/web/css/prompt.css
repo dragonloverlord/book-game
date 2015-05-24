@@ -1,0 +1,46 @@
+#main-div{
+  border:4px groove #009;
+  background-color:#EEE;
+}
+
+#body{
+  background-color:#DDF;
+}
+
+#prompt-msg{
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+.buttons{
+  cursor:pointer;
+  width:100px;
+  height:50px;
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  transition:box-shadow 0.5s;
+  border:1px solid #666;
+  border-radius:2px;
+  outline:none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
+}
+
+.buttons:active{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,190,200,205)), color-stop(0.25, rgba(0,180,190,205)), color-stop(0.5, rgba(0,170,180,205)), color-stop(0.75, rgba(0,204,201,205)), color-stop(1, rgba(0,203,205,205)));
+}
+
+.buttons:hover{
+  box-shadow:0 0 15px 0 #99F;
+}
+
+#button-div{
+  width:205px;
+  margin-left:auto;
+  margin-right:auto;
+}

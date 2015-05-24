@@ -1,0 +1,58 @@
+#main-div{
+  border:4px groove #009;
+  background-color:#EEE;
+}
+
+#body{
+  background-color:#DDF;
+}
+
+#name-msg{
+  font-family:arial;
+  font-size:20px;
+  text-align:center;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+#input-div{
+  margin-left:auto;
+  margin-right:auto;
+  width:360px;
+}
+
+#input{
+  width:250px;
+  height:40px;
+  font-size:16px;
+  font-family:arial;
+  border:solid 1px #CCC;
+  transition:box-shadow 0.5s, border 0.5s;
+  outline:none;
+}
+
+#input:focus{
+  box-shadow:0 0 15px 0 #99F;
+  border:solid 1px #99D;
+}
+
+#enter{
+  cursor:pointer;
+  width:100px;
+  height:50px;
+  font-size:16px;
+  font-family:arial;
+  transition:box-shadow 0.5s;
+  border:1px solid #666;
+  border-radius:2px;
+  outline:none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
+}
+
+#enter:active{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,190,200,205)), color-stop(0.25, rgba(0,180,190,205)), color-stop(0.5, rgba(0,170,180,205)), color-stop(0.75, rgba(0,204,201,205)), color-stop(1, rgba(0,203,205,205)));
+}
+
+#enter:hover{
+  box-shadow:0 0 15px 0 #99F;
+}

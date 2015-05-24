@@ -1,0 +1,114 @@
+.main-div{
+    border:4px groove #009;
+    width:1175px;
+    height:633px;
+    background-color:#DDF;
+    margin:auto auto auto auto;
+}
+
+.money{
+  border-left:3px groove #009;
+  border-bottom:3px groove #009;
+  width:120px;
+  height:623px;
+  margin-left:auto;
+  padding:5px;
+  font-family:consolas;
+  font-size:16px;
+  text-align:left;
+  background-color:#f2f2f2;
+  float:right;
+  overflow:scroll;
+  transition:height 2s, background-color 0.5s;
+}
+
+.save-button{
+  cursor:pointer;
+  width:100px;
+  transition:box-shadow 0.5s;
+  border:1px solid #666;
+  border-radius:2px;
+  outline:none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
+}
+
+.save-button:active{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,190,200,205)), color-stop(0.25, rgba(0,180,190,205)), color-stop(0.5, rgba(0,170,180,205)), color-stop(0.75, rgba(0,204,201,205)), color-stop(1, rgba(0,203,205,205)));
+}
+
+.save-button:hover{
+  box-shadow:0 0 15px 0 #99F;
+}
+
+.body{
+  background-color:#8D8;
+}
+
+.book-col{
+  height:633px;
+  width:165px;
+  float:left;
+  border-right:3px groove #009;
+  background-color:#f2f2f2;
+  overflow:scroll;
+}
+
+.book-button{
+  cursor:pointer;
+  margin-top:2px;
+  margin-bottom:2px;
+  width:150px;
+  border:1px solid #666;
+  border-radius:2px;
+  transition:box-shadow 0.5s;
+  outline:none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(198,240,250,255)), color-stop(0.25, rgba(172,230,240,255)), color-stop(0.5, rgba(147,220,230,255)), color-stop(0.75, rgba(142,254,251,255)), color-stop(1, rgba(137,253,255,255)));
+}
+
+.book-button:active{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,190,200,205)), color-stop(0.25, rgba(0,180,190,205)), color-stop(0.5, rgba(0,170,180,205)), color-stop(0.75, rgba(0,204,201,205)), color-stop(1, rgba(0,203,205,205)));
+}
+
+.book-button:hover{
+  box-shadow:0 0 15px 0 #99F;
+}
+
+.pic-div{
+  float:left;
+}
+
+.save-div{
+  border:2px groove #999;
+  width:94px;
+  background-color:#FFF;
+  overflow:hidden;
+}
+
+.stats-text{
+  font-family:arial;
+  font-size:12px;
+  width:100px;
+}
+
+.book-button-locked{
+  cursor:pointer;
+  margin-top:2px;
+  margin-bottom:2px;
+  width:150px;
+  color:#999;
+  transition:box-shadow 0.5s;
+}
+
+.book-button-locked:hover{
+  box-shadow:0 0 15px 0 #F99;
+}
+
+.probar{
+  height:45px;
+  width:872px;
+}
+
+.iframe{
+  width:870px;
+  height:600px;
+}
