@@ -8,10 +8,9 @@ dependencies:
   chrome: any
   polymer: any
 transformers:
-- chrome
 - polymer:
-	entry_points:
-	- web/index.html
+    entry_points:
+    - ./web/index.html
     csp: true
 - $dart2js:
     csp: true
