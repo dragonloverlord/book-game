@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="app" ng-csp>
-  <head>
+  <head id="head">
       <title>Game</title>
       <script type="text/javascript" src="js/angularjs/angular-loader.min.js"></script>
       <link rel="stylesheet" type="text/css" href="/css/angularjs/angular-csp.css">
@@ -25,15 +25,9 @@
   <body id="body" class="body">
       
       <!--
-      <input id="lock" type="hidden" value="lockoff">
       <div id="main-div" class="main-div">
           <div ng-controller="chromeLoad as load" id="money-div" class="money">
             
-            <div class="stats-text" id="action-sn">???</div>
-            <div class="save-div" id="action-stats" ng-init="load.action()">0</div>
-            <div class="stats-text">Children's</div>
-            <div class="save-div" id="childrens-stats" ng-init="load.childrens()">0</div>
-            <div class="stats-text" id="comic-sn">???</div>
             <div class="save-div" id="comic-stats" ng-init="load.comic()">0</div>
             <div class="stats-text">Drama</div>
             <div class="save-div" id="drama-stats" ng-init="load.drama()">0</div>
