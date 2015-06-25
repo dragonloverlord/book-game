@@ -10,7 +10,7 @@ class FictionStats{
         fictionStats();
     }
     
-    static void dictionStats(){
+    static void fictionStats(){
         _div_element = new Element.tag('div');
         _div_element.setAttribute('class', 'save-div');
         _div_element.setAttribute('id', 'fiction-stats');
