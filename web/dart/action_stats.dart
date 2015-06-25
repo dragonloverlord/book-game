@@ -2,7 +2,7 @@ library main.index_maker.money_div.action_stats;
 
 import 'dart:html';
 
-Element div_element = new Element.tag('div');
+Element _div_element = new Element.tag('div');
 
 
 class ActionStats{
@@ -11,11 +11,11 @@ class ActionStats{
     }
     
     static void actionStats(){
-        div_element = new Element.tag('div');
-        div_element.setAttribute('class', 'save-div');
-        div_element.setAttribute('id', 'action-stats');
-        div_element.setAttribute('ng-init', 'load.action()');
-        div_element.text = '0';
-        querySelector('#money-div').append(div_element);
+        _div_element = new Element.tag('div');
+        _div_element.setAttribute('class', 'save-div');
+        _div_element.setAttribute('id', 'action-stats');
+        _div_element.setAttribute('ng-init', 'load.action()');
+        _div_element.text = '0';
+        querySelector('#money-div').append(_div_element);
     }
 }

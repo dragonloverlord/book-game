@@ -2,7 +2,7 @@ library main.index_maker.money_div.reset_button;
 
 import 'dart:html';
 
-Element button_element = new Element.tag('button');
+Element _button_element = new Element.tag('button');
 
 
 class ResetButton{
@@ -11,11 +11,11 @@ class ResetButton{
     }
     
     static void resetButton(){
-        button_element = new Element.tag('button');
-        button_element.setAttribute('class', 'save-button');
-        button_element.setAttribute('type', 'button');
-        button_element.setAttribute('id', 'reset');
-        button_element.text = 'New Game';
-        querySelector('#money-div').append(button_element);
+        _button_element = new Element.tag('button');
+        _button_element.setAttribute('class', 'save-button');
+        _button_element.setAttribute('type', 'button');
+        _button_element.setAttribute('id', 'reset');
+        _button_element.text = 'New Game';
+        querySelector('#money-div').append(_button_element);
     }
 }

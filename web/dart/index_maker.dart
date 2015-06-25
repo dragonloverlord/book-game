@@ -4,8 +4,8 @@ import 'dart:html';
 
 import 'money_div.dart';
 
-Element div_element = new Element.tag('div');
-Element input_element = new Element.tag('input');
+Element _div_element = new Element.tag('div');
+Element _input_element = new Element.tag('input');
 
 
 class IndexMaker{
@@ -16,17 +16,17 @@ class IndexMaker{
     }
     
     static void lockcheck(){
-        input_element = new Element.tag('input');
-        input_element.setAttribute('id', 'lock');
-        input_element.setAttribute('type', 'hidden');
-        input_element.setAttribute('value', 'lockoff');
-        querySelector('#body').append(input_element);
+        _input_element = new Element.tag('input');
+        _input_element.setAttribute('id', 'lock');
+        _input_element.setAttribute('type', 'hidden');
+        _input_element.setAttribute('value', 'lockoff');
+        querySelector('#body').append(_input_element);
     }
     
     static void mainDiv(){
-        div_element = new Element.tag('div');
-        div_element.setAttribute('id', 'main-div');
-        div_element.setAttribute('class', 'main-div');
-        querySelector('#body').append(div_element);
+        _div_element = new Element.tag('div');
+        _div_element.setAttribute('id', 'main-div');
+        _div_element.setAttribute('class', 'main-div');
+        querySelector('#body').append(_div_element);
     }
 }

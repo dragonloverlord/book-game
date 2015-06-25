@@ -12,12 +12,21 @@ import 'childrens_sn.dart';
 import 'childrens_stats.dart';
 import 'comic_sn.dart';
 import 'comic_stats.dart';
+import 'drama_sn.dart';
+import 'drama_stats.dart';
+import 'educational_sn.dart';
+import 'educational_stats.dart';
+import 'environmental_sn.dart';
+import 'environmental_stats.dart';
+import 'fantasy_sn.dart';
+import 'fantasy_stats.dart';
+import 'fashion_sn.dart';
+import 'fashion_stats.dart';
+import 'fiction_sn.dart';
 
 
-Element br_element = new Element.tag('br');
-Element button_element = new Element.tag('button');
-Element div_element = new Element.tag('div');
-Element span_element = new Element.tag('span');
+Element _br_element = new Element.tag('br');
+Element _div_element = new Element.tag('div');
 
 
 class MoneyDiv{
@@ -34,18 +43,29 @@ class MoneyDiv{
         ChildrensStats.main();
         ComicSn.main();
         ComicStats.main();
+        DramaSn.main();
+        DramaStats.main();
+        EducationalSn.main();
+        EducationalStats.main();
+        EnvironmentalSn.main();
+        EnvironmentalStats.main();
+        FantasySn.main();
+        FantasyStats.main();
+        FashionSn.main();
+        FashionStats.main();
+        FictionSn.main();
     }
     
     static void moneyDiv(){
-        div_element = new Element.tag('div');
-        div_element.setAttribute('ng-controller', 'chromeLoad as load');
-        div_element.setAttribute('id', 'money-div');
-        div_element.setAttribute('class', 'money');
-        querySelector('#main-div').append(div_element);
+        _div_element = new Element.tag('div');
+        _div_element.setAttribute('ng-controller', 'chromeLoad as load');
+        _div_element.setAttribute('id', 'money-div');
+        _div_element.setAttribute('class', 'money');
+        querySelector('#main-div').append(_div_element);
     }
     
     static void addBr(){
-        br_element = new Element.tag('br');
-        querySelector('#money-div').append(br_element);
+        _br_element = new Element.tag('br');
+        querySelector('#money-div').append(_br_element);
     }
 }

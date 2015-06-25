@@ -4,7 +4,7 @@ import 'dart:html';
 
 import 'money_text.dart';
 
-Element span_element = new Element.tag('span');
+Element _span_element = new Element.tag('span');
 
 
 class MoneyTextSpan{
@@ -15,9 +15,9 @@ class MoneyTextSpan{
     }
     
     static void moneyTextSpan(){
-        span_element = new Element.tag('span');
-        span_element.setAttribute('id', 'money-text-span');
-        querySelector('#money-div').append(span_element);
+        _span_element = new Element.tag('span');
+        _span_element.setAttribute('id', 'money-text-span');
+        querySelector('#money-div').append(_span_element);
     }
     
     static void addCash(){

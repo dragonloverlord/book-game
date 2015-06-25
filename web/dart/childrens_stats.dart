@@ -2,7 +2,7 @@ library main.index_maker.money_div.childrens_stats;
 
 import 'dart:html';
 
-Element div_element = new Element.tag('div');
+Element _div_element = new Element.tag('div');
 
 
 class ChildrensStats{
@@ -11,11 +11,11 @@ class ChildrensStats{
     }
     
     static void childrensStats(){
-        div_element = new Element.tag('div');
-        div_element.setAttribute('class', 'save-div');
-        div_element.setAttribute('id', 'childrens-stats');
-        div_element.setAttribute('ng-init', 'load.childrens()');
-        div_element.text = '0';
-        querySelector('#money-div').append(div_element);
+        _div_element = new Element.tag('div');
+        _div_element.setAttribute('class', 'save-div');
+        _div_element.setAttribute('id', 'childrens-stats');
+        _div_element.setAttribute('ng-init', 'load.childrens()');
+        _div_element.text = '0';
+        querySelector('#money-div').append(_div_element);
     }
 }

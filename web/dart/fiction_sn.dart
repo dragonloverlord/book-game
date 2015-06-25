@@ -1,20 +1,20 @@
-library main.index_maker.money_div.comic_sn;
+library main.index_maker.money_div.fiction_sn;
 
 import 'dart:html';
 
 Element _div_element = new Element.tag('div');
 
 
-class ComicSn{
+class FictionSn{
     static void main(){
-        comicSn();
+        fictionSn();
     }
     
-    static void comicSn(){
+    static void fictionSn(){
         _div_element = new Element.tag('div');
         _div_element.setAttribute('class', 'stats-text');
-        _div_element.setAttribute('id', 'comic-sn');
-        _div_element.text = '???';
+        _div_element.setAttribute('id', 'fiction-sn');
+        _div_element.text = 'Fiction';
         querySelector('#money-div').append(_div_element);
     }
 }

@@ -2,7 +2,7 @@ library main.index_maker.money_div.money_text_span.money_text;
 
 import 'dart:html';
 
-Element span_element = new Element.tag('span');
+Element _span_element = new Element.tag('span');
 
 
 class MoneyText{
@@ -11,10 +11,10 @@ class MoneyText{
     }
     
     static void moneyText(){
-        span_element = new Element.tag('span');
-        span_element.setAttribute('id', 'money-text');
-        span_element.setAttribute('ng-init', 'load.money()');
-        span_element.text = '0';
-        querySelector('#money-text-span').append(span_element);
+        _span_element = new Element.tag('span');
+        _span_element.setAttribute('id', 'money-text');
+        _span_element.setAttribute('ng-init', 'load.money()');
+        _span_element.text = '0';
+        querySelector('#money-text-span').append(_span_element);
     }
 }
