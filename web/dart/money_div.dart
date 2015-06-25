@@ -23,6 +23,7 @@ import 'fantasy_stats.dart';
 import 'fashion_sn.dart';
 import 'fashion_stats.dart';
 import 'fiction_sn.dart';
+import 'fiction_stats.dart';
 
 
 Element _br_element = new Element.tag('br');
@@ -54,6 +55,7 @@ class MoneyDiv{
         FashionSn.main();
         FashionStats.main();
         FictionSn.main();
+        FictionStats.main();
     }
     
     static void moneyDiv(){
