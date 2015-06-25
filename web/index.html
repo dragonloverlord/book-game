@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="app" ng-csp>
-  <head>
+  <head id="head">
       <title>Game</title>
       <script type="text/javascript" src="js/angularjs/angular-loader.min.js"></script>
       <link rel="stylesheet" type="text/css" href="/css/angularjs/angular-csp.css">
@@ -19,33 +19,15 @@
       <script type="text/javascript" src="js/error.js"></script>
       <script type="text/javascript" src="js/utils.js"></script>
       <script type="text/javascript" src="js/iframe.js"></script>
+      <script type="text/javascript" src="packages/chrome/bootstrap.js" defer></script>
+      <script type="application/dart" src="index.dart" defer></script>
   </head>
-  <body class="body">
-      <input id="lock" type="hidden" value="lockoff">
+  <body id="body" class="body">
+      
+      <!--
       <div id="main-div" class="main-div">
           <div ng-controller="chromeLoad as load" id="money-div" class="money">
-            <span id="money-text" ng-init="load.money()">0</span>$
-            <br>
-            <button class="save-button" type="button" id="reset">New Game</button>
-            <div class="stats-text">Adventure</div>
-            <div class="save-div" id="adventure-stats" ng-init="load.adventure()">0</div>
-            <div class="stats-text" id="action-sn">???</div>
-            <div class="save-div" id="action-stats" ng-init="load.action()">0</div>
-            <div class="stats-text">Children's</div>
-            <div class="save-div" id="childrens-stats" ng-init="load.childrens()">0</div>
-            <div class="stats-text" id="comic-sn">???</div>
-            <div class="save-div" id="comic-stats" ng-init="load.comic()">0</div>
-            <div class="stats-text">Drama</div>
-            <div class="save-div" id="drama-stats" ng-init="load.drama()">0</div>
-            <div class="stats-text" id="educational-sn">???</div>
-            <div class="save-div" id="educational-stats" ng-init="load.educational()">0</div>
-            <div class="stats-text" id="environmental-sn">???</div>
-            <div class="save-div" id="environmental-stats" ng-init="load.environmental()">0</div>
-            <div class="stats-text" id="fantasy-sn">???</div>
-            <div class="save-div" id="fantasy-stats" ng-init="load.fantasy()">0</div>
-            <div class="stats-text" id="fashion-sn">???</div>
-            <div class="save-div" id="fashion-stats" ng-init="load.fashion()">0</div>
-            <div class="stats-text">Fiction</div>
+            
             <div class="save-div" id="fiction-stats" ng-init="load.fiction()">0</div>
             <div class="stats-text" id="gossip-sn">???</div>
             <div class="save-div" id="gossip-stats" ng-init="load.gossip()">0</div>
@@ -107,5 +89,6 @@
             <iframe id="iframe" class="iframe" src="about:blank"></iframe>
           </div>
       </div>
+      -->
   </body>
 </html>

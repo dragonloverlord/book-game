@@ -1,0 +1,15 @@
+name: book-game
+version: 0.1.0
+description: A book making game for chrome os
+author: dragonloverlord
+homepage: https://github.com/dragonloverlord/book-game
+documentation: https://github.com/dragonloverlord/book-game/wiki
+dependencies:
+  chrome: any
+  angular: "^1.1.2"
+transformers:
+- chrome
+- $dart2js:
+    csp: true
+    minify: true
+    $include: ["web/index.dart"]
