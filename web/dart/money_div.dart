@@ -24,6 +24,7 @@ import 'fashion_sn.dart';
 import 'fashion_stats.dart';
 import 'fiction_sn.dart';
 import 'fiction_stats.dart';
+import 'gossip_sn.dart';
 
 
 Element _br_element = new Element.tag('br');
@@ -56,6 +57,7 @@ class MoneyDiv{
         FashionStats.main();
         FictionSn.main();
         FictionStats.main();
+        GossipSn.main();
     }
     
     static void moneyDiv(){
