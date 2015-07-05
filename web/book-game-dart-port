@@ -23,15 +23,14 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=7
+current_page=6
 FILE_NAME_0=69;Javascript;0;EUTF-8;0;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fmanifest.json;0;4
 FILE_NAME_1=28;YAML;0;EUTF-8;1;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fpubspec.yaml;0;4
 FILE_NAME_2=1715;HTML;0;EUTF-8;1;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Findex.html;0;4
 FILE_NAME_3=0;Java;0;EUTF-8;1;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Findex.dart;0;4
 FILE_NAME_4=46;Java;0;EUTF-8;1;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fdart%2Findex_maker.dart;0;4
 FILE_NAME_5=36;Java;0;EUTF-8;1;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fdart%2Fmoney_div.dart;0;4
-FILE_NAME_6=470;Java;0;EUTF-8;0;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fdart%2Fgothic_sn.dart;0;4
-FILE_NAME_7=69;Java;0;EUTF-8;0;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fdart%2Fgothic_stats.dart;0;4
+FILE_NAME_6=324;Java;0;EUTF-8;0;1;0;%2Fhome%2Fdragonloverlord%2FDesktop%2Fchrome%2Fbook-game-dart-port%2Fweb%2Fdart%2Fhistory_sn.dart;0;4
 
 [VTE]
 last_dir=/home/dragonloverlord
