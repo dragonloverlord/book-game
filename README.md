@@ -1,9 +1,16 @@
-Book-Game
+Book-Game-Dart-Port
 =============
 
-A javascript book writing idle game app for chrome os
+A Dart based book writing idle game app for chrome os
 
-Instructions For Installation
+How Do I Use This Version?
+==========================
+
+You don't as this version is still <b>highly unstable</b> and you should only use the version available at the [chrome web store](https://chrome.google.com/webstore/detail/book-writer/nbhkbcgmdbbcmdmhnogjjgpkpgkmkpne)
+
+If you must use this version then you will have to compile it with dart your self.
+
+Instructions For Standard Installation
 =============================
 
 To use this app go to the extension page on chrome then check the developer box
