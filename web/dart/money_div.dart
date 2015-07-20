@@ -31,6 +31,7 @@ import 'gothic_stats.dart';
 import 'history_sn.dart';
 import 'history_stats.dart';
 import 'humor_sn.dart';
+import 'humor_stats.dart';
 
 
 Element _br_element = new Element.tag('br');
@@ -70,6 +71,7 @@ class MoneyDiv{
         HistorySn.main();
         HistoryStats.main();
         HumorSn.main();
+        HumorStats.main();
     }
     
     static void moneyDiv(){
