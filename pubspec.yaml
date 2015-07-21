@@ -5,7 +5,7 @@ author: dragonloverlord
 homepage: https://github.com/dragonloverlord/book-game
 documentation: https://github.com/dragonloverlord/book-game/wiki
 dependencies:
-  chrome: any
+  chrome: "^0.7.0-dev1"
   angular: "^1.1.2"
 transformers:
 - chrome
