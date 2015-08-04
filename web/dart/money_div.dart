@@ -34,6 +34,7 @@ import 'humor_sn.dart';
 import 'humor_stats.dart';
 import 'math_sn.dart';
 import 'math_stats.dart';
+import 'nonfiction_sn.dart';
 
 
 Element _br_element = new Element.tag('br');
@@ -76,6 +77,7 @@ class MoneyDiv{
         HumorStats.main();
         MathSn.main();
         MathStats.main();
+        NonFictionSn.main();
     }
     
     static void moneyDiv(){
