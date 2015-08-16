@@ -51,7 +51,7 @@ class MoneyDiv{
         MoneyTextSpan.main();
         addBr();
         ResetButton.main();
-        Action.main();
+        Action.moneyDiv();
         Adventure.moneyDiv();
         Childrens.moneyDiv();
         ComicSn.main();
