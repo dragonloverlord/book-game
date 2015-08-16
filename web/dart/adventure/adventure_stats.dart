@@ -1,4 +1,4 @@
-library main.index_maker.money_div.adventure_stats;
+library main.index_maker.money_div.adventure.adventure_stats;
 
 import 'dart:html';
 
