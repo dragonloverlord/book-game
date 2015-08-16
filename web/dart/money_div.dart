@@ -4,8 +4,7 @@ import 'dart:html';
 
 import 'money_text_span.dart';
 import 'reset_button.dart';
-import 'action_sn.dart';
-import 'action_stats.dart';
+import 'action/action.dart';
 import 'adventure_sn.dart';
 import 'adventure_stats.dart';
 import 'childrens_sn.dart';
@@ -41,6 +40,7 @@ import 'parenting_stats.dart';
 import 'religious_sn.dart';
 import 'religious_stats.dart';
 import 'report_sn.dart';
+import 'report_stats.dart';
 
 
 Element _br_element = new Element.tag('br');
@@ -53,8 +53,7 @@ class MoneyDiv{
         MoneyTextSpan.main();
         addBr();
         ResetButton.main();
-        ActionSn.main();
-        ActionStats.main();
+        Action.main();
         AdventureSn.main();
         AdventureStats.main();
         ChildrensSn.main();
@@ -90,6 +89,7 @@ class MoneyDiv{
         ReligiousSn.main();
         ReligiousStats.main();
         ReportSn.main();
+        ReportStats.main();
     }
     
     static void moneyDiv(){
