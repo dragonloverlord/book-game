@@ -5,7 +5,7 @@ import 'action_stats.dart';
 
 
 class Action{
-    static void main(){
+    static void moneyDiv(){
         ActionSn.main();
         ActionStats.main();
     }
