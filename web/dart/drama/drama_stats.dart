@@ -1,4 +1,4 @@
-library main.index_maker.money_div.drama_stats;
+library main.index_maker.money_div.drama.drama_stats;
 
 import 'dart:html';
 

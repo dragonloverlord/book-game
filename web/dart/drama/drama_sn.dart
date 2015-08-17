@@ -1,4 +1,4 @@
-library main.index_maker.money_div.drama_sn;
+library main.index_maker.money_div.drama.drama_sn;
 
 import 'dart:html';
 
