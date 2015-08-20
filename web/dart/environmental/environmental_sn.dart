@@ -1,4 +1,4 @@
-library main.index_maker.money_div.environmental_sn;
+library main.index_maker.money_div.environmental.environmental_sn;
 
 import 'dart:html';
 
