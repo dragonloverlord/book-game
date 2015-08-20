@@ -5,6 +5,8 @@ import 'gothic_stats.dart';
 
 
 class Gothic{
-    GothicSn.main();
-    GothicStats.main();
+    static void moneyDiv(){
+        GothicSn.main();
+        GothicStats.main();
+    }
 }
