@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="book-game" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/book-game" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/book-game" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++14" />
+			<Add option="-m64" />
+			<Add option="`pkg-config gtk+-3.0 --cflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="-m64" />
+			<Add option="`pkg-config gtk+-3.0 --libs`" />
+		</Linker>
+		<Unit filename="button_container.hpp" />
+		<Unit filename="buttons/book_buttons.cpp" />
+		<Unit filename="buttons/book_buttons.hpp" />
+		<Unit filename="buttons/book_buttons_functions.cpp" />
+		<Unit filename="buttons/button_container.cpp" />
+		<Unit filename="layout.cpp" />
+		<Unit filename="layout.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.hpp" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
